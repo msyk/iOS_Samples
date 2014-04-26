@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5037" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xja-4C-aJ3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="E70-Lw-5uX"/>
+                                </connections>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CHS-V2-4w6">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Button1" id="rW1-HM-rAN">
+                                        <connections>
+                                            <action selector="tapButton1:" destination="vXZ-lx-hvc" id="zdK-1L-Elb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Button2" id="qob-sY-uxU">
+                                        <connections>
+                                            <action selector="tapButton2:" destination="vXZ-lx-hvc" id="kf5-4h-b9q"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="CHS-V2-4w6" secondAttribute="bottom" id="7Wo-Ja-Itq"/>
+                            <constraint firstItem="CHS-V2-4w6" firstAttribute="top" secondItem="xja-4C-aJ3" secondAttribute="bottom" id="Cbc-w1-1RS"/>
+                            <constraint firstAttribute="trailing" secondItem="CHS-V2-4w6" secondAttribute="trailing" id="Mlq-hM-9BM"/>
+                            <constraint firstItem="xja-4C-aJ3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="OdE-WQ-MXX"/>
+                            <constraint firstItem="xja-4C-aJ3" firstAttribute="trailing" secondItem="CHS-V2-4w6" secondAttribute="trailing" id="Qsw-k2-lEK"/>
+                            <constraint firstItem="CHS-V2-4w6" firstAttribute="leading" secondItem="xja-4C-aJ3" secondAttribute="leading" id="i1z-i6-0eJ"/>
+                            <constraint firstItem="xja-4C-aJ3" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="npH-5V-mwj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="xja-4C-aJ3" id="wmR-mv-kJb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
