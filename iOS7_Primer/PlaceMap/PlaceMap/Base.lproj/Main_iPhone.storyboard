@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="feo-S2-jsH">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Place List View Controller - Prefectural Capital-->
+        <scene sceneID="eYa-2h-Zxb">
+            <objects>
+                <tableViewController id="slh-rj-o7h" customClass="PlaceListViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ib4-b7-70b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PLACECELL" id="4C8-Kc-o0i">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4C8-Kc-o0i" id="PJe-94-gnF">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="cjQ-t6-adu" kind="push" id="Zks-F8-RkW"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="slh-rj-o7h" id="v2U-uY-gH4"/>
+                            <outlet property="delegate" destination="slh-rj-o7h" id="4JZ-XB-fLg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Prefectural Capital" id="7fb-zk-2f9"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B0o-pO-TNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-44" y="-602"/>
+        </scene>
+        <!--Map Display View Controller-->
+        <scene sceneID="db0-du-cpJ">
+            <objects>
+                <viewController id="cjQ-t6-adu" customClass="MapDisplayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W4t-AD-gue"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Nn-14-dXt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ihn-Kw-hiU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48l-5H-LaJ">
+                                <rect key="frame" x="20" y="527" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vOr-ys-GbS">
+                                <rect key="frame" x="20" y="86" width="280" height="433"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="48l-5H-LaJ" firstAttribute="leading" secondItem="vOr-ys-GbS" secondAttribute="leading" id="a8t-5P-GQe"/>
+                            <constraint firstAttribute="trailing" secondItem="vOr-ys-GbS" secondAttribute="trailing" constant="20" symbolic="YES" id="bQM-Pe-rvv"/>
+                            <constraint firstAttribute="bottom" secondItem="48l-5H-LaJ" secondAttribute="bottom" constant="20" symbolic="YES" id="ciJ-k1-Haf"/>
+                            <constraint firstItem="vOr-ys-GbS" firstAttribute="trailing" secondItem="48l-5H-LaJ" secondAttribute="trailing" id="dhM-sV-K7I"/>
+                            <constraint firstItem="vOr-ys-GbS" firstAttribute="top" secondItem="W4t-AD-gue" secondAttribute="bottom" constant="22" id="gEY-Cn-vz9"/>
+                            <constraint firstItem="48l-5H-LaJ" firstAttribute="top" secondItem="vOr-ys-GbS" secondAttribute="bottom" constant="8" symbolic="YES" id="geV-dK-4Ta"/>
+                            <constraint firstItem="vOr-ys-GbS" firstAttribute="leading" secondItem="ihn-Kw-hiU" secondAttribute="leading" constant="20" symbolic="YES" id="kg5-9B-M43"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1PH-Co-ndH"/>
+                    <connections>
+                        <outlet property="mapView" destination="vOr-ys-GbS" id="Smz-b0-FYT"/>
+                        <outlet property="placeName" destination="48l-5H-LaJ" id="7lV-aj-pOU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="upR-ge-qwz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="397" y="-414"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4fo-wq-Paq">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="feo-S2-jsH" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="s0z-V0-QFW">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="slh-rj-o7h" kind="relationship" relationship="rootViewController" id="jHu-uZ-gRq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D5V-O0-gAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-503" y="-414"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

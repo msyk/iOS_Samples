@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rGv-D7-PnV">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Photo Show View Controller-->
+        <scene sceneID="eGy-33-x6I">
+            <objects>
+                <viewController id="rGv-D7-PnV" customClass="PhotoShowViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JJ5-fL-aHy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fhr-gi-bK7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZvU-2f-6VT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndj-EH-WIf">
+                                <rect key="frame" x="20" y="20" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="photo1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="rGv-D7-PnV" eventType="touchUpInside" id="907-hx-MdD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6a-X8-Ved">
+                                <rect key="frame" x="136" y="20" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="photo2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="rGv-D7-PnV" eventType="touchUpInside" id="zPt-LJ-V9P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6g-33-lES">
+                                <rect key="frame" x="251" y="20" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="photo3">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="rGv-D7-PnV" eventType="touchUpInside" id="xxO-yo-hwp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2H-kJ-2fa">
+                                <rect key="frame" x="20" y="518" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="photo4">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="rGv-D7-PnV" eventType="touchUpInside" id="XJj-ZN-m6H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQE-h7-Uzi">
+                                <rect key="frame" x="136" y="518" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="photo5">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="rGv-D7-PnV" eventType="touchUpInside" id="qjf-a1-uGb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpM-Hf-dOy">
+                                <rect key="frame" x="251" y="518" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="photo6">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="rGv-D7-PnV" eventType="touchUpInside" id="WKK-x2-JYG"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3QK-UO-2Yh">
+                                <rect key="frame" x="20" y="58" width="280" height="452"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C6a-X8-Ved" firstAttribute="baseline" secondItem="Ndj-EH-WIf" secondAttribute="baseline" id="1BN-BA-UZA"/>
+                            <constraint firstItem="Ndj-EH-WIf" firstAttribute="leading" secondItem="ZvU-2f-6VT" secondAttribute="leading" constant="20" symbolic="YES" id="52g-2g-UCA"/>
+                            <constraint firstItem="wpM-Hf-dOy" firstAttribute="leading" secondItem="N6g-33-lES" secondAttribute="leading" id="7nr-Wd-VmC"/>
+                            <constraint firstItem="3QK-UO-2Yh" firstAttribute="trailing" secondItem="N6g-33-lES" secondAttribute="trailing" id="Ct6-h4-KBF"/>
+                            <constraint firstAttribute="trailing" secondItem="N6g-33-lES" secondAttribute="trailing" constant="20" symbolic="YES" id="FsH-0Q-62y"/>
+                            <constraint firstItem="wpM-Hf-dOy" firstAttribute="baseline" secondItem="eQE-h7-Uzi" secondAttribute="baseline" id="JCh-sH-Hbc"/>
+                            <constraint firstItem="Z2H-kJ-2fa" firstAttribute="baseline" secondItem="eQE-h7-Uzi" secondAttribute="baseline" id="QsZ-ih-1hm"/>
+                            <constraint firstItem="Z2H-kJ-2fa" firstAttribute="top" secondItem="3QK-UO-2Yh" secondAttribute="bottom" constant="8" symbolic="YES" id="Uql-x7-XAO"/>
+                            <constraint firstItem="3QK-UO-2Yh" firstAttribute="top" secondItem="Ndj-EH-WIf" secondAttribute="bottom" constant="8" symbolic="YES" id="aHY-jd-Kud"/>
+                            <constraint firstItem="3QK-UO-2Yh" firstAttribute="centerX" secondItem="C6a-X8-Ved" secondAttribute="centerX" id="bmJ-3t-DnD"/>
+                            <constraint firstItem="3QK-UO-2Yh" firstAttribute="leading" secondItem="Z2H-kJ-2fa" secondAttribute="leading" id="c0z-uT-Nc7"/>
+                            <constraint firstItem="C6a-X8-Ved" firstAttribute="leading" secondItem="eQE-h7-Uzi" secondAttribute="leading" id="hQD-Zc-FIe"/>
+                            <constraint firstItem="3QK-UO-2Yh" firstAttribute="leading" secondItem="Ndj-EH-WIf" secondAttribute="leading" id="mfQ-qr-QI5"/>
+                            <constraint firstItem="Ndj-EH-WIf" firstAttribute="top" secondItem="ZvU-2f-6VT" secondAttribute="top" constant="20" symbolic="YES" id="nKH-ce-8df"/>
+                            <constraint firstAttribute="bottom" secondItem="Z2H-kJ-2fa" secondAttribute="bottom" constant="20" symbolic="YES" id="sLu-Fk-7fz"/>
+                            <constraint firstItem="N6g-33-lES" firstAttribute="baseline" secondItem="C6a-X8-Ved" secondAttribute="baseline" id="yVD-cU-mIS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="3QK-UO-2Yh" id="8NW-0Y-Wmj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gEk-lf-Cj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92" y="40"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
