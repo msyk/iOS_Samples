@@ -12,6 +12,8 @@
 		2BD10BA4196FD19100F0853E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BD10BA2196FD19100F0853E /* Main.storyboard */; };
 		2BD10BA6196FD19100F0853E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BD10BA5196FD19100F0853E /* Images.xcassets */; };
 		2BD10BB2196FD19100F0853E /* __2_SelfInBlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD10BB1196FD19100F0853E /* __2_SelfInBlockTests.swift */; };
+		2BDA079E19743AD400F385DD /* SelfInBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA079D19743AD400F385DD /* SelfInBlock.swift */; };
+		2BDA079F19743AD400F385DD /* SelfInBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDA079D19743AD400F385DD /* SelfInBlock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 		2BD10BAB196FD19100F0853E /* 1_2_SelfInBlockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 1_2_SelfInBlockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BD10BB0196FD19100F0853E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BD10BB1196FD19100F0853E /* __2_SelfInBlockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __2_SelfInBlockTests.swift; sourceTree = "<group>"; };
+		2BDA079D19743AD400F385DD /* SelfInBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfInBlock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,7 @@
 			children = (
 				2BD10B9E196FD19100F0853E /* AppDelegate.swift */,
 				2BD10BA0196FD19100F0853E /* ViewController.swift */,
+				2BDA079D19743AD400F385DD /* SelfInBlock.swift */,
 				2BD10BA2196FD19100F0853E /* Main.storyboard */,
 				2BD10BA5196FD19100F0853E /* Images.xcassets */,
 				2BD10B9C196FD19100F0853E /* Supporting Files */,
@@ -209,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BD10BA1196FD19100F0853E /* ViewController.swift in Sources */,
+				2BDA079E19743AD400F385DD /* SelfInBlock.swift in Sources */,
 				2BD10B9F196FD19100F0853E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BDA079F19743AD400F385DD /* SelfInBlock.swift in Sources */,
 				2BD10BB2196FD19100F0853E /* __2_SelfInBlockTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +332,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = 1_2_SelfInBlock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -337,6 +344,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = 1_2_SelfInBlock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -395,6 +403,7 @@
 				2BD10BB7196FD19100F0853E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2BD10BB8196FD19100F0853E /* Build configuration list for PBXNativeTarget "1_2_SelfInBlockTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +412,7 @@
 				2BD10BBA196FD19100F0853E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

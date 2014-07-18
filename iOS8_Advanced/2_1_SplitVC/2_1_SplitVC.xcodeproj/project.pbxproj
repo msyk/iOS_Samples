@@ -13,6 +13,7 @@
 		2BC7350A1978D635002B373D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BC735081978D635002B373D /* Main.storyboard */; };
 		2BC7350C1978D635002B373D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC7350B1978D635002B373D /* Images.xcassets */; };
 		2BC735181978D635002B373D /* __1_SplitVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC735171978D635002B373D /* __1_SplitVCTests.swift */; };
+		2BC735221978D65E002B373D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC735211978D65E002B373D /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		2BC735111978D635002B373D /* 2_1_SplitVCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 2_1_SplitVCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC735161978D635002B373D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BC735171978D635002B373D /* __1_SplitVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __1_SplitVCTests.swift; sourceTree = "<group>"; };
+		2BC735211978D65E002B373D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				2BC735021978D635002B373D /* AppDelegate.swift */,
+				2BC735211978D65E002B373D /* RootViewController.swift */,
 				2BC735041978D635002B373D /* MasterViewController.swift */,
 				2BC735061978D635002B373D /* DetailViewController.swift */,
 				2BC735081978D635002B373D /* Main.storyboard */,
@@ -213,6 +216,7 @@
 			files = (
 				2BC735071978D635002B373D /* DetailViewController.swift in Sources */,
 				2BC735051978D635002B373D /* MasterViewController.swift in Sources */,
+				2BC735221978D65E002B373D /* RootViewController.swift in Sources */,
 				2BC735031978D635002B373D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
