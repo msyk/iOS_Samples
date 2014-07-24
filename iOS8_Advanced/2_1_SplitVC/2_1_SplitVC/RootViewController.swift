@@ -14,6 +14,10 @@ class RootViewController: UIViewController {
     
     override func viewDidLoad()
     {
+        #if DEBUG
+            println((__FILE__ as String).lastPathComponent, __FUNCTION__, __LINE__)
+        #endif
+        
         let storyboard = self.storyboard as UIStoryboard
         let svc = storyboard.instantiateViewControllerWithIdentifier("svc")
             as UISplitViewController
@@ -27,14 +31,18 @@ class RootViewController: UIViewController {
         svc.delegate = detailNC.topViewController as DetailViewController
         //svc.preferredDisplayMode = .AllVisible
         
-//        if (UIDevice.currentDevice().userInterfaceIdiom != .Phone) {
-//            self.setTraitCollection(
-//                UITraitCollection(horizontalSizeClass: .Regular))
-//        }
+        //        if (UIDevice.currentDevice().userInterfaceIdiom != .Phone) {
+        //            self.setTraitCollection(
+        //                UITraitCollection(horizontalSizeClass: .Regular))
+        //        }
     }
     
     func setTraitCollection(traits: UITraitCollection?)
     {
+        #if DEBUG
+            println((__FILE__ as String).lastPathComponent, __FUNCTION__, __LINE__)
+        #endif
+        
         self.setOverrideTraitCollection(traits,
             forChildViewController: self.containingVC)
         self.containingVC?.didMoveToParentViewController(self)
@@ -42,8 +50,12 @@ class RootViewController: UIViewController {
     
     override func viewWillTransitionToSize(size: CGSize,
         withTransitionCoordinator
-            coordinator: UIViewControllerTransitionCoordinator!)
+        coordinator: UIViewControllerTransitionCoordinator!)
     {
+        #if DEBUG
+            println((__FILE__ as String).lastPathComponent, __FUNCTION__, __LINE__)
+        #endif
+        
         println(__FUNCTION__, __LINE__, NSStringFromCGSize(size))
         if (UIDevice.currentDevice().userInterfaceIdiom == .Phone) {
             if (size.width > size.height)  {
@@ -54,5 +66,22 @@ class RootViewController: UIViewController {
             }
         }
     }
+    
+//    override func collapseSecondaryViewController(secondaryViewController: UIViewController!, forSplitViewController splitViewController: UISplitViewController!)
+//    {
+//        #if DEBUG
+//            println((__FILE__ as String).lastPathComponent, __FUNCTION__, __LINE__)
+//        #endif
+//        
+//    }
+//    
+//    override func separateSecondaryViewControllerForSplitViewController(splitViewController: UISplitViewController!) -> UIViewController!
+//    {
+//        #if DEBUG
+//            println((__FILE__ as String).lastPathComponent, __FUNCTION__, __LINE__)
+//        #endif
+//        let detailNC = splitViewController.viewControllers[1] as UINavigationController
+//        return detailNC.topViewController as DetailViewController
+//    }
     
 }

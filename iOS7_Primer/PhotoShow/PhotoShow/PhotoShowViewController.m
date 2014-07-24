@@ -58,12 +58,12 @@
                                                           ofType: @"jpg"];
     UIImage *photoImage = [UIImage imageWithContentsOfFile: imagePath];
     self.imageView.image = photoImage;
-    
-    CGRect initialRect = self.imageView.frame;
-    self.imageView.frame = CGRectZero;
-    [UIView animateWithDuration: 2.0
-                     animations: ^(){
-                         self.imageView.frame = initialRect;
-                     }];
+ 
+//    CGRect initialRect = self.imageView.frame;
+//    self.imageView.frame = CGRectZero;
+//    [UIView animateWithDuration: 2.0
+//                     animations: ^(){
+//                         self.imageView.frame = initialRect;
+//                     }];
 }
 @end

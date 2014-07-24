@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.11" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eEM-LG-ZXf">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6190.4"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="modal" id="6lJ-mh-Mil">
+                            <connections>
+                                <action selector="tapButton1:" destination="vXZ-lx-hvc" id="PmF-ih-NNm"/>
+                                <segue destination="41c-QC-EDg" kind="presentation" identifier="modal1" modalPresentationStyle="formSheet" id="94T-Kg-5U6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="pop1" id="dmK-Sr-hoq">
+                            <connections>
+                                <segue destination="41c-QC-EDg" kind="popover" popoverAnchorBarButtonItem="dmK-Sr-hoq" id="S0c-au-1MA">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="pop2" id="E5N-bu-GNQ">
+                            <connections>
+                                <segue destination="41c-QC-EDg" kind="popoverPresentation" popoverAnchorBarButtonItem="E5N-bu-GNQ" id="MYL-0y-RRG">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="push" id="dZf-7u-ews">
+                            <connections>
+                                <action selector="tapButton4:" destination="vXZ-lx-hvc" id="f3I-bp-R3h"/>
+                                <segue destination="41c-QC-EDg" kind="show" id="pcr-3i-ZtM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="b5" id="vFn-c5-e75">
+                            <connections>
+                                <action selector="tapButton5:" destination="vXZ-lx-hvc" id="lzE-4h-Hna"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="b6" id="lVI-Kd-cUr">
+                            <connections>
+                                <action selector="tapButton6:" destination="vXZ-lx-hvc" id="Wu5-EM-yxZ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="pop3" id="ikb-bX-4R2">
+                            <connections>
+                                <segue destination="G1d-p1-voD" kind="popoverPresentation" popoverAnchorBarButtonItem="ikb-bX-4R2" id="p0o-jv-VOQ">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="pop4" id="kOt-Hs-l16">
+                            <connections>
+                                <segue destination="G1d-p1-voD" kind="popoverPresentation" popoverAnchorBarButtonItem="kOt-Hs-l16" id="KRo-BW-nij">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="AlertController1" id="O7L-Pq-dAd">
+                            <connections>
+                                <action selector="tapAlertController:" destination="vXZ-lx-hvc" id="rrw-hR-dvR"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="j1e-c8-RnA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1591.5" y="-307.6056338028169"/>
+        </scene>
+        <!--My Alert Controller-->
+        <scene sceneID="caT-ah-TmV">
+            <objects>
+                <viewController id="as9-yK-S1q" customClass="MyAlertController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l8N-4h-ick"/>
+                        <viewControllerLayoutGuide type="bottom" id="Baz-TJ-D7m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CaK-pl-8Y2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IrH-I5-Jfp">
+                                <rect key="frame" x="139" y="77" width="51" height="31"/>
+                            </switch>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="f6c-Rc-6Cw">
+                                <rect key="frame" x="153" y="153" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eYj-MR-0Bh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2049" y="781"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CmK-cf-vTh">
+            <objects>
+                <viewController id="G1d-p1-voD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sPx-Eh-uin"/>
+                        <viewControllerLayoutGuide type="bottom" id="67r-sd-FQn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nr1-Lr-SkI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="1" green="0.47480845789999998" blue="0.26329806109999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fv4-V2-4f9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2533" y="71"/>
+        </scene>
+        <!--Sub View Controller-->
+        <scene sceneID="Xmh-Dr-njH">
+            <objects>
+                <viewController id="41c-QC-EDg" customClass="SubViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HdZ-hP-LzQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="4zb-DJ-bSY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UkD-vZ-mjT">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cme-Ny-5LX">
+                                <rect key="frame" x="127" y="250" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="3kv-Vr-HhD"/>
+                                </constraints>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapCloseButton:" destination="41c-QC-EDg" eventType="touchUpInside" id="lCB-4T-8m4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40407316609999999" green="1" blue="0.60313707289999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Cme-Ny-5LX" firstAttribute="centerX" secondItem="UkD-vZ-mjT" secondAttribute="centerX" id="AcU-2X-wvE"/>
+                            <constraint firstAttribute="bottom" secondItem="Cme-Ny-5LX" secondAttribute="bottom" constant="20" symbolic="YES" id="SMf-et-a46"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tBD-oB-huo"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="300"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qEQ-TT-np9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2523" y="-420"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CeN-Ww-E5X">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="eEM-LG-ZXf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics">
+                        <size key="portraitSize" width="768" height="1024"/>
+                        <size key="landscapeSize" width="1024" height="768"/>
+                    </simulatedScreenMetrics>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="esx-9Z-h2g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Spk-DK-QFb">
+                        <rect key="frame" x="0.0" y="980" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="n5a-Gm-edu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4of-p0-Cod" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="99" y="-307.6056338028169"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="S0c-au-1MA"/>
+        <segue reference="KRo-BW-nij"/>
+    </inferredMetricsTieBreakers>
+</document>

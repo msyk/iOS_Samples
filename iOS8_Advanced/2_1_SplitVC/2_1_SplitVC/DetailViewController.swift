@@ -10,7 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController, UISplitViewControllerDelegate {
 
-    @IBOutlet var detailDescriptionLabel: UILabel
+    @IBOutlet var detailDescriptionLabel: UILabel!
     var masterPopoverController: UIPopoverController? = nil
 
 
@@ -35,6 +35,10 @@ class DetailViewController: UIViewController, UISplitViewControllerDelegate {
     }
 
     override func viewDidLoad() {
+        #if DEBUG
+            println((__FILE__ as String).lastPathComponent, __FUNCTION__, __LINE__)
+        #endif
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()

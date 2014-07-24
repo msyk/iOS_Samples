@@ -15,6 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
+        #if DEBUG
+            println((__FILE__ as String).lastPathComponent, __FUNCTION__, __LINE__)
+        #endif
+        
         // Override point for customization after application launch.
 //        let splitViewController = self.window!.rootViewController as UISplitViewController
 //        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as UINavigationController

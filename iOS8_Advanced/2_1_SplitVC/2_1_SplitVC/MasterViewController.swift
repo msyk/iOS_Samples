@@ -23,6 +23,10 @@ class MasterViewController: UITableViewController {
     }
 
     override func viewDidLoad() {
+        #if DEBUG
+            println((__FILE__ as String).lastPathComponent, __FUNCTION__, __LINE__)
+        #endif
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
@@ -52,6 +56,10 @@ class MasterViewController: UITableViewController {
     // #pragma mark - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        #if DEBUG
+            println((__FILE__ as String).lastPathComponent, __FUNCTION__, __LINE__)
+        #endif
+        
         if segue.identifier == "showDetail" {
             let indexPath = self.tableView.indexPathForSelectedRow()
             let object = objects[indexPath.row] as NSDate
