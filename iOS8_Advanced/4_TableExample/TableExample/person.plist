@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>age</key>
+		<integer>46</integer>
+		<key>birthday</key>
+		<string>1963/12/23</string>
+		<key>carrier</key>
+		<string>ドコモ</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>take_megumi@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>武根 めぐみ</string>
+		<key>prefecture</key>
+		<string>石川県</string>
+		<key>ruby</key>
+		<string>たけね めぐみ</string>
+		<key>sex</key>
+		<string>女</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>52</integer>
+		<key>birthday</key>
+		<string>1958/1/9</string>
+		<key>carrier</key>
+		<string>ソフトバンク</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>akamatsu_kazuya@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>赤松根 一哉</string>
+		<key>prefecture</key>
+		<string>静岡県</string>
+		<key>ruby</key>
+		<string>あかまつね かずや</string>
+		<key>sex</key>
+		<string>男</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>57</integer>
+		<key>birthday</key>
+		<string>1953/5/12</string>
+		<key>carrier</key>
+		<string>au</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>tachibana_youko@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>橘根 陽子</string>
+		<key>prefecture</key>
+		<string>東京都</string>
+		<key>ruby</key>
+		<string>たちばなね ようこ</string>
+		<key>sex</key>
+		<string>女</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>66</integer>
+		<key>birthday</key>
+		<string>1944/4/28</string>
+		<key>carrier</key>
+		<string>ドコモ</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>uchimura_ami@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>内村根 有海</string>
+		<key>prefecture</key>
+		<string>茨城県</string>
+		<key>ruby</key>
+		<string>うちむらね あみ</string>
+		<key>sex</key>
+		<string>女</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>26</integer>
+		<key>birthday</key>
+		<string>1984/2/19</string>
+		<key>carrier</key>
+		<string>ソフトバンク</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>moriya_chikako@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>森谷根 千佳子</string>
+		<key>prefecture</key>
+		<string>愛媛県</string>
+		<key>ruby</key>
+		<string>もりやね ちかこ</string>
+		<key>sex</key>
+		<string>女</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>26</integer>
+		<key>birthday</key>
+		<string>1983/10/22</string>
+		<key>carrier</key>
+		<string>au</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>sugimoto_hiro@example.com</string>
+		<key>married</key>
+		<string>未婚</string>
+		<key>name</key>
+		<string>杉本根 ヒロ</string>
+		<key>prefecture</key>
+		<string>熊本県</string>
+		<key>ruby</key>
+		<string>すぎもとね ひろ</string>
+		<key>sex</key>
+		<string>男</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>45</integer>
+		<key>birthday</key>
+		<string>1964/11/28</string>
+		<key>carrier</key>
+		<string>ドコモ</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>kanayama_masayuki@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>金山根 雅之</string>
+		<key>prefecture</key>
+		<string>神奈川県</string>
+		<key>ruby</key>
+		<string>かなやまね まさゆき</string>
+		<key>sex</key>
+		<string>男</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>45</integer>
+		<key>birthday</key>
+		<string>1964/9/21</string>
+		<key>carrier</key>
+		<string>ドコモ</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>takigawa_eiichi@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>滝川根 栄一</string>
+		<key>prefecture</key>
+		<string>岩手県</string>
+		<key>ruby</key>
+		<string>たきがわね えいいち</string>
+		<key>sex</key>
+		<string>男</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>34</integer>
+		<key>birthday</key>
+		<string>1975/9/14</string>
+		<key>carrier</key>
+		<string>ドコモ</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>oda_akane@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>小田根 茜</string>
+		<key>prefecture</key>
+		<string>埼玉県</string>
+		<key>ruby</key>
+		<string>おだね あかね</string>
+		<key>sex</key>
+		<string>女</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>56</integer>
+		<key>birthday</key>
+		<string>1954/1/12</string>
+		<key>carrier</key>
+		<string>ドコモ</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>miwa_shinsuke@example.com</string>
+		<key>married</key>
+		<string>未婚</string>
+		<key>name</key>
+		<string>美輪根 信輔</string>
+		<key>prefecture</key>
+		<string>埼玉県</string>
+		<key>ruby</key>
+		<string>みわね しんすけ</string>
+		<key>sex</key>
+		<string>男</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>26</integer>
+		<key>birthday</key>
+		<string>1983/6/8</string>
+		<key>carrier</key>
+		<string>ドコモ</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>imano_teruyoshi@example.com</string>
+		<key>married</key>
+		<string>未婚</string>
+		<key>name</key>
+		<string>今野根 光良</string>
+		<key>prefecture</key>
+		<string>京都府</string>
+		<key>ruby</key>
+		<string>いまのね てるよし</string>
+		<key>sex</key>
+		<string>男</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>65</integer>
+		<key>birthday</key>
+		<string>1944/6/20</string>
+		<key>carrier</key>
+		<string>ドコモ</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>kon_yuu@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>今根 優</string>
+		<key>prefecture</key>
+		<string>静岡県</string>
+		<key>ruby</key>
+		<string>こんね ゆう</string>
+		<key>sex</key>
+		<string>女</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>45</integer>
+		<key>birthday</key>
+		<string>1964/6/9</string>
+		<key>carrier</key>
+		<string>ドコモ</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>kawamura_takeo@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>河村根 丈雄</string>
+		<key>prefecture</key>
+		<string>兵庫県</string>
+		<key>ruby</key>
+		<string>かわむらね たけお</string>
+		<key>sex</key>
+		<string>男</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>69</integer>
+		<key>birthday</key>
+		<string>1941/5/8</string>
+		<key>carrier</key>
+		<string>ソフトバンク</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>koga_takeo@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>古賀根 丈雄</string>
+		<key>prefecture</key>
+		<string>香川県</string>
+		<key>ruby</key>
+		<string>こがね たけお</string>
+		<key>sex</key>
+		<string>男</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>45</integer>
+		<key>birthday</key>
+		<string>1965/3/15</string>
+		<key>carrier</key>
+		<string>ドコモ</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>kawabata_miho@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>川端根 美帆</string>
+		<key>prefecture</key>
+		<string>愛知県</string>
+		<key>ruby</key>
+		<string>かわばたね みほ</string>
+		<key>sex</key>
+		<string>女</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>78</integer>
+		<key>birthday</key>
+		<string>1932/3/19</string>
+		<key>carrier</key>
+		<string>ドコモ</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>fujishima_rie@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>藤島根 りえ</string>
+		<key>prefecture</key>
+		<string>富山県</string>
+		<key>ruby</key>
+		<string>ふじしまね りえ</string>
+		<key>sex</key>
+		<string>女</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>69</integer>
+		<key>birthday</key>
+		<string>1940/10/9</string>
+		<key>carrier</key>
+		<string>au</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>nagai_jun@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>永井根 惇</string>
+		<key>prefecture</key>
+		<string>岩手県</string>
+		<key>ruby</key>
+		<string>ながいね じゅん</string>
+		<key>sex</key>
+		<string>男</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>31</integer>
+		<key>birthday</key>
+		<string>1979/1/13</string>
+		<key>carrier</key>
+		<string>ソフトバンク</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>tamaki_sadawo@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>玉木根 サダヲ</string>
+		<key>prefecture</key>
+		<string>新潟県</string>
+		<key>ruby</key>
+		<string>たまきね さだお</string>
+		<key>sex</key>
+		<string>男</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>65</integer>
+		<key>birthday</key>
+		<string>1944/8/9</string>
+		<key>carrier</key>
+		<string>ドコモ</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>oda_emi@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>小田根 えみ</string>
+		<key>prefecture</key>
+		<string>熊本県</string>
+		<key>ruby</key>
+		<string>おだね えみ</string>
+		<key>sex</key>
+		<string>女</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>26</integer>
+		<key>birthday</key>
+		<string>1984/5/11</string>
+		<key>carrier</key>
+		<string>au</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>suga_karoku@example.com</string>
+		<key>married</key>
+		<string>未婚</string>
+		<key>name</key>
+		<string>菅根 花緑</string>
+		<key>prefecture</key>
+		<string>埼玉県</string>
+		<key>ruby</key>
+		<string>すがね かろく</string>
+		<key>sex</key>
+		<string>男</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>31</integer>
+		<key>birthday</key>
+		<string>1978/7/19</string>
+		<key>carrier</key>
+		<string>ドコモ</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>ai_hiroaki@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>阿井根 仁晶</string>
+		<key>prefecture</key>
+		<string>愛知県</string>
+		<key>ruby</key>
+		<string>あいね ひろあき</string>
+		<key>sex</key>
+		<string>男</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>49</integer>
+		<key>birthday</key>
+		<string>1960/9/3</string>
+		<key>carrier</key>
+		<string>ドコモ</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>nishiaki_tomofumi@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>西秋根 知史</string>
+		<key>prefecture</key>
+		<string>福井県</string>
+		<key>ruby</key>
+		<string>にしあきね ともふみ</string>
+		<key>sex</key>
+		<string>男</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>36</integer>
+		<key>birthday</key>
+		<string>1974/4/13</string>
+		<key>carrier</key>
+		<string>au</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>tejima_miduki@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>手島根 美月</string>
+		<key>prefecture</key>
+		<string>大阪府</string>
+		<key>ruby</key>
+		<string>てじまね みづき</string>
+		<key>sex</key>
+		<string>女</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>42</integer>
+		<key>birthday</key>
+		<string>1968/5/12</string>
+		<key>carrier</key>
+		<string>ドコモ</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>kishida_naoto@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>岸田根 直人</string>
+		<key>prefecture</key>
+		<string>佐賀県</string>
+		<key>ruby</key>
+		<string>きしだね なおと</string>
+		<key>sex</key>
+		<string>男</string>
+	</dict>
+	<dict>
+		<key>age</key>
+		<integer>53</integer>
+		<key>birthday</key>
+		<string>1956/11/15</string>
+		<key>carrier</key>
+		<string>ドコモ</string>
+		<key>keitai</key>
+		<string>080-XXXX-XXXX</string>
+		<key>mail</key>
+		<string>oomura_yonezou@example.com</string>
+		<key>married</key>
+		<string>既婚</string>
+		<key>name</key>
+		<string>大村根 米蔵</string>
+		<key>prefecture</key>
+		<string>福岡県</string>
+		<key>ruby</key>
+		<string>おおむらね よねぞう</string>
+		<key>sex</key>
+		<string>男</string>
+	</dict>
+</array>
+</plist>

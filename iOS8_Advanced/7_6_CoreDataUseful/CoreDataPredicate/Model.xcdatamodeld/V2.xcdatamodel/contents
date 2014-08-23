@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5059" systemVersion="13B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Company" representedClassName="Company" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="section" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zip" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="people" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="People" inverseName="company" inverseEntity="People" syncable="YES"/>
+    </entity>
+    <entity name="People" representedClassName="People" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="birthday" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="group" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phonetic" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prefecture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serial" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="company" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Company" inverseName="people" inverseEntity="Company" syncable="YES"/>
+    </entity>
+    <fetchRequest name="nameRange" entity="People" predicateString="phonetic &lt; $end AND phonetic > $start"/>
+    <fetchRequest name="nameRange1" entity="People" predicateString="phonetic BEGINSWITH &quot;あ&quot; OR phonetic BEGINSWITH &quot;い&quot; OR phonetic BEGINSWITH &quot;う&quot; OR phonetic BEGINSWITH &quot;え&quot; OR phonetic BEGINSWITH &quot;お&quot;"/>
+    <fetchRequest name="serialRange" entity="People" predicateString="serial &lt; 0 AND serial >= $start"/>
+    <elements>
+        <element name="Company" positionX="-36" positionY="45" width="128" height="118"/>
+        <element name="People" positionX="-288" positionY="-34" width="128" height="195"/>
+    </elements>
+</model>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3B2E3047-4CF3-4991-BB67-574EFA7A8037</string>
+	<key>IDESourceControlProjectName</key>
+	<string>6_CoreDataPredicate</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0555530F-6359-428C-B0EA-66443032B09B</key>
+		<string>https://msyk2.backlog.jp/svn/IOS14</string>
+		<key>BD9F5C53530874142DD7017CAE561E277A0C39D2</key>
+		<string>https://github.com/msyk/iOS_Samples.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iOS8_Advanced/6_CoreDataPredicate/6_CoreDataPredicate.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0555530F-6359-428C-B0EA-66443032B09B</key>
+		<string>../../../../../IOS14</string>
+		<key>BD9F5C53530874142DD7017CAE561E277A0C39D2</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/msyk/iOS_Samples.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BD9F5C53530874142DD7017CAE561E277A0C39D2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BD9F5C53530874142DD7017CAE561E277A0C39D2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS_Samples</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0555530F-6359-428C-B0EA-66443032B09B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>IOS14</string>
+		</dict>
+	</array>
+</dict>
+</plist>

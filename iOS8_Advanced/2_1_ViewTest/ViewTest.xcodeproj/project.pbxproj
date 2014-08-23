@@ -11,7 +11,7 @@
 		2BE1468019800C1900E507EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1467F19800C1900E507EE /* ViewController.swift */; };
 		2BE1468319800C1A00E507EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BE1468119800C1A00E507EE /* Main.storyboard */; };
 		2BE1468519800C1A00E507EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BE1468419800C1A00E507EE /* Images.xcassets */; };
-		2BE1469119800C1A00E507EE /* __1_ViewTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1469019800C1A00E507EE /* __1_ViewTestTests.swift */; };
+		2BE1469119800C1A00E507EE /* ViewTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE1469019800C1A00E507EE /* ViewTestTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +33,7 @@
 		2BE1468419800C1A00E507EE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2BE1468A19800C1A00E507EE /* ViewTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViewTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BE1468F19800C1A00E507EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2BE1469019800C1A00E507EE /* __1_ViewTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __1_ViewTestTests.swift; sourceTree = "<group>"; };
+		2BE1469019800C1A00E507EE /* ViewTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTestTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +81,7 @@
 				2BE1468419800C1A00E507EE /* Images.xcassets */,
 				2BE1467B19800C1900E507EE /* Supporting Files */,
 			);
-			name = ViewTest;
-			path = 2_1_ViewTest;
+			path = ViewTest;
 			sourceTree = "<group>";
 		};
 		2BE1467B19800C1900E507EE /* Supporting Files */ = {
@@ -96,11 +95,10 @@
 		2BE1468D19800C1A00E507EE /* ViewTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				2BE1469019800C1A00E507EE /* __1_ViewTestTests.swift */,
+				2BE1469019800C1A00E507EE /* ViewTestTests.swift */,
 				2BE1468E19800C1A00E507EE /* Supporting Files */,
 			);
-			name = ViewTestTests;
-			path = 2_1_ViewTestTests;
+			path = ViewTestTests;
 			sourceTree = "<group>";
 		};
 		2BE1468E19800C1A00E507EE /* Supporting Files */ = {
@@ -219,7 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BE1469119800C1A00E507EE /* __1_ViewTestTests.swift in Sources */,
+				2BE1469119800C1A00E507EE /* ViewTestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +327,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = 2_1_ViewTest/Info.plist;
+				INFOPLIST_FILE = ViewTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = ViewTest;
 			};
@@ -340,7 +338,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = 2_1_ViewTest/Info.plist;
+				INFOPLIST_FILE = ViewTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = ViewTest;
 			};
@@ -349,7 +347,7 @@
 		2BE1469819800C1A00E507EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/2_1_ViewTest.app/2_1_ViewTest";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ViewTest.app/ViewTest";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -358,7 +356,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = 2_1_ViewTestTests/Info.plist;
+				INFOPLIST_FILE = ViewTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ViewTestTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -368,12 +366,12 @@
 		2BE1469919800C1A00E507EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/2_1_ViewTest.app/2_1_ViewTest";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ViewTest.app/ViewTest";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = 2_1_ViewTestTests/Info.plist;
+				INFOPLIST_FILE = ViewTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ViewTestTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";

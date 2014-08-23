@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CE96F9E9-47D5-4236-850C-ACD450E0585B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>6_CoreDataSample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7E8E1C22-ED23-4BB2-AE74-69BD683E430A</key>
+		<string>https://msyk2.backlog.jp/svn/IOS14</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>samples/6_CoreDataMod/6_CoreDataSample.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7E8E1C22-ED23-4BB2-AE74-69BD683E430A</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>7E8E1C22-ED23-4BB2-AE74-69BD683E430A</key>
+		<string>https://msyk2.backlog.jp/svn/IOS14</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://msyk2.backlog.jp/svn/IOS14/samples/6_CoreDataSample/6_CoreDataSample.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7E8E1C22-ED23-4BB2-AE74-69BD683E430A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7E8E1C22-ED23-4BB2-AE74-69BD683E430A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>IOS14</string>
+		</dict>
+	</array>
+</dict>
+</plist>
