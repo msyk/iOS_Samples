@@ -12,6 +12,8 @@
 		2B9B411619BC1B5B00208F68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B9B411419BC1B5B00208F68 /* Main.storyboard */; };
 		2B9B411819BC1B5B00208F68 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B9B411719BC1B5B00208F68 /* Images.xcassets */; };
 		2B9B412419BC1B5B00208F68 /* SampleClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9B412319BC1B5B00208F68 /* SampleClassTests.swift */; };
+		2B9B412E19BC1BCF00208F68 /* SampleClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9B412D19BC1BCF00208F68 /* SampleClass.swift */; };
+		2B9B412F19BC457000208F68 /* SampleClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9B412D19BC1BCF00208F68 /* SampleClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 		2B9B411D19BC1B5B00208F68 /* SampleClassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleClassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B9B412219BC1B5B00208F68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B9B412319BC1B5B00208F68 /* SampleClassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleClassTests.swift; sourceTree = "<group>"; };
+		2B9B412D19BC1BCF00208F68 /* SampleClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,7 @@
 				2B9B411419BC1B5B00208F68 /* Main.storyboard */,
 				2B9B411719BC1B5B00208F68 /* Images.xcassets */,
 				2B9B410E19BC1B5A00208F68 /* Supporting Files */,
+				2B9B412D19BC1BCF00208F68 /* SampleClass.swift */,
 			);
 			path = SampleClass;
 			sourceTree = "<group>";
@@ -209,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B9B411319BC1B5B00208F68 /* ViewController.swift in Sources */,
+				2B9B412E19BC1BCF00208F68 /* SampleClass.swift in Sources */,
 				2B9B411119BC1B5B00208F68 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B9B412419BC1B5B00208F68 /* SampleClassTests.swift in Sources */,
+				2B9B412F19BC457000208F68 /* SampleClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +403,7 @@
 				2B9B412919BC1B5B00208F68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B9B412A19BC1B5B00208F68 /* Build configuration list for PBXNativeTarget "SampleClassTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +412,7 @@
 				2B9B412C19BC1B5B00208F68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -397,6 +397,7 @@
 				2B2D07A419BEEAEC00F11F50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B2D07A519BEEAEC00F11F50 /* Build configuration list for PBXNativeTarget "BackgroundFetchTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +406,7 @@
 				2B2D07A719BEEAEC00F11F50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

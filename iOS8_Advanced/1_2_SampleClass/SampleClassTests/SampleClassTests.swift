@@ -22,15 +22,56 @@ class SampleClassTests: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        
+        let obj = SampleClass()
+        
+        let str = obj.appendHTMLTaggedString("TEST", withTag:"div")
+        XCTAssert(str == "<div>TEST</div>")
+        
+        //obj.appendString("q")
+        //obj.htmlStringCompute = "###"
+        
+        // Property and Observable
+        println(".magicNumber=\(obj.magicNumber)")
+        XCTAssert(obj.magicNumber == 4, "Property magicNumber checking")
+        obj.tag = "table"
+        XCTAssert(obj.magicNumber == 5, "Property magicNumber checking")
+
+        // Property and lazy initializer
+        obj.insideText = "open mind!"
+        obj.tag = "span"
+        XCTAssert(obj.htmlStringFix == "<span>open mind!</span>")
+        XCTAssert(obj.htmlStringCompute == "<span>open mind!</span>")
+        
+        obj.insideText = "close the door!"
+        obj.tag = "div"
+        XCTAssert(obj.htmlStringFix == "<span>open mind!</span>")
+        XCTAssert(obj.htmlStringCompute == "<div>close the door!</div>")
+
+        // Setter / Getter
+        let element1 = KeyValue(key: "myKey", value: "myValue");
+        obj.attribute = element1
+        let element2 = KeyValue(key: "yourKey", value: "yourValue");
+        obj.attribute = element2
+        
+        println(obj.attributeValueFromKey("myKey"))
+        XCTAssert(obj.attributeValueFromKey("myKey") == "myValue")
+        XCTAssert(obj.attributeValueFromKey("yourKey") == "yourValue")
+  
+        // Subscript
+        XCTAssert(obj[0] == "#HTML")
+        XCTAssert(obj[1] == "#close the door!")
+        XCTAssert(obj[500] == "#no way")
+        XCTAssert(obj["class"] == "Sample Class")
+        XCTAssert(obj["auther"] == "It's me")
+        XCTAssert(obj["oops"] == "info")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
+//    func testPerformanceExample() {
+//        // This is an example of a performance test case.
+//        self.measureBlock() {
+//            // Put the code you want to measure the time of here.
+//        }
+//    }
     
 }

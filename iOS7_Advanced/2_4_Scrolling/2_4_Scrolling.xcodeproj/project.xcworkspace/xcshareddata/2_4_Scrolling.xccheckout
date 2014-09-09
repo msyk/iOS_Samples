@@ -5,41 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>E07D8775-9CD0-4FE2-A24B-812A6CDE9064</string>
+	<string>42C219D7-9B25-4C33-87D6-524AFA38148B</string>
 	<key>IDESourceControlProjectName</key>
 	<string>2_4_Scrolling</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>6FC2B14A-976A-4FE0-AC93-91A06DDCA27A</key>
-		<string>https://msyk2.backlog.jp/svn/IOS14</string>
+		<key>9AA027BA-2E25-48E8-923D-2A3C29929565</key>
+		<string>https://github.com/msyk/iOS_Samples.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>samples/2_4_Scrolling/2_4_Scrolling.xcodeproj/project.xcworkspace</string>
+	<string>iOS7_Advanced/2_4_Scrolling/2_4_Scrolling.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>6FC2B14A-976A-4FE0-AC93-91A06DDCA27A</key>
+		<key>9AA027BA-2E25-48E8-923D-2A3C29929565</key>
 		<string>../../../..</string>
 	</dict>
-	<key>IDESourceControlProjectRepositoryRootDictionary</key>
-	<dict>
-		<key>6FC2B14A-976A-4FE0-AC93-91A06DDCA27A</key>
-		<string>https://msyk2.backlog.jp/svn/IOS14</string>
-	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://msyk2.backlog.jp/svn/IOS14/samples/2_4_Scrolling/2_4_Scrolling.xcodeproj</string>
+	<string>https://github.com/msyk/iOS_Samples.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>6FC2B14A-976A-4FE0-AC93-91A06DDCA27A</string>
+	<string>9AA027BA-2E25-48E8-923D-2A3C29929565</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
+			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>6FC2B14A-976A-4FE0-AC93-91A06DDCA27A</string>
+			<string>9AA027BA-2E25-48E8-923D-2A3C29929565</string>
 			<key>IDESourceControlWCCName</key>
-			<string>IOS14</string>
+			<string>iOS_Samples</string>
 		</dict>
 	</array>
 </dict>
