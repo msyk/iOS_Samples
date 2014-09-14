@@ -15,12 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        println("didFinishLaunchingWithOptions on \(NSDate())")
         
-        application.setMinimumBackgroundFetchInterval(10)
-        //            UIApplicationBackgroundFetchIntervalMinimum)
+        application.setMinimumBackgroundFetchInterval(
+            UIApplicationBackgroundFetchIntervalMinimum)
         
         NSTimer.scheduledTimerWithTimeInterval(
             0.5, target: self, selector: "myTask:", userInfo: nil, repeats: false);
+        
+        
+        
         return true
     }
     
@@ -28,24 +32,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let application = UIApplication.sharedApplication();
         for i in 1...2000	{
             println("\(i)#Now = \(NSDate()) \(application.backgroundTimeRemaining)")
+            for x in 1...10000 {
+                var y = atan(Double(x))
+            }
             NSRunLoop.currentRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 1.0))
         }
     }
     
     func application(application: UIApplication,
-        performFetchWithCompletionHandler
-        completionHandler: (UIBackgroundFetchResult) -> Void) {
-            println("performFetchWithCompletionHandler")
-            completionHandler(.NewData);
+        performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void ) {
+            println("performFetchWithCompletionHandler on \(NSDate())")
+            
+            //            let notifying = UILocalNotification()
+            //            notifying.fireDate = NSDate(timeIntervalSinceNow: 10.0)
+            //            notifying.timeZone = NSTimeZone.defaultTimeZone()
+            //            notifying.alertBody = "Test"
+            //            notifying.hasAction = true
+            //            notifying.alertAction = "OK"
+            //            application.scheduleLocalNotification(notifying)
+            //            application.presentLocalNotificationNow(notifying)
+            let url = NSURL.URLWithString("http://msyk.net")
+            let config = NSURLSessionConfiguration.ephemeralSessionConfiguration()
+            let session = NSURLSession(configuration: config)
+            let task = session.dataTaskWithURL(url,
+                completionHandler: {
+                    (data: NSData!, response: NSURLResponse!, error: NSError!) -> Void
+                    in
+                    println("dataTaskWithURL-completionHandler[\(data.length)]")
+                    session.finishTasksAndInvalidate()
+//                    for x in 1...1000000 {
+//                        var y = atan(Double(x))
+//                        NSRunLoop.currentRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 1.0))
+//                    }
+//                    println("dataTaskWithURL-completionHandler[\(data.length)]")
+                    completionHandler(.NoData)
+            })
+            task.resume()
     }
     
-func application(application: UIApplication,
-    openURL url: NSURL,
-    sourceApplication: String,
-    annotation: AnyObject?) -> Bool  {
-        
-        return true
-}
+    func application(application: UIApplication,
+        didReceiveLocalNotification notification: UILocalNotification) {
+            println("didReceiveLocalNotification")
+    }
+    
+    func application(application: UIApplication,
+        openURL url: NSURL,
+        sourceApplication: String,
+        annotation: AnyObject?) -> Bool  {
+            println("openURL \(url)")
+            println("sourceApplication \(sourceApplication)")
+            println("annotation \(annotation)")
+            
+            return true
+    }
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
