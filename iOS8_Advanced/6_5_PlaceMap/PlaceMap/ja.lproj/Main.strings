@@ -1,0 +1,12 @@
+
+/* Class = "IBUINavigationItem"; title = "県庁所在地"; ObjectID = "0Vj-7Z-9SJ"; */
+"0Vj-7Z-9SJ.title" = "県庁所在地";
+
+/* Class = "IBUIButton"; normalTitle = "ボタン"; ObjectID = "QKm-EP-n0g"; */
+"QKm-EP-n0g.normalTitle" = "ボタン";
+
+/* Class = "IBUILabel"; text = "ラベル"; ObjectID = "fQ2-8Z-7c7"; */
+"fQ2-8Z-7c7.text" = "ラベル";
+
+/* Class = "IBUINavigationItem"; title = "地図"; ObjectID = "ql4-nX-6mo"; */
+"ql4-nX-6mo.title" = "地図";
