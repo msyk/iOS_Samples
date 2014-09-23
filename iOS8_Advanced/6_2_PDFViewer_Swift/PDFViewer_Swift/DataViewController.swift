@@ -8,11 +8,13 @@
 
 import UIKit
 
-class DataViewController: UIViewController {
+class DataViewController: UIViewController, UIScrollViewDelegate {
 
-    @IBOutlet weak var dataLabel: UILabel!
-    var dataObject: AnyObject?
-
+    var page: Int = -1
+    var pageRef: CGPDFPageRef?
+    
+    private var scrollView: UIScrollView?
+    private var pdfView: PDFView?
 
     override func viewDidLoad() {
         super.viewDidLoad()

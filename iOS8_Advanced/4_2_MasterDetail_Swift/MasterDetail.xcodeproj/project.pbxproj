@@ -14,6 +14,7 @@
 		2B06E80819CE80DE0084AA3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B06E80719CE80DE0084AA3D /* Images.xcassets */; };
 		2B06E80B19CE80DE0084AA3D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B06E80919CE80DE0084AA3D /* LaunchScreen.xib */; };
 		2B06E81719CE80DE0084AA3D /* MasterDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B06E81619CE80DE0084AA3D /* MasterDetailTests.swift */; };
+		2B06E82219CEB8900084AA3D /* Main_iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B06E82019CEB8900084AA3D /* Main_iphone.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		2B06E81019CE80DE0084AA3D /* MasterDetailTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterDetailTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B06E81519CE80DE0084AA3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B06E81619CE80DE0084AA3D /* MasterDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterDetailTests.swift; sourceTree = "<group>"; };
+		2B06E82119CEB8900084AA3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iphone.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				2B06E80019CE80DE0084AA3D /* MasterViewController.swift */,
 				2B06E80219CE80DE0084AA3D /* DetailViewController.swift */,
 				2B06E80419CE80DE0084AA3D /* Main.storyboard */,
+				2B06E82019CEB8900084AA3D /* Main_iphone.storyboard */,
 				2B06E80719CE80DE0084AA3D /* Images.xcassets */,
 				2B06E80919CE80DE0084AA3D /* LaunchScreen.xib */,
 				2B06E7FC19CE80DE0084AA3D /* Supporting Files */,
@@ -195,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B06E82219CEB8900084AA3D /* Main_iphone.storyboard in Resources */,
 				2B06E80619CE80DE0084AA3D /* Main.storyboard in Resources */,
 				2B06E80B19CE80DE0084AA3D /* LaunchScreen.xib in Resources */,
 				2B06E80819CE80DE0084AA3D /* Images.xcassets in Resources */,
@@ -254,6 +258,14 @@
 				2B06E80A19CE80DE0084AA3D /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		2B06E82019CEB8900084AA3D /* Main_iphone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B06E82119CEB8900084AA3D /* Base */,
+			);
+			name = Main_iphone.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -344,6 +356,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MasterDetail/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -354,6 +367,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MasterDetail/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -411,6 +425,7 @@
 				2B06E81C19CE80DE0084AA3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B06E81D19CE80DE0084AA3D /* Build configuration list for PBXNativeTarget "MasterDetailTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +434,7 @@
 				2B06E81F19CE80DE0084AA3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

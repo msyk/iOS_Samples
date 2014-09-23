@@ -13,6 +13,10 @@
 @property (weak, nonatomic) IBOutlet UIView *boxView;
 - (IBAction)tapAnotherView:(id)sender;
 - (IBAction)tapAnimating:(id)sender;
+
+@property (weak, nonatomic) UIView *view1;
+@property (weak, nonatomic) UIView *view2;
+
 @end
 
 @implementation SecondViewController
@@ -61,6 +65,13 @@
                     completion: ^(BOOL finished){
                         NSLog( @"self.view=%@", self.view);
                     }];
+    self.view1 = self.view;
+    self.view2 = newView;
+    [NSTimer scheduledTimerWithTimeInterval: 1.0
+                                     target: self
+                                   selector: @selector(fire:)
+                                   userInfo: nil
+                                    repeats: YES];
 }
 
 - (IBAction)tapAnimating:(id)sender {
@@ -74,12 +85,20 @@
                      }
                      completion: ^(BOOL finished){
                          [UIView animateWithDuration: 2.0
-                                          animations: ^(){
+                                               delay: 1.0
+                                             options: UIViewAnimationOptionLayoutSubviews
+animations: ^(){
                                               self.boxView.center = point2;
                                           }
                                           completion: ^(BOOL finished){
                                               self.boxView.center = point3;
                                           }];
                      }];
+    
+}
+
+- (void)fire: (NSTimer *)timer
+{
+    NSLog(@"\nself.view=%@\nview1=%@\nview2=%@\nview2.super=%@", self.view, self.view1, self.view2, self.view2.superview);
 }
 @end

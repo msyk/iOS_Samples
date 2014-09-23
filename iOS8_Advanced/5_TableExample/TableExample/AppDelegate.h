@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class PersonData;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) PersonData *personData;
 
 @end
 

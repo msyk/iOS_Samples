@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController
+@class MasterViewController;
 
-@property (strong, nonatomic) id detailItem;
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@interface DetailViewController : UITableViewController
+    <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+
+@property (weak, nonatomic) MasterViewController *masterViewController;
+@property (nonatomic) NSInteger detailIndex;
+
+- (void)updateContent;
 
 @end
 

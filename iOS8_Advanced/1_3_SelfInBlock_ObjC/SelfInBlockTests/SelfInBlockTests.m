@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface __2_SelfInBlockTests : XCTestCase
+@interface SelfInBlockTests : XCTestCase
 
 @end
 
-@implementation __2_SelfInBlockTests
+@implementation SelfInBlockTests
 
 - (void)setUp
 {

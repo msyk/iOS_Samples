@@ -64,18 +64,6 @@
     return cell;
 }
 
-//- (void)       tableView: (UITableView *)tableView
-// didSelectRowAtIndexPath: (NSIndexPath *)indexPath
-//{
-//    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-//        UISplitViewController *splitVC = self.splitViewController;
-//        UINavigationController *detainNC = (UINavigationController *)splitVC.viewControllers[1];
-//        MapDisplayViewController *mapDisplayVC = (MapDisplayViewController *)detainNC.topViewController;
-//        mapDisplayVC.selectedIndex = self.tableView.indexPathForSelectedRow.row;
-//        [mapDisplayVC updateContent];
-//    }
-//}
-
 /*
  - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
@@ -130,10 +118,16 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 
-    UINavigationController *detailNC = (UINavigationController *)[segue destinationViewController];
-    MapDisplayViewController *destVC = (MapDisplayViewController *)detailNC.topViewController;
+    UINavigationController *detailNC
+        = (UINavigationController *)[segue destinationViewController];
+    MapDisplayViewController *destVC
+        = (MapDisplayViewController *)detailNC.topViewController;
     destVC.selectedIndex = self.tableView.indexPathForSelectedRow.row;
-    [destVC updateContent];
+    
+//    destVC.navigationItem.leftBarButtonItem
+//        = self.splitViewController.displayModeButtonItem;
+//    destVC.navigationItem.leftItemsSupplementBackButton = YES;
+//
 }
 
 

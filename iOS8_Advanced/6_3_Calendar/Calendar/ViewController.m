@@ -9,9 +9,6 @@
 #import "ViewController.h"
 #import "DateCellView.h"
 
-#define CELL_WIDTH 42.0
-#define CELLS_PAR_LINE 7
-
 @interface ViewController ()
 
 @property (nonatomic) NSInteger startDateBias;
@@ -21,147 +18,182 @@
 - (IBAction)tapPrev:(id)sender;
 - (IBAction)tapNext:(id)sender;
 
-- (void)updateCalendar;
-- (NSInteger)daysOfMonth: (NSInteger)m ofYear: (NSInteger)y;
+@end
+
+@interface ViewController ()
+
+// calendar
+@property (strong, nonatomic) NSCalendar       *calendar;
+@property (assign, nonatomic) NSInteger         numberOfDaysInWeek;
+
+// current month
+@property (strong, nonatomic) NSDate           *month;
+@property (strong, nonatomic) NSDateComponents *monthComponents;
+
+// for collection view
+@property (strong, nonatomic) NSDate           *firstDateOfCollectionView;
+@property (assign, nonatomic) NSInteger         numberOfWeeksInMonth;
+
+// formatter
+@property (strong, nonatomic) NSDateFormatter  *monthFormatter;
 
 @end
 
 @implementation ViewController
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    self.monthFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *locale = [NSLocale currentLocale];
+    [self.monthFormatter
+     setDateFormat:[NSDateFormatter dateFormatFromTemplate: @"yyyyMMMM"
+                                                   options: 0
+                                                    locale: locale]];
+    
+    self.calendar = [[NSCalendar alloc]
+                     initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
+    
+    [self.calendar setFirstWeekday:1]; // 1 = sunday, 2 = monday
+    
+    self.numberOfDaysInWeek
+     = [self.calendar maximumRangeOfUnit: NSCalendarUnitWeekday].length;
+    
+    self.month = ({
+        NSDate *month;
+        [self.calendar rangeOfUnit: NSCalendarUnitMonth
+                         startDate: &month
+                          interval: NULL
+                           forDate: [NSDate date]];
+        month;
+    });
+}
+
 - (void)viewDidLoad
 {
-#ifdef DEBUG
-    NSLog( @"%s", __FUNCTION__);
-#endif
     [super viewDidLoad];
     
-    self.year = 2013;
-    self.month = 10;
-    [self updateCalendar];
+    UICollectionViewFlowLayout *layout
+        = (UICollectionViewFlowLayout *)self.collectionViewLayout;
+    layout.minimumInteritemSpacing
+        = (320.0 - layout.itemSize.width * self.numberOfDaysInWeek)
+            / (self.numberOfDaysInWeek - 1);
+    layout.minimumLineSpacing = 2.0;
+    layout.sectionInset = UIEdgeInsetsMake(1.0, 0, 1.0, 0);
 }
 
-- (void)didReceiveMemoryWarning
+- (void)setMonth:(NSDate *)month;
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)updateCalendar
-{
-    self.navigationItem.title = [NSString stringWithFormat: @"%d/%d", self.year, self.month];
-    
-    UICollectionViewFlowLayout *fl = (UICollectionViewFlowLayout *)self.collectionViewLayout;
-    fl.minimumInteritemSpacing = (320.0 - CELL_WIDTH * CELLS_PAR_LINE) / (CELLS_PAR_LINE - 1);
-    fl.minimumLineSpacing = 2.0;
-    fl.sectionInset = UIEdgeInsetsMake(1.0, 0, 1.0, 0);
-
-    NSDateFormatter *dtFormatter = [[NSDateFormatter alloc]init];
-    [dtFormatter setDateFormat: @"yyyy-MM-dd"];
-    NSString *firstDateString = [NSString stringWithFormat:
-                                 @"%4d-%2d-01", self.year, self.month];
-    NSDate *firstDate = [dtFormatter dateFromString:firstDateString];
-    NSCalendar *cal = [NSCalendar currentCalendar];
-    NSDateComponents *comps = [cal components: (NSCalendarUnit)kCFCalendarUnitWeekday
-                                     fromDate: firstDate];
-    self.startDateBias = comps.weekday - 1;
-    self.endDayNum = [self daysOfMonth: self.month ofYear: self.year];
-    self.lines = (self.endDayNum + self.startDateBias) / CELLS_PAR_LINE;
-    if (self.endDayNum + self.startDateBias > self.lines * CELLS_PAR_LINE)  {
-        self.lines++;
-    }
-}
-
-- (NSInteger)daysOfMonth: (NSInteger)m ofYear: (NSInteger)y
-{
-    if (m != 2) {
-        return [@[@0,@31,@28,@31,@30,@31,@30,@31,@31,@30,@31,@30,@31][m] integerValue];
-    }
-    if (y % 4 == 0) {
-        if ( y % 100 == 0)  {
-            if ( y % 400 == 0)  {
-                return 29;
-            } else {
-                return 28;
-            }
-        } else {
-            return 29;
-        }
-    } else {
-        return 28;
+    if (_month != month) {
+        _month = month;
+        
+        self.title = [self.monthFormatter stringFromDate:month];
+        
+        NSCalendarUnit flags = NSCalendarUnitYear | NSCalendarUnitMonth;
+        self.monthComponents = [self.calendar components: flags
+                                                fromDate: month];
+        
+        self.firstDateOfCollectionView = ({
+            NSDate *date;
+            [self.calendar rangeOfUnit: NSCalendarUnitWeekOfYear
+                             startDate: &date
+                              interval: NULL
+                               forDate: month];
+            date;
+        });
+        
+        self.numberOfWeeksInMonth
+            = [self.calendar rangeOfUnit: NSCalendarUnitWeekOfMonth
+                                  inUnit: NSCalendarUnitMonth
+                                 forDate: self.month].length;
+        
+        [self.collectionView reloadData];
     }
 }
 
 - (IBAction)tapPrev:(id)sender
 {
-    self.month--;
-    if (self.month < 1)    {
-        self.month = 12;
-        self.year--;
-    }
-    [self updateCalendar];
-    [self.collectionView reloadData];
+    self.month = ({
+        NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+        [dateComponents setMonth:-1];
+        [self.calendar dateByAddingComponents: dateComponents
+                                       toDate: self.month
+                                      options: 0];
+    });
 }
 
 - (IBAction)tapNext:(id)sender
 {
-    self.month++;
-    if (self.month > 12)    {
-        self.month = 1;
-        self.year++;
-    }
-    [self updateCalendar];
-    [self.collectionView reloadData];
+    self.month = ({
+        NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+        [dateComponents setMonth:+1];
+        [self.calendar dateByAddingComponents: dateComponents
+                                       toDate: self.month
+                                      options: 0];
+    });
 }
 
 #pragma mark - UICollectionViewDataSource
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
-                  cellForItemAtIndexPath:(NSIndexPath *)indexPath
+- (UICollectionViewCell *)collectionView: (UICollectionView *)collectionView
+                  cellForItemAtIndexPath: (NSIndexPath *)indexPath
 {
-#ifdef DEBUG
-    NSLog( @"%s", __FUNCTION__ );
-#endif
-    DateCellView *cell = [collectionView dequeueReusableCellWithReuseIdentifier: @"DATECELL"
-                                                                   forIndexPath:indexPath];
-    //    cell.dateLabel.text = [NSString stringWithFormat: @"%d", indexPath.item];
-    NSInteger dayNum = indexPath.item + indexPath.section * CELLS_PAR_LINE - self.startDateBias + 1;
-    if (dayNum > 0 && dayNum <= self.endDayNum) {
-        cell.dateLabel.text = [NSString stringWithFormat: @"%d", dayNum];
-        if (indexPath.item == 0) {
-            cell.dateLabel.textColor = [UIColor redColor];
-        } else if (indexPath.item == 6) {
-            cell.dateLabel.textColor = [UIColor blueColor];
-        }else {
-            cell.dateLabel.textColor = [UIColor blackColor];
+    DateCellView *cell
+        = [collectionView dequeueReusableCellWithReuseIdentifier: @"DATECELL"
+                                                    forIndexPath: indexPath];
+    
+    NSDate *date = ({
+        NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+        [dateComponents setDay: indexPath.section * self.numberOfDaysInWeek
+                                + indexPath.item];
+        [self.calendar dateByAddingComponents: dateComponents
+                                       toDate: self.firstDateOfCollectionView
+                                      options: 0];
+    });
+    
+    NSCalendarUnit flags = NSCalendarUnitYear | NSCalendarUnitMonth
+                         | NSCalendarUnitDay | NSCalendarUnitWeekday;
+    NSDateComponents *dateComponents = [self.calendar components: flags
+                                                        fromDate: date];
+    
+    cell.dateLabel.text
+        = [NSString stringWithFormat:@"%d", (int)[dateComponents day]];
+    
+    if ([self.monthComponents year] == [dateComponents year]
+        && [self.monthComponents month] == [dateComponents month]) {
+        switch ([dateComponents weekday]) {
+            case 1: // sunday
+                cell.dateLabel.textColor = [UIColor redColor];
+                break;
+            case 7: // saturday
+                cell.dateLabel.textColor = [UIColor blueColor];
+                break;
+            default:
+                cell.dateLabel.textColor = [UIColor blackColor];
+                break;
         }
     } else {
-        cell.dateLabel.text = @".";
-        cell.dateLabel.textColor = [UIColor blackColor];
+        cell.dateLabel.textColor = [UIColor lightGrayColor];
     }
+    
     return cell;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView
-     numberOfItemsInSection:(NSInteger)section
+- (NSInteger)collectionView: (UICollectionView *)collectionView
+     numberOfItemsInSection: (NSInteger)section
 {
-#ifdef DEBUG
-    NSLog( @"%s", __FUNCTION__ );
-#endif
-    //    return 7;
-    return CELLS_PAR_LINE;
-}
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-#ifdef DEBUG
-    NSLog( @"%s", __FUNCTION__ );
-#endif
-    //    return 5;
-    return self.lines;
+    return self.numberOfDaysInWeek;
 }
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
-           viewForSupplementaryElementOfKind:(NSString *)kind
-                                 atIndexPath:(NSIndexPath *)indexPath
+- (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView
+{
+    return self.numberOfWeeksInMonth;
+}
+
+- (UICollectionReusableView *)collectionView: (UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind: (NSString *)kind
+                                 atIndexPath: (NSIndexPath *)indexPath
 {
 #ifdef DEBUG
     NSLog( @"%s", __FUNCTION__ );

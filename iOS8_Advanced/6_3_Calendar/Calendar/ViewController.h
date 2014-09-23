@@ -11,7 +11,7 @@
 @interface ViewController : UICollectionViewController
     <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property (nonatomic) NSInteger year;
-@property (nonatomic) NSInteger month;
+//@property (nonatomic) NSInteger year;
+//@property (nonatomic) NSInteger month;
 
 @end

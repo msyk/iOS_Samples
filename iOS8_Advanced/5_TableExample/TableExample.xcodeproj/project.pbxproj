@@ -15,6 +15,9 @@
 		2B623FAA19CFCD1F004F8555 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B623FA919CFCD1F004F8555 /* Images.xcassets */; };
 		2B623FAD19CFCD1F004F8555 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B623FAB19CFCD1F004F8555 /* LaunchScreen.xib */; };
 		2B623FB919CFCD1F004F8555 /* TableExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B623FB819CFCD1F004F8555 /* TableExampleTests.m */; };
+		2B623FC619CFCD5A004F8555 /* PersonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B623FC319CFCD5A004F8555 /* PersonData.m */; };
+		2B623FC719CFCD5A004F8555 /* MyCustomCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B623FC519CFCD5A004F8555 /* MyCustomCellTableViewCell.m */; };
+		2B623FC919CFD1B2004F8555 /* person.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B623FC819CFD1B2004F8555 /* person.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,11 @@
 		2B623FB219CFCD1F004F8555 /* TableExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B623FB719CFCD1F004F8555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B623FB819CFCD1F004F8555 /* TableExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableExampleTests.m; sourceTree = "<group>"; };
+		2B623FC219CFCD5A004F8555 /* PersonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonData.h; sourceTree = "<group>"; };
+		2B623FC319CFCD5A004F8555 /* PersonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonData.m; sourceTree = "<group>"; };
+		2B623FC419CFCD5A004F8555 /* MyCustomCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomCellTableViewCell.h; sourceTree = "<group>"; };
+		2B623FC519CFCD5A004F8555 /* MyCustomCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomCellTableViewCell.m; sourceTree = "<group>"; };
+		2B623FC819CFD1B2004F8555 /* person.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = person.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,11 @@
 				2B623FA119CFCD1F004F8555 /* MasterViewController.m */,
 				2B623FA319CFCD1F004F8555 /* DetailViewController.h */,
 				2B623FA419CFCD1F004F8555 /* DetailViewController.m */,
+				2B623FC219CFCD5A004F8555 /* PersonData.h */,
+				2B623FC319CFCD5A004F8555 /* PersonData.m */,
+				2B623FC419CFCD5A004F8555 /* MyCustomCellTableViewCell.h */,
+				2B623FC519CFCD5A004F8555 /* MyCustomCellTableViewCell.m */,
+				2B623FC819CFD1B2004F8555 /* person.plist */,
 				2B623FA619CFCD1F004F8555 /* Main.storyboard */,
 				2B623FA919CFCD1F004F8555 /* Images.xcassets */,
 				2B623FAB19CFCD1F004F8555 /* LaunchScreen.xib */,
@@ -205,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B623FA819CFCD1F004F8555 /* Main.storyboard in Resources */,
+				2B623FC919CFD1B2004F8555 /* person.plist in Resources */,
 				2B623FAD19CFCD1F004F8555 /* LaunchScreen.xib in Resources */,
 				2B623FAA19CFCD1F004F8555 /* Images.xcassets in Resources */,
 			);
@@ -224,6 +238,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B623FC719CFCD5A004F8555 /* MyCustomCellTableViewCell.m in Sources */,
+				2B623FC619CFCD5A004F8555 /* PersonData.m in Sources */,
 				2B623F9F19CFCD1F004F8555 /* AppDelegate.m in Sources */,
 				2B623FA219CFCD1F004F8555 /* MasterViewController.m in Sources */,
 				2B623F9C19CFCD1F004F8555 /* main.m in Sources */,

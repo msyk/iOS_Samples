@@ -11,6 +11,5 @@
 @interface MapDisplayViewController : UIViewController 
 
 @property (nonatomic) NSInteger selectedIndex;
-- (void)updateContent;
 
 @end

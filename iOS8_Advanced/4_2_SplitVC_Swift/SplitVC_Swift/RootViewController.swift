@@ -8,15 +8,15 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+class RootViewController: UIViewController, UISplitViewControllerDelegate {
     
     weak var containingVC: UIViewController? = nil
     
     override func viewDidLoad()
     {
-        #if DEBUG
-            println((__FILE__ as String).lastPathComponent, __FUNCTION__, __LINE__)
-        #endif
+        debugLogging()
+        
+        self.viewDidLoad()
         
         let storyboard = self.storyboard
         let svc = storyboard?.instantiateViewControllerWithIdentifier("svc")
@@ -24,24 +24,27 @@ class RootViewController: UIViewController {
         self.containingVC = svc
         
         self.addChildViewController(svc);
+        svc.didMoveToParentViewController(self)
         self.view.addSubview(svc.view);
         
         let masterNC = svc.viewControllers[0] as UINavigationController
         let detailNC = svc.viewControllers[1] as UINavigationController
-        svc.delegate = detailNC.topViewController as DetailViewController
-        //svc.preferredDisplayMode = .AllVisible
+        svc.delegate = self
         
-        //        if (UIDevice.currentDevice().userInterfaceIdiom != .Phone) {
-        //            self.setTraitCollection(
-        //                UITraitCollection(horizontalSizeClass: .Regular))
-        //        }
+//        detailNC.topViewController.navigationItem.leftBarButtonItem = svc.displayModeButtonItem()
+        
+        let controller = masterNC.topViewController as MasterViewController
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        controller.managedObjectContext = appDelegate.managedObjectContext
+        
+        let hClass = self.traitCollection.horizontalSizeClass.toRaw()
+        let vClass = self.traitCollection.verticalSizeClass.toRaw()
+        println("Size Class: h:\(hClass) v:\(vClass) ex:1=Compact,2=Regular")
     }
     
     func setTraitCollection(traits: UITraitCollection?)
     {
-        #if DEBUG
-            println((__FILE__ as String).lastPathComponent, __FUNCTION__, __LINE__)
-        #endif
+        debugLogging()
         
         self.setOverrideTraitCollection(traits,
             forChildViewController: self.containingVC!)
@@ -52,11 +55,8 @@ class RootViewController: UIViewController {
         withTransitionCoordinator
         coordinator: UIViewControllerTransitionCoordinator)
     {
-        #if DEBUG
-            println((__FILE__ as String).lastPathComponent, __FUNCTION__, __LINE__)
-        #endif
-        
-        println(__FUNCTION__, __LINE__, NSStringFromCGSize(size))
+        debugLogging(info: "size=\(NSStringFromCGSize(size))")
+
         if (UIDevice.currentDevice().userInterfaceIdiom == .Phone) {
             if (size.width > size.height)  {
                 self.setTraitCollection(
@@ -66,26 +66,49 @@ class RootViewController: UIViewController {
             }
         }
     }
-    
-    override func collapseSecondaryViewController(
-        secondaryViewController: UIViewController,
-        forSplitViewController splitViewController: UISplitViewController)
-    {
-        #if DEBUG
-            println((__FILE__ as String).lastPathComponent, __FUNCTION__, __LINE__)
-        #endif
-        
+ 
+    func splitViewController(splitViewController: UISplitViewController,
+        collapseSecondaryViewController secondaryViewController:UIViewController!,
+        ontoPrimaryViewController primaryViewController:UIViewController!) -> Bool {
+            
+            debugLogging()
+            
+            return true
     }
     
-    override func separateSecondaryViewControllerForSplitViewController(
-        splitViewController: UISplitViewController) -> UIViewController
-    {
-        #if DEBUG
-            println((__FILE__ as String).lastPathComponent, __FUNCTION__, __LINE__)
-        #endif
-        
-        let detailNC = splitViewController.viewControllers[1] as UINavigationController
-        return detailNC.topViewController as DetailViewController
-    }
-    
+//    override func collapseSecondaryViewController(
+//        secondaryViewController: UIViewController,
+//        forSplitViewController splitViewController: UISplitViewController)
+//    {
+//        debugLogging()
+//        
+//    }
+//    
+//    override func separateSecondaryViewControllerForSplitViewController(
+//        splitViewController: UISplitViewController) -> UIViewController
+//    {
+//        debugLogging()
+//        
+//        let detailNC = splitViewController.viewControllers[1] as UINavigationController
+//        return detailNC.topViewController as DetailViewController
+//    }
+
+}
+
+func debugLogging(
+    info: String = "",
+    function: String = __FUNCTION__,
+    file: String = __FILE__,
+    line: Int = __LINE__) {
+    #if DEBUG
+        let flag: NSCalendarUnit
+            = .CalendarUnitHour       | .CalendarUnitMinute |
+              .CalendarUnitNanosecond | .CalendarUnitSecond
+        let components = NSCalendar.currentCalendar().components(flag, fromDate: NSDate())
+        let misecond = Int(components.nanosecond / 1000000)
+        let timeDesc = "\(components.hour):\(components.minute):\(components.second).\(misecond)"
+        let fileName = file.lastPathComponent.stringByDeletingPathExtension
+        let sourceInfo = "\(fileName).\(function)-line\(line)"
+        println("\(timeDesc)[\(sourceInfo)]\(info)")
+    #endif
 }

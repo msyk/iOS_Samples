@@ -6,91 +6,192 @@
 //  Copyright (c) 2014年 msyk.net. All rights reserved.
 //
 
+#define CUSTOM_CELL
+
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "AppDelegate.h"
+#import "PersonData.h"
+#import "MyCustomCellTableViewCell.h"
 
 @interface MasterViewController ()
 
-@property NSMutableArray *objects;
+@property (nonatomic, strong) NSString *fieldNameName;
+@property (nonatomic, strong) NSString *fieldNamePhone;
+@property (nonatomic, strong) NSString *fieldNameBirthday;
+
+- (IBAction)tapInsertButton: (id)sender;
+
 @end
 
 @implementation MasterViewController
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        self.clearsSelectionOnViewWillAppear = NO;
-        self.preferredContentSize = CGSizeMake(320.0, 600.0);
-    }
-}
-
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
+#ifdef DEBUG
+    NSLog( @"%s", __FUNCTION__);
+#endif
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    PersonData *pd = ((AppDelegate *)UIApplication.sharedApplication.delegate).personData;
+    self.fieldNameName = pd.fieldNames[0];
+    self.fieldNamePhone = pd.fieldNames[1];
+    self.fieldNameBirthday = pd.fieldNames[2];
+    
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
-    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+//    UINavigationController *detailArea = [self.splitViewController.viewControllers lastObject];
+//    self.detailViewController = (DetailViewController *)[detailArea topViewController];
+//    self.detailViewController.masterViewController = self;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
+#ifdef DEBUG
+    NSLog( @"%s", __FUNCTION__);
+#endif
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender {
-    if (!self.objects) {
-        self.objects = [[NSMutableArray alloc] init];
-    }
-    [self.objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
-
-#pragma mark - Segues
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.objects[indexPath.row];
-        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        [controller setDetailItem:object];
-        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-        controller.navigationItem.leftItemsSupplementBackButton = YES;
-    }
+- (IBAction)tapInsertButton: (id)sender
+{
+#ifdef DEBUG
+    NSLog( @"%s", __FUNCTION__);
+#endif
+    PersonData *pd = ((AppDelegate *)UIApplication.sharedApplication.delegate).personData;
+    [pd insert];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow: 0 inSection: 0];
+    [self.tableView insertRowsAtIndexPaths: @[indexPath]
+                          withRowAnimation: UITableViewRowAnimationAutomatic];
 }
 
 #pragma mark - Table View
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (CGFloat)    tableView: (UITableView *)tableView
+ heightForRowAtIndexPath: (NSIndexPath *)indexPath
+{
+    return 44.0;
+}
+
+- (NSInteger)numberOfSectionsInTableView: (UITableView *)tableView
+{
+#ifdef DEBUG
+    NSLog( @"%s", __FUNCTION__);
+#endif
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.objects.count;
+- (NSInteger)tableView: (UITableView *)tableView
+ numberOfRowsInSection: (NSInteger)section
+{
+#ifdef DEBUG
+    NSLog( @"%s", __FUNCTION__);
+#endif
+    PersonData *pd = ((AppDelegate *)UIApplication.sharedApplication.delegate).personData;
+    return pd.people.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+#ifdef CUSTOM_CELL
 
-    NSDate *object = self.objects[indexPath.row];
-    cell.textLabel.text = [object description];
+- (UITableViewCell *)tableView: (UITableView *)tableView
+         cellForRowAtIndexPath: (NSIndexPath *)indexPath
+{
+#ifdef DEBUG
+    NSLog( @"%s %@", __FUNCTION__, indexPath);
+#endif
+    PersonData *pd = ((AppDelegate *)UIApplication.sharedApplication.delegate).personData;
+    MyCustomCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"CellCustom"
+                                                                      forIndexPath: indexPath];
+    cell.nameField.text = pd.people[indexPath.row][self.fieldNameName];
+    cell.phoneField.text = pd.people[indexPath.row][self.fieldNamePhone];
+    cell.birthdayField.text = pd.people[indexPath.row][self.fieldNameBirthday];
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
+#else
+
+- (UITableViewCell *)tableView: (UITableView *)tableView
+         cellForRowAtIndexPath: (NSIndexPath *)indexPath
+{
+#ifdef DEBUG
+    NSLog( @"%s %@", __FUNCTION__, indexPath);
+#endif
+    PersonData *pd = ((AppDelegate *)UIApplication.sharedApplication.delegate).personData;
+    //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"CellBasic"
+    //                                                            forIndexPath: indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"CellRightDetail"
+                                                            forIndexPath: indexPath];
+    cell.textLabel.text = pd.people[indexPath.row][self.fieldNameName];
+    cell.detailTextLabel.text = pd.people[indexPath.row][self.fieldNamePhone];
+    return cell;
+}
+
+#endif
+
+- (void)prepareForSegue: (UIStoryboardSegue *)segue
+                 sender: (id)sender
+{
+#ifdef DEBUG
+    NSLog( @"%s", __FUNCTION__);
+#endif
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        UITableViewCell *tappedCell = sender;
+        UINavigationController *detailNC = [segue destinationViewController];
+        DetailViewController *detailVC = (DetailViewController *)detailNC.topViewController;
+        detailVC.detailIndex = [self.tableView indexPathForCell: tappedCell].row;
+        detailVC.masterViewController = self;
+    }
+}
+
+- (BOOL)     tableView: (UITableView *)tableView
+ canEditRowAtIndexPath: (NSIndexPath *)indexPath
+{
+#ifdef DEBUG
+    NSLog( @"%s", __FUNCTION__);
+#endif
     return YES;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCellEditingStyle)tableView: (UITableView *)tableView
+           editingStyleForRowAtIndexPath: (NSIndexPath *)indexPath
+{
+//    if (indexPath.row == 0) {
+//        return UITableViewCellEditingStyleInsert;
+//    }
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void) tableView: (UITableView *)tableView
+commitEditingStyle: (UITableViewCellEditingStyle)editingStyle
+ forRowAtIndexPath: (NSIndexPath *)indexPath
+{
+#ifdef DEBUG
+    NSLog( @"%s", __FUNCTION__);
+#endif
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.objects removeObjectAtIndex:indexPath.row];
+        PersonData *pd = ((AppDelegate *)UIApplication.sharedApplication.delegate).personData;
+        [pd delete: indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [pd save];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        // not implemented
     }
+}
+
+- (void) tableView: (UITableView *)tableView
+moveRowAtIndexPath: (NSIndexPath *)fromIndexPath
+       toIndexPath: (NSIndexPath *)toIndexPath
+{
+    PersonData *pd = ((AppDelegate *)UIApplication.sharedApplication.delegate).personData;
+    [pd moveTo: toIndexPath.row from: fromIndexPath.row];
+}
+
+
+- (BOOL)     tableView: (UITableView *)tableView
+ canMoveRowAtIndexPath: (NSIndexPath *)indexPath
+{
+    return YES;
 }
 
 @end

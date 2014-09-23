@@ -53,18 +53,19 @@
     NSLog( @"%s", __FUNCTION__);
 #endif
     [super viewDidAppear: YES];
+    [self reportCurrentValues: @"viewDidAppear-before"];
     
     [self setupRatio];
     [self setupContentInset];
     
-    [self reportCurrentValues: @"viewDidAppear"];
+    [self reportCurrentValues: @"viewDidAppear-after"];
 }
 
 - (void)viewWillLayoutSubviews
 {
-    CGRect scrollRect = self.scrollView.frame;
-    scrollRect.origin.y += self.topLayoutGuide.length;
-    self.scrollView.frame = scrollRect;
+//    CGRect scrollRect = self.scrollView.frame;
+//    scrollRect.origin.y += self.topLayoutGuide.length;
+//    self.scrollView.frame = scrollRect;
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView

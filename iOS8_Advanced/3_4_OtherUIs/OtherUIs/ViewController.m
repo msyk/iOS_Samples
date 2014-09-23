@@ -133,10 +133,13 @@
     UIAlertController* alert
     = [UIAlertController alertControllerWithTitle: @"My Alert"
                                           message: @"This is my message."
-      //                             preferredStyle: UIAlertControllerStyleAlert];
-                                preferredStyle: UIAlertControllerStyleActionSheet];
+     //                             preferredStyle: UIAlertControllerStyleAlert];
+                                 preferredStyle: UIAlertControllerStyleActionSheet];
     
     UIAlertController* __weak weakAlert = alert;
+    
+    alert.popoverPresentationController.permittedArrowDirections = UIMenuControllerArrowDown;
+    alert.popoverPresentationController.barButtonItem = sender;
     
     UIAlertAction* defaultAction
     = [UIAlertAction actionWithTitle: @"OK"
@@ -196,7 +199,7 @@
 - (void)    alertView:(UIAlertView *)alertView
  clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSLog(@"Alert Button Click = %ld", buttonIndex);
+    NSLog(@"Alert Button Click = %d", buttonIndex);
 }
 
 - (void)showActionSheet:(id)sender
@@ -218,7 +221,7 @@
 - (void)  actionSheet:(UIActionSheet *)actionSheet
  clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSLog(@"Action Sheet Button Click = %ld", buttonIndex);
+    NSLog(@"Action Sheet Button Click = %d", buttonIndex);
 }
 
 - (void)actionSheetCancel:(UIActionSheet *)actionSheet

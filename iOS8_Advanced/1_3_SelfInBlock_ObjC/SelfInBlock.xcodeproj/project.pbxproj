@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BE99D8519CBEFCE00813CEA /* SelfInBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE99D8419CBEFCE00813CEA /* SelfInBlock.m */; };
+		2BE99D8619CBEFCE00813CEA /* SelfInBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE99D8419CBEFCE00813CEA /* SelfInBlock.m */; };
 		2BF6E351196FC8A2002B266E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF6E350196FC8A2002B266E /* Foundation.framework */; };
 		2BF6E353196FC8A2002B266E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF6E352196FC8A2002B266E /* CoreGraphics.framework */; };
 		2BF6E355196FC8A2002B266E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF6E354196FC8A2002B266E /* UIKit.framework */; };
@@ -20,7 +22,7 @@
 		2BF6E371196FC8A2002B266E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF6E350196FC8A2002B266E /* Foundation.framework */; };
 		2BF6E372196FC8A2002B266E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF6E354196FC8A2002B266E /* UIKit.framework */; };
 		2BF6E37A196FC8A2002B266E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2BF6E378196FC8A2002B266E /* InfoPlist.strings */; };
-		2BF6E37C196FC8A2002B266E /* __2_SelfInBlockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6E37B196FC8A2002B266E /* __2_SelfInBlockTests.m */; };
+		2BF6E37C196FC8A2002B266E /* SelfInBlockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6E37B196FC8A2002B266E /* SelfInBlockTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,25 +36,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2BF6E34D196FC8A2002B266E /* 1_2_SelfInBlock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1_2_SelfInBlock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BE99D8319CBEFCE00813CEA /* SelfInBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfInBlock.h; sourceTree = "<group>"; };
+		2BE99D8419CBEFCE00813CEA /* SelfInBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfInBlock.m; sourceTree = "<group>"; };
+		2BF6E34D196FC8A2002B266E /* SelfInBlock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfInBlock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF6E350196FC8A2002B266E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2BF6E352196FC8A2002B266E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2BF6E354196FC8A2002B266E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2BF6E358196FC8A2002B266E /* 1_2_SelfInBlock-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "1_2_SelfInBlock-Info.plist"; sourceTree = "<group>"; };
+		2BF6E358196FC8A2002B266E /* SelfInBlock-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SelfInBlock-Info.plist"; sourceTree = "<group>"; };
 		2BF6E35A196FC8A2002B266E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2BF6E35C196FC8A2002B266E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2BF6E35E196FC8A2002B266E /* 1_2_SelfInBlock-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "1_2_SelfInBlock-Prefix.pch"; sourceTree = "<group>"; };
+		2BF6E35E196FC8A2002B266E /* SelfInBlock-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SelfInBlock-Prefix.pch"; sourceTree = "<group>"; };
 		2BF6E35F196FC8A2002B266E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2BF6E360196FC8A2002B266E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2BF6E363196FC8A2002B266E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2BF6E365196FC8A2002B266E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2BF6E366196FC8A2002B266E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2BF6E368196FC8A2002B266E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		2BF6E36E196FC8A2002B266E /* 1_2_SelfInBlockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 1_2_SelfInBlockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BF6E36E196FC8A2002B266E /* SelfInBlockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SelfInBlockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF6E36F196FC8A2002B266E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		2BF6E377196FC8A2002B266E /* 1_2_SelfInBlockTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "1_2_SelfInBlockTests-Info.plist"; sourceTree = "<group>"; };
+		2BF6E377196FC8A2002B266E /* SelfInBlockTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SelfInBlockTests-Info.plist"; sourceTree = "<group>"; };
 		2BF6E379196FC8A2002B266E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2BF6E37B196FC8A2002B266E /* __2_SelfInBlockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __2_SelfInBlockTests.m; sourceTree = "<group>"; };
+		2BF6E37B196FC8A2002B266E /* SelfInBlockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelfInBlockTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +86,8 @@
 		2BF6E344196FC8A2002B266E = {
 			isa = PBXGroup;
 			children = (
-				2BF6E356196FC8A2002B266E /* 1_2_SelfInBlock */,
-				2BF6E375196FC8A2002B266E /* 1_2_SelfInBlockTests */,
+				2BF6E356196FC8A2002B266E /* SelfInBlock */,
+				2BF6E375196FC8A2002B266E /* SelfInBlockTests */,
 				2BF6E34F196FC8A2002B266E /* Frameworks */,
 				2BF6E34E196FC8A2002B266E /* Products */,
 			);
@@ -92,8 +96,8 @@
 		2BF6E34E196FC8A2002B266E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2BF6E34D196FC8A2002B266E /* 1_2_SelfInBlock.app */,
-				2BF6E36E196FC8A2002B266E /* 1_2_SelfInBlockTests.xctest */,
+				2BF6E34D196FC8A2002B266E /* SelfInBlock.app */,
+				2BF6E36E196FC8A2002B266E /* SelfInBlockTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,7 +113,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2BF6E356196FC8A2002B266E /* 1_2_SelfInBlock */ = {
+		2BF6E356196FC8A2002B266E /* SelfInBlock */ = {
 			isa = PBXGroup;
 			children = (
 				2BF6E35F196FC8A2002B266E /* AppDelegate.h */,
@@ -117,36 +121,38 @@
 				2BF6E362196FC8A2002B266E /* Main.storyboard */,
 				2BF6E365196FC8A2002B266E /* ViewController.h */,
 				2BF6E366196FC8A2002B266E /* ViewController.m */,
+				2BE99D8319CBEFCE00813CEA /* SelfInBlock.h */,
+				2BE99D8419CBEFCE00813CEA /* SelfInBlock.m */,
 				2BF6E368196FC8A2002B266E /* Images.xcassets */,
 				2BF6E357196FC8A2002B266E /* Supporting Files */,
 			);
-			path = 1_2_SelfInBlock;
+			path = SelfInBlock;
 			sourceTree = "<group>";
 		};
 		2BF6E357196FC8A2002B266E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2BF6E358196FC8A2002B266E /* 1_2_SelfInBlock-Info.plist */,
+				2BF6E358196FC8A2002B266E /* SelfInBlock-Info.plist */,
 				2BF6E359196FC8A2002B266E /* InfoPlist.strings */,
 				2BF6E35C196FC8A2002B266E /* main.m */,
-				2BF6E35E196FC8A2002B266E /* 1_2_SelfInBlock-Prefix.pch */,
+				2BF6E35E196FC8A2002B266E /* SelfInBlock-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2BF6E375196FC8A2002B266E /* 1_2_SelfInBlockTests */ = {
+		2BF6E375196FC8A2002B266E /* SelfInBlockTests */ = {
 			isa = PBXGroup;
 			children = (
-				2BF6E37B196FC8A2002B266E /* __2_SelfInBlockTests.m */,
+				2BF6E37B196FC8A2002B266E /* SelfInBlockTests.m */,
 				2BF6E376196FC8A2002B266E /* Supporting Files */,
 			);
-			path = 1_2_SelfInBlockTests;
+			path = SelfInBlockTests;
 			sourceTree = "<group>";
 		};
 		2BF6E376196FC8A2002B266E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2BF6E377196FC8A2002B266E /* 1_2_SelfInBlockTests-Info.plist */,
+				2BF6E377196FC8A2002B266E /* SelfInBlockTests-Info.plist */,
 				2BF6E378196FC8A2002B266E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -155,9 +161,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2BF6E34C196FC8A2002B266E /* 1_2_SelfInBlock */ = {
+		2BF6E34C196FC8A2002B266E /* SelfInBlock */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2BF6E37F196FC8A2002B266E /* Build configuration list for PBXNativeTarget "1_2_SelfInBlock" */;
+			buildConfigurationList = 2BF6E37F196FC8A2002B266E /* Build configuration list for PBXNativeTarget "SelfInBlock" */;
 			buildPhases = (
 				2BF6E349196FC8A2002B266E /* Sources */,
 				2BF6E34A196FC8A2002B266E /* Frameworks */,
@@ -167,14 +173,14 @@
 			);
 			dependencies = (
 			);
-			name = 1_2_SelfInBlock;
+			name = SelfInBlock;
 			productName = 1_2_SelfInBlock;
-			productReference = 2BF6E34D196FC8A2002B266E /* 1_2_SelfInBlock.app */;
+			productReference = 2BF6E34D196FC8A2002B266E /* SelfInBlock.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2BF6E36D196FC8A2002B266E /* 1_2_SelfInBlockTests */ = {
+		2BF6E36D196FC8A2002B266E /* SelfInBlockTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2BF6E382196FC8A2002B266E /* Build configuration list for PBXNativeTarget "1_2_SelfInBlockTests" */;
+			buildConfigurationList = 2BF6E382196FC8A2002B266E /* Build configuration list for PBXNativeTarget "SelfInBlockTests" */;
 			buildPhases = (
 				2BF6E36A196FC8A2002B266E /* Sources */,
 				2BF6E36B196FC8A2002B266E /* Frameworks */,
@@ -185,9 +191,9 @@
 			dependencies = (
 				2BF6E374196FC8A2002B266E /* PBXTargetDependency */,
 			);
-			name = 1_2_SelfInBlockTests;
+			name = SelfInBlockTests;
 			productName = 1_2_SelfInBlockTests;
-			productReference = 2BF6E36E196FC8A2002B266E /* 1_2_SelfInBlockTests.xctest */;
+			productReference = 2BF6E36E196FC8A2002B266E /* SelfInBlockTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -204,7 +210,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2BF6E348196FC8A2002B266E /* Build configuration list for PBXProject "1_2_SelfInBlock" */;
+			buildConfigurationList = 2BF6E348196FC8A2002B266E /* Build configuration list for PBXProject "SelfInBlock" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -217,8 +223,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2BF6E34C196FC8A2002B266E /* 1_2_SelfInBlock */,
-				2BF6E36D196FC8A2002B266E /* 1_2_SelfInBlockTests */,
+				2BF6E34C196FC8A2002B266E /* SelfInBlock */,
+				2BF6E36D196FC8A2002B266E /* SelfInBlockTests */,
 			);
 		};
 /* End PBXProject section */
@@ -249,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BE99D8519CBEFCE00813CEA /* SelfInBlock.m in Sources */,
 				2BF6E367196FC8A2002B266E /* ViewController.m in Sources */,
 				2BF6E361196FC8A2002B266E /* AppDelegate.m in Sources */,
 				2BF6E35D196FC8A2002B266E /* main.m in Sources */,
@@ -259,7 +266,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BF6E37C196FC8A2002B266E /* __2_SelfInBlockTests.m in Sources */,
+				2BE99D8619CBEFCE00813CEA /* SelfInBlock.m in Sources */,
+				2BF6E37C196FC8A2002B266E /* SelfInBlockTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +276,7 @@
 /* Begin PBXTargetDependency section */
 		2BF6E374196FC8A2002B266E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2BF6E34C196FC8A2002B266E /* 1_2_SelfInBlock */;
+			target = 2BF6E34C196FC8A2002B266E /* SelfInBlock */;
 			targetProxy = 2BF6E373196FC8A2002B266E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -377,9 +385,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "1_2_SelfInBlock/1_2_SelfInBlock-Prefix.pch";
-				INFOPLIST_FILE = "1_2_SelfInBlock/1_2_SelfInBlock-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "SelfInBlock/SelfInBlock-Prefix.pch";
+				INFOPLIST_FILE = "SelfInBlock/SelfInBlock-Info.plist";
+				PRODUCT_NAME = SelfInBlock;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -390,9 +398,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "1_2_SelfInBlock/1_2_SelfInBlock-Prefix.pch";
-				INFOPLIST_FILE = "1_2_SelfInBlock/1_2_SelfInBlock-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "SelfInBlock/SelfInBlock-Prefix.pch";
+				INFOPLIST_FILE = "SelfInBlock/SelfInBlock-Info.plist";
+				PRODUCT_NAME = SelfInBlock;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -412,8 +420,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "1_2_SelfInBlockTests/1_2_SelfInBlockTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "1_2_SelfInBlockTests/SelfInBlockTests-Info.plist";
+				PRODUCT_NAME = SelfInBlockTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -430,8 +438,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "1_2_SelfInBlock/1_2_SelfInBlock-Prefix.pch";
-				INFOPLIST_FILE = "1_2_SelfInBlockTests/1_2_SelfInBlockTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "1_2_SelfInBlockTests/SelfInBlockTests-Info.plist";
+				PRODUCT_NAME = SelfInBlockTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -440,7 +448,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2BF6E348196FC8A2002B266E /* Build configuration list for PBXProject "1_2_SelfInBlock" */ = {
+		2BF6E348196FC8A2002B266E /* Build configuration list for PBXProject "SelfInBlock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BF6E37D196FC8A2002B266E /* Debug */,
@@ -449,21 +457,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2BF6E37F196FC8A2002B266E /* Build configuration list for PBXNativeTarget "1_2_SelfInBlock" */ = {
+		2BF6E37F196FC8A2002B266E /* Build configuration list for PBXNativeTarget "SelfInBlock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BF6E380196FC8A2002B266E /* Debug */,
 				2BF6E381196FC8A2002B266E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		2BF6E382196FC8A2002B266E /* Build configuration list for PBXNativeTarget "1_2_SelfInBlockTests" */ = {
+		2BF6E382196FC8A2002B266E /* Build configuration list for PBXNativeTarget "SelfInBlockTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BF6E383196FC8A2002B266E /* Debug */,
 				2BF6E384196FC8A2002B266E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bYd-fZ-dg5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bYd-fZ-dg5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -19,9 +19,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFN-dq-3t4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-147" y="1232"/>
+            <point key="canvasLocation" x="1099" y="972"/>
         </scene>
-        <!--Map Display View Controller-->
+        <!--Map-->
         <scene sceneID="hv6-Ff-cqQ">
             <objects>
                 <viewController id="jte-jg-58Y" customClass="MapDisplayViewController" sceneMemberID="viewController">
@@ -53,7 +53,7 @@
                             <constraint firstItem="HPG-Zv-0Nv" firstAttribute="top" secondItem="87T-QJ-VOv" secondAttribute="bottom" constant="8" symbolic="YES" id="xTH-d9-R9k"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ql4-nX-6mo"/>
+                    <navigationItem key="navigationItem" title="Map" id="ql4-nX-6mo"/>
                     <connections>
                         <outlet property="mapView" destination="HPG-Zv-0Nv" id="khP-um-nAg"/>
                         <outlet property="placeName" destination="fQ2-8Z-7c7" id="OMW-CR-oda"/>
@@ -61,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1cM-3l-CZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="667" y="1238"/>
+            <point key="canvasLocation" x="1913" y="978"/>
         </scene>
         <!--Prefectural Capital-->
         <scene sceneID="44o-Kk-VMn">
@@ -91,7 +91,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXr-qz-iSs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="667" y="536"/>
+            <point key="canvasLocation" x="1913" y="276"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4D9-CE-N9J">
@@ -107,7 +107,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txA-Rz-Q7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-153" y="536"/>
+            <point key="canvasLocation" x="1093" y="276"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="nMl-XM-Q8T">
@@ -120,10 +120,10 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8IH-Pf-3Kf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-973" y="864"/>
+            <point key="canvasLocation" x="273" y="604"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xwK-8n-XQv"/>
+        <segue reference="IdE-rd-ycA"/>
     </inferredMetricsTieBreakers>
 </document>

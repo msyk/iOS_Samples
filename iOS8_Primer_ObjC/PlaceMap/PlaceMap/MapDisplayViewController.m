@@ -21,8 +21,19 @@
 @implementation MapDisplayViewController
 
 - (void)viewDidLoad {
+    NSLog(@"%s", __FUNCTION__);
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    if([UIDevice currentDevice].userInterfaceIdiom
+                                    == UIUserInterfaceIdiomPad) {
+        UISplitViewController *svc = self.splitViewController;
+//        UINavigationController *masterNavVC = svc.viewControllers[0];
+//        UIViewController *masterVC = masterNavVC.topViewController;
+        UINavigationItem *navItem = self.navigationItem;
+        navItem.leftBarButtonItem = svc.displayModeButtonItem;
+//        navItem.leftBarButtonItem.title = masterVC.navigationItem.title;
+        navItem.leftItemsSupplementBackButton = YES;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,42 +43,39 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    NSLog(@"%s", __FUNCTION__);
     [super viewDidAppear: animated];
-    [self updateContent];
     
     //    NSLog(@"Selected = %d", self.selectedIndex);
     
-//    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-//    NSArray *places = appDelegate.placeDB.places;
-//    
-//    NSLog(@"Selected = %@", places[self.selectedIndex][@"name"]);
-//    
-//    self.placeName.text = [NSString stringWithFormat: @"%@ [%@]",
-//                           places[self.selectedIndex][@"pref"],
-//                           places[self.selectedIndex][@"name"]];
+    //    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    //    NSArray *places = appDelegate.placeDB.places;
+    //
+    //    NSLog(@"Selected = %@", places[self.selectedIndex][@"name"]);
+    //
+    //    self.placeName.text = [NSString stringWithFormat: @"%@ [%@]",
+    //                           places[self.selectedIndex][@"pref"],
+    //                           places[self.selectedIndex][@"name"]];
     
-//    CLLocationCoordinate2D coordinate;
-//    NSNumber *num = places[self.selectedIndex][@"latitude"];
-//    coordinate.latitude = num.doubleValue;
-//    num = places[self.selectedIndex][@"longitude"];
-//    coordinate.longitude = num.doubleValue;
-//    self.mapView.centerCoordinate = coordinate;
+    //    CLLocationCoordinate2D coordinate;
+    //    NSNumber *num = places[self.selectedIndex][@"latitude"];
+    //    coordinate.latitude = num.doubleValue;
+    //    num = places[self.selectedIndex][@"longitude"];
+    //    coordinate.longitude = num.doubleValue;
+    //    self.mapView.centerCoordinate = coordinate;
     
-//    MKCoordinateRegion region;
-//    CLLocationCoordinate2D coordinate;
-//    NSNumber *num = places[self.selectedIndex][@"latitude"];
-//    coordinate.latitude = num.doubleValue;
-//    num = places[self.selectedIndex][@"longitude"];
-//    coordinate.longitude = num.doubleValue;
-//    region.center = coordinate;
-//    MKCoordinateSpan span;
-//    span.latitudeDelta = span.longitudeDelta = 0.01; //1 = 111km
-//    region.span = span;
-//    self.mapView.region = region;
-}
-
-- (void)updateContent
-{
+    //    MKCoordinateRegion region;
+    //    CLLocationCoordinate2D coordinate;
+    //    NSNumber *num = places[self.selectedIndex][@"latitude"];
+    //    coordinate.latitude = num.doubleValue;
+    //    num = places[self.selectedIndex][@"longitude"];
+    //    coordinate.longitude = num.doubleValue;
+    //    region.center = coordinate;
+    //    MKCoordinateSpan span;
+    //    span.latitudeDelta = span.longitudeDelta = 0.01; //1 = 111km
+    //    region.span = span;
+    //    self.mapView.region = region;
+    
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     NSArray *places = appDelegate.placeDB.places;
     
@@ -87,7 +95,51 @@
     span.latitudeDelta = span.longitudeDelta = 0.01; //1 = 111km
     region.span = span;
     self.mapView.region = region;
+    
+//    UISplitViewController *svc = self.splitViewController;
+//          UINavigationController *masterNavVC = svc.viewControllers[0];
+//           UIViewController *masterVC = masterNavVC.topViewController;
+//    UINavigationController *navVC = svc.viewControllers[1];
+//    UINavigationItem *navItem = navVC.topViewController.navigationItem;
+//    navItem.leftBarButtonItem = svc.displayModeButtonItem;
+//           navItem.leftBarButtonItem.title = masterVC.navigationItem.title;
+//    navItem.leftItemsSupplementBackButton = YES;
+//    [self updateMasterButton];
 }
+
+//- (void)viewDidLayoutSubviews
+//{
+//    NSLog(@"%s", __FUNCTION__);
+//
+//    UISplitViewController *svc = self.splitViewController;
+//    UINavigationController *masterNavVC = svc.viewControllers[0];
+//    UIViewController *masterVC = masterNavVC.topViewController;
+//    UINavigationController *navVC = svc.viewControllers[1];
+//    UINavigationItem *navItem = navVC.topViewController.navigationItem;
+//    navItem.leftBarButtonItem = svc.displayModeButtonItem;
+//    navItem.leftBarButtonItem.title = masterVC.navigationItem.title;
+//    navItem.leftItemsSupplementBackButton = YES;
+//}
+//
+//- (void)updateMasterButton
+//{
+//    
+//    UISplitViewController *svc = self.splitViewController;
+//    if (svc.displayMode == UISplitViewControllerDisplayModeAllVisible)  {
+//        self.navigationItem.leftBarButtonItem = nil;
+//    } else if (svc.displayMode == UISplitViewControllerDisplayModePrimaryHidden)  {
+//        if (! self.navigationItem.leftBarButtonItem)    {
+//            UIBarButtonItem *button = svc.displayModeButtonItem;
+//            self.navigationItem.leftBarButtonItem = button;
+//        }
+//        UINavigationController *vc = svc.viewControllers[0];
+//        NSString *masterTitle = vc.topViewController.navigationItem.title;
+//        self.navigationItem.leftBarButtonItem.title = masterTitle;
+//    }
+//    
+//}
+//
+
 /*
  #pragma mark - Navigation
  

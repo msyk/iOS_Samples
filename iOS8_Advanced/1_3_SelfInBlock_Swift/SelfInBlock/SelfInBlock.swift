@@ -14,28 +14,25 @@ class SelfInBlock: NSObject {
     
     lazy
     private var block: () -> Void = {
-        //        [unowned self]
-        //        () -> Void in
-        //        self.doSomething()
-        //        self.str = "Test"
-        //        let x = self.str
+        [unowned self]
+        () -> Void in
+        self.doSomething()
+        self.str = "Test"
+        let x = self.str
     }
     
+    private var block2: () -> Void = {}
+    
     func configureBlock() {
-        //        self.block = {
-        //            [unowned self] () -> Void in
-        //            self.doSomething()
-        //            self.str = "Test"
-        //            let x = self.str
-        //        }
-        //        let q: () -> Void = {
-        //            [unowned self] () -> Void in
-        //            self.doSomething()
-        //            self.str = "Test"
-        //            let x = self.str
-        //        }
-        //        self.block = q;
-        self.block()
+        self.block2 = {
+            [unowned self]
+            () -> Void in
+            self.doSomething()
+            self.str = "Test"
+            let x = self.str
+        }
+        block()
+        block2()
     }
     
     func doSomething()

@@ -6,36 +6,14 @@
 //  Copyright (c) 2014年 msyk.net. All rights reserved.
 //
 
-//#define STORE_DOCUMENTS
-
 #import "PersonData.h"
 
 @interface PersonData()
 @property (nonatomic, strong) NSMutableArray *context;
-@property (nonatomic, strong) NSString *plistFile;
+@property (nonatomic, strong) NSURL *plistFile;
 @end
 
 @implementation PersonData
-
-#ifndef STORE_DOCUMENTS
-- (id)init
-{
-#ifdef DEBUG
-    NSLog( @"%s STORE_DOCUMENTS isn't defined.", __FUNCTION__);
-#endif
-    self = [super init];
-    
-    self.plistFile = [[NSBundle mainBundle] pathForResource: @"person"
-                                                     ofType: @"plist"];
-    NSArray *fileContent = [[NSArray alloc] initWithContentsOfFile: self.plistFile];
-    self.context = [[NSMutableArray alloc] initWithArray: fileContent];
-    
-    return self;
-}
-
-#else
-
-#define DATA_FILE @"persondata.plist"
 
 - (id)init
 {
@@ -44,28 +22,24 @@
 #endif
     self = [super init];
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                         NSUserDomainMask,
-                                                         YES);
-    NSString *documentsDir = paths[0];
-    NSString *dataFile = [documentsDir stringByAppendingPathComponent: DATA_FILE];
     NSFileManager *fm = [NSFileManager defaultManager];
-    NSArray *fileContent;
-    if ( [fm fileExistsAtPath: dataFile])   {
-        fileContent = [[NSArray alloc] initWithContentsOfFile: dataFile];
-    } else {
-        NSString *rsrcPlistFile = [[NSBundle mainBundle] pathForResource: @"person"
-                                                                  ofType: @"plist"];
-        fileContent = [[NSArray alloc] initWithContentsOfFile: rsrcPlistFile];
+    NSArray *docDirs = [fm URLsForDirectory: NSDocumentDirectory
+                                  inDomains: NSUserDomainMask];
+    self.plistFile = [docDirs[0] URLByAppendingPathComponent: @"data.plist"];
+    NSError *error;
+    if (![self.plistFile checkResourceIsReachableAndReturnError: &error])   {
+        NSURL *plistFile = [[NSBundle mainBundle] URLForResource: @"person"
+                                                   withExtension: @"plist"];
+        if(![fm copyItemAtURL: plistFile toURL: self.plistFile error: &error])  {
+            NSLog(@"Copy Error");
+        }
     }
+    NSArray *fileContent = [[NSArray alloc] initWithContentsOfURL: self.plistFile];
     self.context = [[NSMutableArray alloc] initWithArray: fileContent];
-    self.plistFile = dataFile;
     
     return self;
     
 }
-
-#endif
 
 - (NSArray *)fieldNames //**Getter**
 {
@@ -80,7 +54,7 @@
 #ifdef DEBUG
     NSLog( @"%s", __FUNCTION__);
 #endif
-    return [self.context writeToFile: self.plistFile atomically: YES];
+    return [self.context writeToURL: self.plistFile atomically: YES];
 }
 
 - (NSArray *)people

@@ -16,6 +16,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 
     override func awakeFromNib() {
+        debugLogging(info: "")
+
         super.awakeFromNib()
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
             self.clearsSelectionOnViewWillAppear = false
@@ -24,6 +26,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
 
     override func viewDidLoad() {
+        debugLogging(info: "")
+
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()

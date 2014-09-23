@@ -8,24 +8,24 @@
 
 #import "AppDelegate.h"
 #import "PlaceDatabase.h"
-#import "MapDisplayViewController.h"
+//#import "MapDisplayViewController.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
-
-@property (strong, nonatomic) UIPopoverController *masterPOC;
 
 @end
 
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)           application: (UIApplication *)application
+ didFinishLaunchingWithOptions: (NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.placeDB = [[PlaceDatabase alloc] init];
     
-        UISplitViewController *splitVC = (UISplitViewController *)self.window.rootViewController;
-        splitVC.delegate = self;
-
+    UISplitViewController *splitVC
+    = (UISplitViewController *)self.window.rootViewController;
+    splitVC.delegate = self;
+    
     return YES;
 }
 
@@ -57,40 +57,74 @@
  collapseSecondaryViewController: (UIViewController *)secondaryViewController
        ontoPrimaryViewController: (UIViewController *)primaryViewController {
     
-     if([UIDevice currentDevice].userInterfaceIdiom != UIUserInterfaceIdiomPad) {
+    NSLog(@"%s", __FUNCTION__);
+    
+    if([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
         return YES;
     } else {
         return NO;
     }
 }
 
-- (void)splitViewController: (UISplitViewController *)svc
-     willShowViewController: (UIViewController *)aViewController
-  invalidatingBarButtonItem:(UIBarButtonItem *)button
-{
-    NSLog(@"%s", __FUNCTION__);
-    
-    UISplitViewController *splitVC = (UISplitViewController *)self.window.rootViewController;
-    UINavigationController *detailNC = (UINavigationController *)splitVC.viewControllers[1];
-    NSArray *barItems = detailNC.navigationBar.items;
-    ((UINavigationItem *)barItems[0]).leftBarButtonItem = nil;
-    self.masterPOC = nil;
-}
+//- (void)splitViewController: (UISplitViewController *)svc
+//    willChangeToDisplayMode: (UISplitViewControllerDisplayMode)displayMode   {
+//    
+//    NSLog(@"%s", __FUNCTION__);
+//    
+//    UISplitViewController *splitVC
+//        = (UISplitViewController *)self.window.rootViewController;
+//    UINavigationController *detailNC
+//        = (UINavigationController *)splitVC.viewControllers[1];
+//    UIViewController *containVC
+//        = detailNC.topViewController;
+//    UINavigationItem *navItem = containVC.navigationItem;
+//   
+//    switch (displayMode)    {
+//        case UISplitViewControllerDisplayModePrimaryHidden: {
+//            UIBarButtonItem *button = splitVC.displayModeButtonItem;
+//            navItem.leftBarButtonItem = button;
+//            navItem.leftItemsSupplementBackButton = YES;
+//        }   break;
+//            
+//        case UISplitViewControllerDisplayModeAllVisible:
+//            navItem.leftBarButtonItem = nil;
+//            break;
+//            
+//        case UISplitViewControllerDisplayModeAutomatic:
+//        case UISplitViewControllerDisplayModePrimaryOverlay:
+//            break;
+//    }
+//}
 
-- (void)splitViewController: (UISplitViewController *)svc
-     willHideViewController: (UIViewController *)aViewController
-          withBarButtonItem: (UIBarButtonItem *)barButtonItem
-       forPopoverController: (UIPopoverController *)pc
-{
-    NSLog(@"%s", __FUNCTION__);
-    
-    UISplitViewController *splitVC = (UISplitViewController *)self.window.rootViewController;
-    UINavigationController *detailNC = (UINavigationController *)splitVC.viewControllers[1];
-    barButtonItem.title = @"Prefectural Capital";
-    NSArray *barItems = detailNC.navigationBar.items;
-    ((UINavigationItem *)barItems[0]).leftBarButtonItem = barButtonItem;
-    self.masterPOC = pc;
-}
+//- (void)splitViewController: (UISplitViewController *)svc
+//     willShowViewController: (UIViewController *)aViewController
+//  invalidatingBarButtonItem: (UIBarButtonItem *)button
+//{
+//    NSLog(@"%s", __FUNCTION__);
+//
+//    UISplitViewController *splitVC = (UISplitViewController *)self.window.rootViewController;
+//    UINavigationController *detailNC = (UINavigationController *)splitVC.viewControllers[1];
+//    NSArray *barItems = detailNC.navigationBar.items;
+//    ((UINavigationItem *)barItems[0]).leftBarButtonItem = nil;
+//    self.masterPOC = nil;
+//    self.masterButton = nil;
+//}
+//
+//- (void)splitViewController: (UISplitViewController *)svc
+//     willHideViewController: (UIViewController *)aViewController
+//          withBarButtonItem: (UIBarButtonItem *)barButtonItem
+//       forPopoverController: (UIPopoverController *)pc
+//{
+//    NSLog(@"%s", __FUNCTION__);
+//
+//    UISplitViewController *splitVC = (UISplitViewController *)self.window.rootViewController;
+//    UINavigationController *detailNC = (UINavigationController *)splitVC.viewControllers[1];
+//    barButtonItem.title = @"Prefectural Capital";
+//    NSArray *barItems = detailNC.navigationBar.items;
+//    ((UINavigationItem *)barItems[0]).leftBarButtonItem = barButtonItem;
+//    self.masterPOC = pc;
+//    self.masterButton = barButtonItem;
+//}
 
 
 @end

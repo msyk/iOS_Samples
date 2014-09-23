@@ -18,8 +18,8 @@
     TestClass *obj3 = [[TestClass alloc] init];
     obj1.nextObject = obj2;
     obj2.nextObject = obj3;
-    //obj3.nextObject = obj1;
-    //obj1 = nil;
+    obj3.nextObject = obj1;
+    obj1 = nil;
 
     return YES;
 }

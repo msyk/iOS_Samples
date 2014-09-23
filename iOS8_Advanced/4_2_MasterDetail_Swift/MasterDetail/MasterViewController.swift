@@ -15,6 +15,8 @@ class MasterViewController: UITableViewController {
 
 
     override func awakeFromNib() {
+        debugLogging()
+        
         super.awakeFromNib()
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
             self.clearsSelectionOnViewWillAppear = false
@@ -23,6 +25,8 @@ class MasterViewController: UITableViewController {
     }
 
     override func viewDidLoad() {
+        debugLogging()
+
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
@@ -49,13 +53,15 @@ class MasterViewController: UITableViewController {
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        debugLogging()
+
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let object = objects[indexPath.row] as NSDate
                 let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
                 controller.detailItem = object
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                controller.navigationItem.leftItemsSupplementBackButton = true
+//                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+//                controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
@@ -91,7 +97,99 @@ class MasterViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        debugLogging()
+    }
+    
+    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        debugLogging()
+        return indexPath
+    }
+    
+    override func tableView(tableView: UITableView, willDeselectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        debugLogging()
+        return indexPath
+    }
+    
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        debugLogging()
 
+    }
+
+    // MARK: - CHECKING
+    
+    //===================================================================
+    
+    required init(coder aDecoder: NSCoder) {
+        debugLogging()
+        
+        return super.init(coder: aDecoder);
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        debugLogging()
+        
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        debugLogging()
+        
+        super.viewDidDisappear(animated)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        debugLogging()
+        
+        super.viewDidLayoutSubviews()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        debugLogging()
+        
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        debugLogging()
+        
+        super.viewWillDisappear(animated)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        debugLogging()
+        
+        super.viewWillLayoutSubviews()
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize,
+        withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+            debugLogging()
+            
+            super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    }
+    
+    override func willTransitionToTraitCollection(
+        newCollection: UITraitCollection,
+        withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+            debugLogging()
+            
+            super.willTransitionToTraitCollection(newCollection, withTransitionCoordinator: coordinator)
+    }
+    
+    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection) {
+        debugLogging()
+        
+        super.traitCollectionDidChange(previousTraitCollection)
+    }
+    
+    override func updateViewConstraints() {
+        debugLogging()
+        
+        super.updateViewConstraints()
+    }
+    
 
 }
 

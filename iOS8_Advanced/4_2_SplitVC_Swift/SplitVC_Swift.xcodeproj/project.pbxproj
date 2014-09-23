@@ -15,6 +15,7 @@
 		2BE99DA219CC8FFB00813CEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BE99DA119CC8FFB00813CEA /* Images.xcassets */; };
 		2BE99DA519CC8FFB00813CEA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BE99DA319CC8FFB00813CEA /* LaunchScreen.xib */; };
 		2BE99DB119CC8FFB00813CEA /* SplitVC_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE99DB019CC8FFB00813CEA /* SplitVC_SwiftTests.swift */; };
+		2BE99DBB19CC901100813CEA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE99DBA19CC901100813CEA /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		2BE99DAA19CC8FFB00813CEA /* SplitVC_SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplitVC_SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BE99DAF19CC8FFB00813CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BE99DB019CC8FFB00813CEA /* SplitVC_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitVC_SwiftTests.swift; sourceTree = "<group>"; };
+		2BE99DBA19CC901100813CEA /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				2BE99D9519CC8FFB00813CEA /* AppDelegate.swift */,
 				2BE99D9A19CC8FFB00813CEA /* MasterViewController.swift */,
 				2BE99D9C19CC8FFB00813CEA /* DetailViewController.swift */,
+				2BE99DBA19CC901100813CEA /* RootViewController.swift */,
 				2BE99D9E19CC8FFB00813CEA /* Main.storyboard */,
 				2BE99DA119CC8FFB00813CEA /* Images.xcassets */,
 				2BE99DA319CC8FFB00813CEA /* LaunchScreen.xib */,
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BE99DBB19CC901100813CEA /* RootViewController.swift in Sources */,
 				2BE99D9619CC8FFB00813CEA /* AppDelegate.swift in Sources */,
 				2BE99D9919CC8FFB00813CEA /* SplitVC_Swift.xcdatamodeld in Sources */,
 				2BE99D9B19CC8FFB00813CEA /* MasterViewController.swift in Sources */,
@@ -348,6 +352,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SplitVC_Swift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
