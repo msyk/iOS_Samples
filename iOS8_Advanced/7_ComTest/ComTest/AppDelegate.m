@@ -66,11 +66,20 @@
 #endif
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)           application: (UIApplication *)application
+ didFinishLaunchingWithOptions: (NSDictionary *)launchOptions
 {
 #ifdef DEBUG
     NSLog( @"%s", __FUNCTION__ );
 #endif
+    UIUserNotificationType types = UIUserNotificationTypeAlert
+                                 | UIUserNotificationTypeBadge
+                                 | UIUserNotificationTypeSound;
+    UIUserNotificationSettings *settings
+        = [UIUserNotificationSettings settingsForTypes: types
+                                            categories: nil];
+    [application registerUserNotificationSettings: settings];
+    
     return YES;
 }
 

@@ -133,7 +133,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL: self.currentURL];
     
     NSURLSessionConfiguration *config
-    = [NSURLSessionConfiguration backgroundSessionConfiguration: @"mytask"];
+    = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier: @"mytask"];
 //    config.sessionSendsLaunchEvents = true;
     
     NSURLSessionDownloadTask *task;

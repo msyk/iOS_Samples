@@ -25,6 +25,7 @@
 		2B479C62188E0C950014EB9E /* Communication.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B479C60188E0C950014EB9E /* Communication.m */; };
 		2B479C65188E0CF30014EB9E /* ComTestMod.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B479C64188E0CF30014EB9E /* ComTestMod.m */; };
 		2B479C66188E0CF30014EB9E /* ComTestMod.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B479C64188E0CF30014EB9E /* ComTestMod.m */; };
+		2B6400F419D272CA00B2F4DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B6400F319D272CA00B2F4DA /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		2B479C60188E0C950014EB9E /* Communication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Communication.m; sourceTree = "<group>"; };
 		2B479C63188E0CF30014EB9E /* ComTestMod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComTestMod.h; sourceTree = "<group>"; };
 		2B479C64188E0CF30014EB9E /* ComTestMod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComTestMod.m; sourceTree = "<group>"; };
+		2B6400F319D272CA00B2F4DA /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				2B479C63188E0CF30014EB9E /* ComTestMod.h */,
 				2B479C64188E0CF30014EB9E /* ComTestMod.m */,
 				2B479C42188E08E00014EB9E /* Images.xcassets */,
+				2B6400F319D272CA00B2F4DA /* LaunchScreen.xib */,
 				2B479C31188E08E00014EB9E /* Supporting Files */,
 			);
 			path = ComTest;
@@ -247,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B6400F419D272CA00B2F4DA /* LaunchScreen.xib in Resources */,
 				2B479C43188E08E00014EB9E /* Images.xcassets in Resources */,
 				2B479C35188E08E00014EB9E /* InfoPlist.strings in Resources */,
 				2B479C3E188E08E00014EB9E /* Main.storyboard in Resources */,

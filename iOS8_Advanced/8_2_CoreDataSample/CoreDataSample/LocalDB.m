@@ -142,7 +142,7 @@
 #endif
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName: @"Company"];
 
-    if ( criteria == nil )  {
+    if ( criteria != nil )  {
         NSPredicate *predicate;
         predicate = [NSPredicate predicateWithFormat: @"company BEGINSWITH %d", criteria];
         [request setPredicate: predicate];

@@ -26,6 +26,7 @@
 		2B180750189E8FA500905943 /* company.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2B18074E189E8FA500905943 /* company.xml */; };
 		2B180756189EAC9B00905943 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B180755189EAC9B00905943 /* Company.m */; };
 		2B20920418BB3A830052EF59 /* Mappinh.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2B20920318BB3A830052EF59 /* Mappinh.xcmappingmodel */; };
+		2B6400FB19D291D900B2F4DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B6400FA19D291D900B2F4DA /* LaunchScreen.xib */; };
 		2B6FB0B318B6F8A800B77DFD /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6FB0B218B6F8A800B77DFD /* People.m */; };
 		2B9ABAFC18B6F4A5004F4CD2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B9ABAFA18B6F4A5004F4CD2 /* Model.xcdatamodeld */; };
 		2B9ABAFD18B6F4A5004F4CD2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B9ABAFA18B6F4A5004F4CD2 /* Model.xcdatamodeld */; };
@@ -68,6 +69,7 @@
 		2B180754189EAC9B00905943 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
 		2B180755189EAC9B00905943 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
 		2B20920318BB3A830052EF59 /* Mappinh.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Mappinh.xcmappingmodel; sourceTree = "<group>"; };
+		2B6400FA19D291D900B2F4DA /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		2B6FB0B018B6F7F300B77DFD /* V2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = V2.xcdatamodel; sourceTree = "<group>"; };
 		2B6FB0B118B6F8A800B77DFD /* People.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
 		2B6FB0B218B6F8A800B77DFD /* People.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				2B180755189EAC9B00905943 /* Company.m */,
 				2B18074A189E8DC400905943 /* LocalDB.h */,
 				2B18074B189E8DC400905943 /* LocalDB.m */,
+				2B6400FA19D291D900B2F4DA /* LaunchScreen.xib */,
 				2B180709189E2B9600905943 /* Supporting Files */,
 			);
 			path = CoreDataPredicate;
@@ -261,6 +264,7 @@
 				2B18071E189E2B9600905943 /* Images.xcassets in Resources */,
 				2B180716189E2B9600905943 /* Main.storyboard in Resources */,
 				2B18070D189E2B9600905943 /* InfoPlist.strings in Resources */,
+				2B6400FB19D291D900B2F4DA /* LaunchScreen.xib in Resources */,
 				2B18074F189E8FA500905943 /* people.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
