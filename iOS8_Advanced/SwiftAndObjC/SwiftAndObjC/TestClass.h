@@ -10,4 +10,7 @@
 
 @interface TestClass : NSObject
 
+@property (nonatomic, strong) NSString *name;
+- (NSString *)deluxName: (NSString *)prefix;
+
 @end

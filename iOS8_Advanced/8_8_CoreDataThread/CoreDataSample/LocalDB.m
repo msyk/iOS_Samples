@@ -21,6 +21,8 @@
 @property (nonatomic, strong) NSMutableString *currentString;
 
 @property (nonatomic, strong) NSOperationQueue *queue;
+@property (nonatomic, strong) NSPersistentStore *pStore;
+@property (nonatomic, strong) NSPersistentStoreCoordinator *pStoreCoordinator;
 
 - (void)readFromXMLFiles;
 
@@ -37,8 +39,7 @@
     
     self.queue = [[NSOperationQueue alloc] init];
     self.queue.maxConcurrentOperationCount = 1;
-    //    [self.queue addOperationWithBlock: ^(void){
-
+    
     NSError *error = nil;
     NSURL *modelURL
     = [[NSBundle mainBundle] URLForResource: @"Model"
@@ -46,45 +47,49 @@
     NSManagedObjectModel *model
     = [[NSManagedObjectModel alloc] initWithContentsOfURL: modelURL];
     
-    NSPersistentStoreCoordinator *pStoreCoordinator
+    self.pStoreCoordinator
     = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: model];
     
     NSFileManager *fm = [NSFileManager defaultManager];
     NSURL *storeURL = [fm URLsForDirectory: NSDocumentDirectory
                                  inDomains: NSUserDomainMask][0];
     storeURL = [storeURL URLByAppendingPathComponent: @"localdb.sqlite"];
-    NSPersistentStore *pStore
-    = [pStoreCoordinator addPersistentStoreWithType: NSSQLiteStoreType
-                                      configuration: nil
-                                                URL: storeURL
-                                            options: nil
-                                              error: &error];
-    if ( pStore == nil )	{
+    self.pStore
+    = [self.pStoreCoordinator addPersistentStoreWithType: NSSQLiteStoreType
+                                           configuration: nil
+                                                     URL: storeURL
+                                                 options: nil
+                                                   error: &error];
+    if ( self.pStore == nil )	{
         NSLog( @"Error Description: %@", [error userInfo] );
         return nil;
     }
     
-    self.moContext = [[NSManagedObjectContext alloc] init];
-    [self.moContext setPersistentStoreCoordinator: pStoreCoordinator];
-    self.entityDescPeople = [NSEntityDescription entityForName: @"People"
-                                        inManagedObjectContext: self.moContext];
-    self.entityDescCompany = [NSEntityDescription entityForName: @"Company"
-                                         inManagedObjectContext: self.moContext];
-    //    }];
-    //   [self.queue waitUntilAllOperationsAreFinished];
+#ifdef SESSION1
+    [self.queue addOperationWithBlock: ^(void){
+        self.moContext = [[NSManagedObjectContext alloc] init];
+#endif
+#ifdef SESSION2
+        self.moContext
+        = [[NSManagedObjectContext alloc]
+           initWithConcurrencyType: NSMainQueueConcurrencyType];
+#endif
+        self.moContext.persistentStoreCoordinator = self.pStoreCoordinator;
+        self.entityDescPeople = [NSEntityDescription entityForName: @"People"
+                                            inManagedObjectContext: self.moContext];
+        self.entityDescCompany = [NSEntityDescription entityForName: @"Company"
+                                             inManagedObjectContext: self.moContext];
+#ifdef SESSION1
+    }];
+    [self.queue waitUntilAllOperationsAreFinished];
+#endif
     
     NSArray *peopleInDB = [self selectedPeople: nil orderBy: nil];
     if ( peopleInDB.count < 1 ) {
         [self readFromXMLFiles];
     }
     
-#ifdef SESSION1
     self.selectedData = [self selectedPeople: nil orderBy: nil];
-#endif
-#ifdef SESSION2
-    self.selectedData = [self selectedCompany: nil orderBy: nil];
-#endif
-    
     
     return self;
 }
@@ -117,31 +122,44 @@
     __block NSArray *array;
     __block NSError *error = nil;
     
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName: @"People"];
+    
+    if ( criteria != nil )  {
+        NSPredicate *predicate;
+        predicate = [NSPredicate predicateWithFormat: @"name BEGINSWITH %@", criteria];
+        [request setPredicate: predicate];
+    }
+    
+    if ( field != nil)  {
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey: field
+                                                                       ascending: NO];
+        [request setSortDescriptors: @[sortDescriptor]];
+    }
+#ifdef SESSION1
     [self.queue addOperationWithBlock: ^(void){
-#ifdef DEBUG
         NSLog(@"%s %d", __FUNCTION__, [NSThread isMainThread]);
-#endif
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName: @"People"];
-        
-        if ( criteria != nil )  {
-            NSPredicate *predicate;
-            predicate = [NSPredicate predicateWithFormat: @"name BEGINSWITH %@", criteria];
-            [request setPredicate: predicate];
-        }
-        
-        if ( field != nil)  {
-            NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey: field
-                                                                           ascending: NO];
-            [request setSortDescriptors: @[sortDescriptor]];
-        }
         array = [self.moContext executeFetchRequest: request
                                               error: &error];
     }];
     [self.queue waitUntilAllOperationsAreFinished];
+#endif
+#ifdef SESSION2
+    NSManagedObjectContext *context
+    = [[NSManagedObjectContext alloc]
+       initWithConcurrencyType: NSPrivateQueueConcurrencyType];
+    context.parentContext = self.moContext;
+    //    context.persistentStoreCoordinator = self.pStoreCoordinator;
     
+    [context performBlockAndWait: ^(void){
+        NSLog(@"%s %d", __FUNCTION__, [NSThread isMainThread]);
+        array = [context executeFetchRequest: request
+                                       error: &error];
+    }];
+#endif
     if (array == nil)    {
         NSLog( @"ERROR: %@", error.description );
     }
+    //    NSLog(@"%@", array);
     return array;
 }
 
@@ -153,31 +171,40 @@
     __block NSArray *array;
     __block NSError *error = nil;
     
-    NSManagedObjectContext *context
-        = [[NSManagedObjectContext alloc]
-            initWithConcurrencyType: NSPrivateQueueConcurrencyType];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName: @"Company"];
     
-    [context performBlockAndWait: ^(void){
-#ifdef DEBUG
+    if ( criteria != nil )  {
+        NSPredicate *predicate;
+        predicate = [NSPredicate predicateWithFormat: @"company BEGINSWITH %d", criteria];
+        [request setPredicate: predicate];
+    }
+    
+    if ( field != nil)  {
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey: field
+                                                                       ascending: NO];
+        [request setSortDescriptors: [NSArray arrayWithObject: sortDescriptor]];
+    }
+#ifdef SESSION1
+    [self.queue addOperationWithBlock: ^(void){
         NSLog(@"%s %d", __FUNCTION__, [NSThread isMainThread]);
-#endif
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName: @"Company"];
-        
-        if ( criteria != nil )  {
-            NSPredicate *predicate;
-            predicate = [NSPredicate predicateWithFormat: @"company BEGINSWITH %d", criteria];
-            [request setPredicate: predicate];
-        }
-        
-        if ( field != nil)  {
-            NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey: field
-                                                                           ascending: NO];
-            [request setSortDescriptors: [NSArray arrayWithObject: sortDescriptor]];
-        }
         array = [self.moContext executeFetchRequest: request
                                               error: &error];
     }];
+    [self.queue waitUntilAllOperationsAreFinished];
+#endif
+#ifdef SESSION2
+    NSManagedObjectContext *context
+    = [[NSManagedObjectContext alloc]
+       initWithConcurrencyType: NSPrivateQueueConcurrencyType];
+    context.parentContext = self.moContext;
+    //    context.persistentStoreCoordinator = self.pStoreCoordinator;
     
+    [context performBlockAndWait: ^(void){
+        NSLog(@"%s %d", __FUNCTION__, [NSThread isMainThread]);
+        array = [context executeFetchRequest: request
+                                       error: &error];
+    }];
+#endif
     if (array == nil)    {
         NSLog( @"ERROR: %@", error.description );
     }
