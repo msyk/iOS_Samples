@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 msyk.net. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 struct KeyValue {
@@ -14,34 +14,33 @@ struct KeyValue {
     var value: String
 }
 
-class SampleClass : NSMutableString {
-    
-    // 初期化メソッド
-    override init()  {
+class SampleClass : UIViewController {
+  
+    override init() {
         super.init()
-    //    self.tag = "p"
     }
     
-    // NSMutableStringを継承すると必要になる初期化メソッド
     required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
-    // 既存のメソッドをオーバーライドするとき
-    override func appendString(aString: String)   {
-        super.appendString("<\(tag)>\(aString)</\(tag)>")
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil?, bundle: nibBundleOrNil?)
     }
     
-    // メソッドの定義
-    func appendHTMLTaggedString(aString: String, withTag theTag: String) -> NSString {
-        return "<\(theTag)>\(aString)</\(theTag)>";
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
-//    override var length: Int {
-//        get {
-//            return super.length
-//        }
-//    }
+    // 一般的なメソッドの定義
+    func length() -> Int {
+        return countElements(insideText);
+    }
+    
+    func appendHTMLTaggedString(aString: String, withTag theTag: String)
+        -> NSString {
+            return "<\(theTag)>\(aString)</\(theTag)>";
+    }
     
     // 一般的なプロパティの定義
     let standard : String = "HTML"
@@ -49,13 +48,13 @@ class SampleClass : NSMutableString {
     var insideText : String = ""
     
     // 値の設定前後にメソッドを記述したメソッド（Observableの実装がやりやすい）
-    var tag : String = "p"  {
+    var tagString : String = "p"  {
         willSet {
-            println("The property tag will set.[\(tag)->\(newValue)]")
+            println("The property tag will set.[\(tagString)->\(newValue)]")
         }
         didSet  {
-            println("The property tag did set.[\(oldValue)->\(tag)]")
-            magicNumber = countElements(tag)
+            println("The property tag did set.[\(oldValue)->\(tagString)]")
+            magicNumber = tagString.utf16Count
         }
     }
     
@@ -78,10 +77,11 @@ class SampleClass : NSMutableString {
     }
     
     // lazy initializerを組み込んだプロパティ
-    lazy var htmlStringFix : String? = "<\(self.tag)>\(self.insideText)</\(self.tag)>"
+    lazy var htmlStringFix : String?
+        = "<\(self.tagString)>\(self.insideText)</\(self.tagString)>"
     
     var htmlStringCompute : String? {
-        return "<\(tag)>\(insideText)</\(tag)>"
+        return "<\(tagString)>\(insideText)</\(tagString)>"
     }
     
     func tempHTMLString() -> String?    {

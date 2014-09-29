@@ -12,7 +12,9 @@
 #import "Company.h"
 
 @interface ListViewController ()
+
 @property(nonatomic, strong) LocalDB *localDB;
+
 @end
 
 @implementation ListViewController
@@ -21,7 +23,16 @@
 {
     [super awakeFromNib];
     
-    self.localDB = [[LocalDB alloc]init];
+    self.localDB = [[LocalDB alloc]initWithCompletion: ^(){
+        [self.localDB selectedPeople: nil
+                             orderBy: nil
+                          completion: ^(NSArray *result, NSError *error){
+                              self.localDB.selectedData = result;
+                              [[NSOperationQueue mainQueue] addOperationWithBlock: ^{
+                                  [self.tableView reloadData];
+                              }];
+                          }];
+    }];
 }
 
 - (void)viewDidLoad
@@ -31,6 +42,11 @@
 #ifdef DEBUG
     NSLog(@"%s", __FUNCTION__);
 #endif
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear: animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,7 +72,7 @@
     People *myself = self.localDB.selectedData[indexPath.row];
     Company *myCompany = myself.company;
     
-    NSString *x = myself.name;
+//    NSString *x = myself.name;
     cell.textLabel.text = myself.name;
     cell.detailTextLabel.text = myCompany.company;
     

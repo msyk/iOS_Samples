@@ -12,20 +12,14 @@ import Foundation
     @objc func testGenerateXML()        {
         let bodyElement = GDataXMLElement.elementWithName("records")
         var parent = GDataXMLElement.elementWithName("record")
-        var element = GDataXMLElement.elementWithName("name",
-            stringValue: "My Name")
+        var element = GDataXMLElement.elementWithName("name", stringValue: "My Name")
         parent.addChild(element)
-        
-        println(parent.elementsForName("name"))
-        
-        element = GDataXMLElement.elementWithName("ruby",
-            stringValue: "My Name")
+        element = GDataXMLElement.elementWithName("ruby", stringValue: "My Name")
         parent.addChild(element)
-        
+        bodyElement.addChild(parent)
         let xmlDoc = GDataXMLDocument(rootElement: bodyElement)
         xmlDoc.setCharacterEncoding("utf-8")
         
-        println(xmlDoc.XMLData())
         println(bodyElement.XMLString())
         
         

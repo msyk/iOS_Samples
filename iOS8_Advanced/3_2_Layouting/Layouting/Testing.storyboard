@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vji-j3-owY">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="kUp-MS-J5J">
+            <objects>
+                <viewController id="Vji-j3-owY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u9v-I7-oiN"/>
+                        <viewControllerLayoutGuide type="bottom" id="jrn-4a-uFC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gyJ-Ym-ieq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Acx-IY-2Yb">
+                                <rect key="frame" x="16" y="28" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8D-PC-PeL">
+                                <rect key="frame" x="70" y="28" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d09-FX-D2H">
+                                <rect key="frame" x="124" y="28" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Acx-IY-2Yb" firstAttribute="top" secondItem="u9v-I7-oiN" secondAttribute="bottom" constant="8" symbolic="YES" id="6hm-Dy-Zrj"/>
+                            <constraint firstItem="d09-FX-D2H" firstAttribute="baseline" secondItem="c8D-PC-PeL" secondAttribute="baseline" id="GIX-HA-ASB"/>
+                            <constraint firstItem="c8D-PC-PeL" firstAttribute="leading" secondItem="Acx-IY-2Yb" secondAttribute="leading" id="Kcr-gQ-2zZ"/>
+                            <constraint firstItem="d09-FX-D2H" firstAttribute="leading" secondItem="c8D-PC-PeL" secondAttribute="trailing" constant="8" symbolic="YES" id="N2p-7A-cPY"/>
+                            <constraint firstItem="c8D-PC-PeL" firstAttribute="leading" secondItem="Acx-IY-2Yb" secondAttribute="trailing" constant="8" symbolic="YES" id="ZAk-EZ-7yM"/>
+                            <constraint firstItem="c8D-PC-PeL" firstAttribute="baseline" secondItem="Acx-IY-2Yb" secondAttribute="baseline" id="dYK-QQ-FNT"/>
+                            <constraint firstItem="d09-FX-D2H" firstAttribute="top" secondItem="c8D-PC-PeL" secondAttribute="bottom" constant="8" symbolic="YES" id="og7-xA-vLe"/>
+                            <constraint firstItem="c8D-PC-PeL" firstAttribute="top" secondItem="Acx-IY-2Yb" secondAttribute="bottom" constant="8" symbolic="YES" id="qNC-r6-2Si"/>
+                            <constraint firstItem="Acx-IY-2Yb" firstAttribute="leading" secondItem="gyJ-Ym-ieq" secondAttribute="leadingMargin" id="uhA-qz-B5B"/>
+                            <constraint firstItem="d09-FX-D2H" firstAttribute="leading" secondItem="c8D-PC-PeL" secondAttribute="leading" id="yYO-bG-jkW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Kcr-gQ-2zZ"/>
+                                <exclude reference="qNC-r6-2Si"/>
+                                <exclude reference="og7-xA-vLe"/>
+                                <exclude reference="yYO-bG-jkW"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="Kcr-gQ-2zZ"/>
+                                <exclude reference="ZAk-EZ-7yM"/>
+                                <exclude reference="dYK-QQ-FNT"/>
+                                <include reference="qNC-r6-2Si"/>
+                                <exclude reference="GIX-HA-ASB"/>
+                                <exclude reference="N2p-7A-cPY"/>
+                                <include reference="og7-xA-vLe"/>
+                                <include reference="yYO-bG-jkW"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e8L-d9-97a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="300" y="287"/>
+        </scene>
+    </scenes>
+</document>

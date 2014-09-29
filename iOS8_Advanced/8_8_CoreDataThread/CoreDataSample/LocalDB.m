@@ -12,17 +12,20 @@
 
 @interface LocalDB()
 
+// Properties for Core Data objects
+@property (nonatomic, strong) NSManagedObjectContext *moContext;
 @property (nonatomic, strong) NSEntityDescription *entityDescPeople;
 @property (nonatomic, strong) NSEntityDescription *entityDescCompany;
-@property (nonatomic, strong) NSManagedObjectContext *moContext;
+@property (nonatomic, strong) NSPersistentStore *pStore;
+@property (nonatomic, strong) NSPersistentStoreCoordinator *pStoreCoordinator;
 
+// for XML parser
 @property (nonatomic, strong) NSMutableArray *parsedData;
 @property (nonatomic, strong) NSMutableDictionary *currentRecord;
 @property (nonatomic, strong) NSMutableString *currentString;
 
+// Do it another thread
 @property (nonatomic, strong) NSOperationQueue *queue;
-@property (nonatomic, strong) NSPersistentStore *pStore;
-@property (nonatomic, strong) NSPersistentStoreCoordinator *pStoreCoordinator;
 
 - (void)readFromXMLFiles;
 
@@ -30,12 +33,13 @@
 
 @implementation LocalDB
 
--(instancetype) init
+-(instancetype) initWithCompletion: (void(^)(void))finishTask
 {
 #ifdef DEBUG
     NSLog(@"%s %d", __FUNCTION__, [NSThread isMainThread]);
 #endif
     self = [super init];
+    self.isStillInitializing = YES;
     
     self.queue = [[NSOperationQueue alloc] init];
     self.queue.maxConcurrentOperationCount = 1;
@@ -79,49 +83,30 @@
                                             inManagedObjectContext: self.moContext];
         self.entityDescCompany = [NSEntityDescription entityForName: @"Company"
                                              inManagedObjectContext: self.moContext];
+
+        [self selectedPeople: nil
+                     orderBy: nil
+                  completion: ^(NSArray *result, NSError *error){
+                      if ( error == nil && result.count < 1 ) {
+                          [self readFromXMLFiles];
+                      }
+                      self.isStillInitializing = NO;
+                      finishTask();
+                  }];
 #ifdef SESSION1
     }];
-    [self.queue waitUntilAllOperationsAreFinished];
 #endif
-    
-    NSArray *peopleInDB = [self selectedPeople: nil orderBy: nil];
-    if ( peopleInDB.count < 1 ) {
-        [self readFromXMLFiles];
-    }
-    
-    self.selectedData = [self selectedPeople: nil orderBy: nil];
     
     return self;
 }
 
--(void) clearAllRecords
-{
-#ifdef DEBUG
-    NSLog(@"%s", __FUNCTION__);
-#endif
-    NSArray *array = [self selectedPeople: nil orderBy: nil];
-    for ( People *person in array )	{
-        [self.moContext deleteObject: person];
-    }
-    array = [self selectedCompany: nil orderBy: nil];
-    for ( Company *company in array )	{
-        [self.moContext deleteObject: company];
-    }
-    NSError *error = nil;
-    [self.moContext save: &error];
-    if ( error != nil )	{
-        NSLog( @"ERROR: %@", [error	description] );
-    }
-}
-
--(NSArray *) selectedPeople: (NSString *)criteria orderBy: (NSString *)field
+-(void) selectedPeople: (NSString *)criteria
+               orderBy: (NSString *)field
+            completion: (void(^)(NSArray *result, NSError *error))finishTask
 {
 #ifdef DEBUG
     NSLog(@"%s %d", __FUNCTION__, [NSThread isMainThread]);
 #endif
-    __block NSArray *array;
-    __block NSError *error = nil;
-    
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName: @"People"];
     
     if ( criteria != nil )  {
@@ -138,10 +123,12 @@
 #ifdef SESSION1
     [self.queue addOperationWithBlock: ^(void){
         NSLog(@"%s %d", __FUNCTION__, [NSThread isMainThread]);
-        array = [self.moContext executeFetchRequest: request
-                                              error: &error];
+        
+        NSError *error = nil;
+        NSArray *array = [self.moContext executeFetchRequest: request
+                                                       error: &error];
+        finishTask(array, error);
     }];
-    [self.queue waitUntilAllOperationsAreFinished];
 #endif
 #ifdef SESSION2
     NSManagedObjectContext *context
@@ -152,25 +139,21 @@
     
     [context performBlockAndWait: ^(void){
         NSLog(@"%s %d", __FUNCTION__, [NSThread isMainThread]);
-        array = [context executeFetchRequest: request
+        NSError *error = nil;
+        NSArray *array = [context executeFetchRequest: request
                                        error: &error];
+        finishTask(array, error);
     }];
 #endif
-    if (array == nil)    {
-        NSLog( @"ERROR: %@", error.description );
-    }
-    //    NSLog(@"%@", array);
-    return array;
 }
 
--(NSArray *) selectedCompany: (NSString *)criteria orderBy: (NSString *)field
+-(void) selectedCompany: (NSString *)criteria
+                orderBy: (NSString *)field
+             completion: (void(^)(NSArray *result, NSError *error))finishTask
 {
 #ifdef DEBUG
     NSLog(@"%s %d", __FUNCTION__, [NSThread isMainThread]);
 #endif
-    __block NSArray *array;
-    __block NSError *error = nil;
-    
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName: @"Company"];
     
     if ( criteria != nil )  {
@@ -187,10 +170,12 @@
 #ifdef SESSION1
     [self.queue addOperationWithBlock: ^(void){
         NSLog(@"%s %d", __FUNCTION__, [NSThread isMainThread]);
-        array = [self.moContext executeFetchRequest: request
-                                              error: &error];
+        
+        NSError *error = nil;
+        NSArray *array = [self.moContext executeFetchRequest: request
+                                                       error: &error];
+        finishTask(array, error);
     }];
-    [self.queue waitUntilAllOperationsAreFinished];
 #endif
 #ifdef SESSION2
     NSManagedObjectContext *context
@@ -201,14 +186,12 @@
     
     [context performBlockAndWait: ^(void){
         NSLog(@"%s %d", __FUNCTION__, [NSThread isMainThread]);
-        array = [context executeFetchRequest: request
+        NSError *error = nil;
+        NSArray *array = [context executeFetchRequest: request
                                        error: &error];
+        finishTask(array, error);
     }];
 #endif
-    if (array == nil)    {
-        NSLog( @"ERROR: %@", error.description );
-    }
-    return array;
 }
 
 -(void)readFromXMLFiles

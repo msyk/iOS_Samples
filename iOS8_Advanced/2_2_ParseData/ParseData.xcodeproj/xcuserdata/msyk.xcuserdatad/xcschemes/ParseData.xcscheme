@@ -20,6 +20,20 @@
                ReferencedContainer = "container:ParseData.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2BD2114B185D761F002FCA07"
+               BuildableName = "ParseDataTests.xctest"
+               BlueprintName = "ParseDataTests"
+               ReferencedContainer = "container:ParseData.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

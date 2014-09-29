@@ -32,6 +32,11 @@
                             <constraint firstItem="xja-4C-aJ3" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="T9N-wP-pXE"/>
                             <constraint firstItem="xja-4C-aJ3" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="tXG-jK-GcF"/>
                         </constraints>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="xja-4C-aJ3"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems>
                         <barButtonItem title="Button1" id="v4x-Mk-rvW">

@@ -16,7 +16,7 @@ class RootViewController: UIViewController, UISplitViewControllerDelegate {
     {
         debugLogging()
         
-        self.viewDidLoad()
+        super.viewDidLoad()
         
         let storyboard = self.storyboard
         let svc = storyboard?.instantiateViewControllerWithIdentifier("svc")
@@ -55,7 +55,7 @@ class RootViewController: UIViewController, UISplitViewControllerDelegate {
         withTransitionCoordinator
         coordinator: UIViewControllerTransitionCoordinator)
     {
-        debugLogging(info: "size=\(NSStringFromCGSize(size))")
+        debugLogging("size=\(NSStringFromCGSize(size))")
 
         if (UIDevice.currentDevice().userInterfaceIdiom == .Phone) {
             if (size.width > size.height)  {
@@ -95,20 +95,13 @@ class RootViewController: UIViewController, UISplitViewControllerDelegate {
 
 }
 
-func debugLogging(
-    info: String = "",
+func debugLogging(_ info: String = "",
     function: String = __FUNCTION__,
     file: String = __FILE__,
     line: Int = __LINE__) {
     #if DEBUG
-        let flag: NSCalendarUnit
-            = .CalendarUnitHour       | .CalendarUnitMinute |
-              .CalendarUnitNanosecond | .CalendarUnitSecond
-        let components = NSCalendar.currentCalendar().components(flag, fromDate: NSDate())
-        let misecond = Int(components.nanosecond / 1000000)
-        let timeDesc = "\(components.hour):\(components.minute):\(components.second).\(misecond)"
         let fileName = file.lastPathComponent.stringByDeletingPathExtension
         let sourceInfo = "\(fileName).\(function)-line\(line)"
-        println("\(timeDesc)[\(sourceInfo)]\(info)")
+        NSLog("[\(sourceInfo)]\(info)")
     #endif
 }

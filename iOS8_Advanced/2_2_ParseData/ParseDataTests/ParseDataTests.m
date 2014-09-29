@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "ParseData.h"
 #import "GDataXMLNode.h"
-//#import "ParseData-Swift.h"
+#import "ParseData-Swift.h"
 
 @interface ParseDataTests : XCTestCase
 

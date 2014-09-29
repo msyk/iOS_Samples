@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-        debugLogging(info: "")
+        debugLogging("")
 
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

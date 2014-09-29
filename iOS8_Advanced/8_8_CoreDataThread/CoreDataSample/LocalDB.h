@@ -10,10 +10,15 @@
 
 @interface LocalDB : NSObject <NSXMLParserDelegate>
 
-@property (nonatomic, strong) NSArray *selectedData;
+@property (atomic, strong) NSArray *selectedData;
+@property (nonatomic) BOOL isStillInitializing;
 
--(void) clearAllRecords;
--(NSArray *) selectedPeople: (NSString *)criteria orderBy: (NSString *)field;
--(NSArray *) selectedCompany: (NSString *)criteria orderBy: (NSString *)field;
+-(instancetype) initWithCompletion: (void(^)(void))finishTask;
+-(void) selectedPeople: (NSString *)criteria
+               orderBy: (NSString *)field
+            completion: (void(^)(NSArray *result, NSError *error))finishTask;
+-(void) selectedCompany: (NSString *)criteria
+                orderBy: (NSString *)field
+             completion: (void(^)(NSArray *result, NSError *error))finishTask;
 
 @end

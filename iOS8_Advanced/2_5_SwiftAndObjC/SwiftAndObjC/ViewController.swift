@@ -18,6 +18,15 @@ class ViewController: UIViewController {
         tc.name = "As I am";
         println(tc.deluxName("Great! "))
         
+        GenerateXML().testGenerateXML()
+        
+        NSLog("%@s",__FUNCTION__)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        debugLogging("debug message")
+        debugLogging()
     }
 
     override func didReceiveMemoryWarning() {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B03428219D3E11000FDE78A /* ParseDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B03428119D3E11000FDE78A /* ParseDataTests.m */; };
 		2B24C77D18606CF2002395FF /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B24C77C18606CF2002395FF /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2B259E001994EBF900FBF44E /* GenerateXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B259DFF1994EBF900FBF44E /* GenerateXML.swift */; };
 		2B259E011994EBF900FBF44E /* GenerateXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B259DFF1994EBF900FBF44E /* GenerateXML.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B03428119D3E11000FDE78A /* ParseDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseDataTests.m; sourceTree = "<group>"; };
 		2B24C77B18606CF2002395FF /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		2B24C77C18606CF2002395FF /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		2B259DFB1994999900FBF44E /* ParseData-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ParseData-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -69,7 +71,7 @@
 		2BD21146185D761F002FCA07 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2BD2114C185D761F002FCA07 /* ParseDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParseDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BD2114D185D761F002FCA07 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		2BD21155185D761F002FCA07 /* 1_3_ParseDataTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "1_3_ParseDataTests-Info.plist"; sourceTree = "<group>"; };
+		2BD21155185D761F002FCA07 /* ParseDataTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ParseDataTests-Info.plist"; sourceTree = "<group>"; };
 		2BD21157185D761F002FCA07 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2BD21163185D764F002FCA07 /* ParseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseData.h; sourceTree = "<group>"; };
 		2BD21164185D764F002FCA07 /* ParseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseData.m; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		2BD21153185D761F002FCA07 /* ParseDataTests */ = {
 			isa = PBXGroup;
 			children = (
+				2B03428119D3E11000FDE78A /* ParseDataTests.m */,
 				2BD21154185D761F002FCA07 /* Supporting Files */,
 			);
 			path = ParseDataTests;
@@ -184,7 +187,7 @@
 		2BD21154185D761F002FCA07 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2BD21155185D761F002FCA07 /* 1_3_ParseDataTests-Info.plist */,
+				2BD21155185D761F002FCA07 /* ParseDataTests-Info.plist */,
 				2BD21156185D761F002FCA07 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -306,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B03428219D3E11000FDE78A /* ParseDataTests.m in Sources */,
 				2B259E011994EBF900FBF44E /* GenerateXML.swift in Sources */,
 				2BD21177185D802B002FCA07 /* XMLParserType2.m in Sources */,
 				2BD21173185D801E002FCA07 /* XMLParserType1.m in Sources */,

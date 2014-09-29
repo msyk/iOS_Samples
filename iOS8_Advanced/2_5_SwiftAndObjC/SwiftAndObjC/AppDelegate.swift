@@ -44,3 +44,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+/*
+Set the Other Swift Flag in the Swift Compiler - Custom Flags of the Build Settings.
+The value should be '-D' and 'DEBUG' for the Debug build setting.
+*/
+func debugLogging(_ info: String = "",
+    function: String = __FUNCTION__,
+    file: String = __FILE__,
+    line: Int = __LINE__) {
+        #if DEBUG
+            let fileName = file.lastPathComponent.stringByDeletingPathExtension
+            let sourceInfo = "\(fileName).\(function)-line\(line)"
+            NSLog("[\(sourceInfo)]\(info)")
+        #endif
+}

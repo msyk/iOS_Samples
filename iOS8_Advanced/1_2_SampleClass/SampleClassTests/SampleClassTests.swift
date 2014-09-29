@@ -27,6 +27,7 @@ class SampleClassTests: XCTestCase {
         
         let str = obj.appendHTMLTaggedString("TEST", withTag:"div")
         XCTAssert(str == "<div>TEST</div>")
+        XCTAssert(obj.length() == 0)
         
         //obj.appendString("q")
         //obj.htmlStringCompute = "###"
@@ -34,17 +35,17 @@ class SampleClassTests: XCTestCase {
         // Property and Observable
         println(".magicNumber=\(obj.magicNumber)")
         XCTAssert(obj.magicNumber == 4, "Property magicNumber checking")
-        obj.tag = "table"
+        obj.tagString = "table"
         XCTAssert(obj.magicNumber == 5, "Property magicNumber checking")
 
         // Property and lazy initializer
         obj.insideText = "open mind!"
-        obj.tag = "span"
+        obj.tagString = "span"
         XCTAssert(obj.htmlStringFix == "<span>open mind!</span>")
         XCTAssert(obj.htmlStringCompute == "<span>open mind!</span>")
         
         obj.insideText = "close the door!"
-        obj.tag = "div"
+        obj.tagString = "div"
         XCTAssert(obj.htmlStringFix == "<span>open mind!</span>")
         XCTAssert(obj.htmlStringCompute == "<div>close the door!</div>")
 

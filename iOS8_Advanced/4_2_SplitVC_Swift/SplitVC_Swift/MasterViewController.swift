@@ -16,7 +16,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 
     override func awakeFromNib() {
-        debugLogging(info: "")
+        debugLogging("")
 
         super.awakeFromNib()
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
@@ -26,7 +26,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
 
     override func viewDidLoad() {
-        debugLogging(info: "")
+        debugLogging("")
 
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

@@ -79,20 +79,13 @@ func splitViewController(splitViewController: UISplitViewController,
     Set the Other Swift Flag in the Swift Compiler - Custom Flags of the Build Settings.
     The value should be '-D' and 'DEBUG' for the Debug build setting.
 */
-func debugLogging(
-    info: String = "",
+func debugLogging(_ info: String = "",
     function: String = __FUNCTION__,
     file: String = __FILE__,
     line: Int = __LINE__) {
         #if DEBUG
-            let flag: NSCalendarUnit
-            = .CalendarUnitHour       | .CalendarUnitMinute |
-            .CalendarUnitNanosecond | .CalendarUnitSecond
-            let components = NSCalendar.currentCalendar().components(flag, fromDate: NSDate())
-            let misecond = Int(components.nanosecond / 1000000)
-            let timeDesc = "\(components.hour):\(components.minute):\(components.second).\(misecond)"
             let fileName = file.lastPathComponent.stringByDeletingPathExtension
             let sourceInfo = "\(fileName).\(function)-line\(line)"
-            println("\(timeDesc)[\(sourceInfo)]\(info)")
+            NSLog("[\(sourceInfo)]\(info)")
         #endif
 }
