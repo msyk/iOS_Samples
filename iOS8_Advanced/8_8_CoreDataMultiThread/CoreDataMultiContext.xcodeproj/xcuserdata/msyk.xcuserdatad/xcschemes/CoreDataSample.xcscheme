@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2B1806FE189E2B9600905943"
-               BuildableName = "CoreDataSample.app"
-               BlueprintName = "CoreDataSample"
-               ReferencedContainer = "container:CoreDataSample.xcodeproj">
+               BuildableName = "CoreDataMultiSample.app"
+               BlueprintName = "CoreDataMultiContext"
+               ReferencedContainer = "container:CoreDataMultiContext.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2B180722189E2B9600905943"
-               BuildableName = "CoreDataSampleTests.xctest"
-               BlueprintName = "CoreDataSampleTests"
-               ReferencedContainer = "container:CoreDataSample.xcodeproj">
+               BuildableName = "CoreDataMultiSampleTests.xctest"
+               BlueprintName = "CoreDataMultiContextTests"
+               ReferencedContainer = "container:CoreDataMultiContext.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B1806FE189E2B9600905943"
-            BuildableName = "CoreDataSample.app"
-            BlueprintName = "CoreDataSample"
-            ReferencedContainer = "container:CoreDataSample.xcodeproj">
+            BuildableName = "CoreDataMultiSample.app"
+            BlueprintName = "CoreDataMultiContext"
+            ReferencedContainer = "container:CoreDataMultiContext.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B1806FE189E2B9600905943"
-            BuildableName = "CoreDataSample.app"
-            BlueprintName = "CoreDataSample"
-            ReferencedContainer = "container:CoreDataSample.xcodeproj">
+            BuildableName = "CoreDataMultiSample.app"
+            BlueprintName = "CoreDataMultiContext"
+            ReferencedContainer = "container:CoreDataMultiContext.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B1806FE189E2B9600905943"
-            BuildableName = "CoreDataSample.app"
-            BlueprintName = "CoreDataSample"
-            ReferencedContainer = "container:CoreDataSample.xcodeproj">
+            BuildableName = "CoreDataMultiSample.app"
+            BlueprintName = "CoreDataMultiContext"
+            ReferencedContainer = "container:CoreDataMultiContext.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
