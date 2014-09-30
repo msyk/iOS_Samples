@@ -10,7 +10,6 @@
 
 @interface LocalDB : NSObject <NSXMLParserDelegate>
 
-@property (atomic, strong) NSArray *selectedData;
 @property (nonatomic) BOOL isStillInitializing;
 
 -(instancetype) initWithCompletion: (void(^)(void))finishTask;
@@ -20,5 +19,8 @@
 -(void) selectedCompany: (NSString *)criteria
                 orderBy: (NSString *)field
              completion: (void(^)(NSArray *result, NSError *error))finishTask;
+- (void)setSelectedData:(NSArray *)selectedData;
+- (NSDictionary *)selectedDataOfIndex: (NSInteger)index;
+- (NSInteger)countSelectedData;
 
 @end

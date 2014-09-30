@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2B1806FE189E2B9600905943"
-               BuildableName = "CoreDataMultiSample.app"
+               BuildableName = "CoreDataMultiContext.app"
                BlueprintName = "CoreDataMultiContext"
                ReferencedContainer = "container:CoreDataMultiContext.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2B180722189E2B9600905943"
-               BuildableName = "CoreDataMultiSampleTests.xctest"
+               BuildableName = "CoreDataMultiContextTests.xctest"
                BlueprintName = "CoreDataMultiContextTests"
                ReferencedContainer = "container:CoreDataMultiContext.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B1806FE189E2B9600905943"
-            BuildableName = "CoreDataMultiSample.app"
+            BuildableName = "CoreDataMultiContext.app"
             BlueprintName = "CoreDataMultiContext"
             ReferencedContainer = "container:CoreDataMultiContext.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B1806FE189E2B9600905943"
-            BuildableName = "CoreDataMultiSample.app"
+            BuildableName = "CoreDataMultiContext.app"
             BlueprintName = "CoreDataMultiContext"
             ReferencedContainer = "container:CoreDataMultiContext.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B1806FE189E2B9600905943"
-            BuildableName = "CoreDataMultiSample.app"
+            BuildableName = "CoreDataMultiContext.app"
             BlueprintName = "CoreDataMultiContext"
             ReferencedContainer = "container:CoreDataMultiContext.xcodeproj">
          </BuildableReference>

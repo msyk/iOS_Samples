@@ -10,6 +10,5 @@
 #import <CoreData/CoreData.h>
 
 @interface ListViewController : UITableViewController
-                <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 
 @end

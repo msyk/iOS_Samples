@@ -12,9 +12,12 @@
 #import "Company.h"
 
 @interface ListViewController ()
+    <UITableViewDataSource, UITableViewDelegate,
+     NSFetchedResultsControllerDelegate>
 
 @property(nonatomic, strong) LocalDB *localDB;
-@property (nonatomic, strong) NSFetchedResultsController *fechedController;
+@property (nonatomic, strong)
+    NSFetchedResultsController *fechedController;
 
 @end
 

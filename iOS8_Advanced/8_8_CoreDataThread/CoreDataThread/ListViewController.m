@@ -27,7 +27,9 @@
         [self.localDB selectedPeople: nil
                              orderBy: nil
                           completion: ^(NSArray *result, NSError *error){
-                              self.localDB.selectedData = result;
+                              NSLog(@"%s %d", __FUNCTION__, [NSThread isMainThread]);
+
+                              [self.localDB setSelectedData: result];
                               [[NSOperationQueue mainQueue] addOperationWithBlock: ^{
                                   [self.tableView reloadData];
                               }];
@@ -62,19 +64,24 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.localDB.selectedData.count;
+#ifdef DEBUG
+    NSLog(@"%s", __FUNCTION__);
+#endif
+    return [self.localDB countSelectedData];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+#ifdef DEBUG
+    NSLog(@"%s", __FUNCTION__);
+#endif
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"CELL"
                                                             forIndexPath: indexPath];
-    People *myself = self.localDB.selectedData[indexPath.row];
-    Company *myCompany = myself.company;
+    NSDictionary *myself = [self.localDB selectedDataOfIndex: indexPath.row];
     
-//    NSString *x = myself.name;
-    cell.textLabel.text = myself.name;
-    cell.detailTextLabel.text = myCompany.company;
+    cell.textLabel.text = myself[@"name"];
+    cell.detailTextLabel.text = myself[@"company"][@"company"];
     
     return cell;
 }

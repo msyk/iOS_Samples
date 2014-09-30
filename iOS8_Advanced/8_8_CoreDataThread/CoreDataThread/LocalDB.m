@@ -16,9 +16,8 @@
 @property (nonatomic, strong) NSManagedObjectContext *moContext;
 @property (nonatomic, strong) NSEntityDescription *entityDescPeople;
 @property (nonatomic, strong) NSEntityDescription *entityDescCompany;
-@property (nonatomic, strong) NSPersistentStore *pStore;
-@property (nonatomic, strong) NSPersistentStoreCoordinator *pStoreCoordinator;
-
+// Fetched Array for the Table View
+@property (atomic, strong) NSArray *selectedArray;
 // for XML parser
 @property (nonatomic, strong) NSMutableArray *parsedData;
 @property (nonatomic, strong) NSMutableDictionary *currentRecord;
@@ -40,6 +39,7 @@
 #endif
     self = [super init];
     self.isStillInitializing = YES;
+    self.selectedArray = nil;
     
     self.queue = [[NSOperationQueue alloc] init];
     self.queue.maxConcurrentOperationCount = 1;
@@ -51,39 +51,32 @@
     NSManagedObjectModel *model
     = [[NSManagedObjectModel alloc] initWithContentsOfURL: modelURL];
     
-    self.pStoreCoordinator
+    NSPersistentStoreCoordinator *pStoreCoordinator
     = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: model];
     
     NSFileManager *fm = [NSFileManager defaultManager];
     NSURL *storeURL = [fm URLsForDirectory: NSDocumentDirectory
                                  inDomains: NSUserDomainMask][0];
     storeURL = [storeURL URLByAppendingPathComponent: @"localdb.sqlite"];
-    self.pStore
-    = [self.pStoreCoordinator addPersistentStoreWithType: NSSQLiteStoreType
-                                           configuration: nil
-                                                     URL: storeURL
-                                                 options: nil
-                                                   error: &error];
-    if ( self.pStore == nil )	{
+    NSPersistentStore *pStore
+    = [pStoreCoordinator addPersistentStoreWithType: NSSQLiteStoreType
+                                      configuration: nil
+                                                URL: storeURL
+                                            options: nil
+                                              error: &error];
+    if ( pStore == nil )	{
         NSLog( @"Error Description: %@", [error userInfo] );
         return nil;
     }
     
-#ifdef SESSION1
     [self.queue addOperationWithBlock: ^(void){
         self.moContext = [[NSManagedObjectContext alloc] init];
-#endif
-#ifdef SESSION2
-        self.moContext
-        = [[NSManagedObjectContext alloc]
-           initWithConcurrencyType: NSMainQueueConcurrencyType];
-#endif
-        self.moContext.persistentStoreCoordinator = self.pStoreCoordinator;
+        self.moContext.persistentStoreCoordinator = pStoreCoordinator;
         self.entityDescPeople = [NSEntityDescription entityForName: @"People"
                                             inManagedObjectContext: self.moContext];
         self.entityDescCompany = [NSEntityDescription entityForName: @"Company"
                                              inManagedObjectContext: self.moContext];
-
+        
         [self selectedPeople: nil
                      orderBy: nil
                   completion: ^(NSArray *result, NSError *error){
@@ -93,10 +86,7 @@
                       self.isStillInitializing = NO;
                       finishTask();
                   }];
-#ifdef SESSION1
     }];
-#endif
-    
     return self;
 }
 
@@ -120,7 +110,6 @@
                                                                        ascending: NO];
         [request setSortDescriptors: @[sortDescriptor]];
     }
-#ifdef SESSION1
     [self.queue addOperationWithBlock: ^(void){
         NSLog(@"%s %d", __FUNCTION__, [NSThread isMainThread]);
         
@@ -129,22 +118,6 @@
                                                        error: &error];
         finishTask(array, error);
     }];
-#endif
-#ifdef SESSION2
-    NSManagedObjectContext *context
-    = [[NSManagedObjectContext alloc]
-       initWithConcurrencyType: NSPrivateQueueConcurrencyType];
-    context.parentContext = self.moContext;
-    //    context.persistentStoreCoordinator = self.pStoreCoordinator;
-    
-    [context performBlockAndWait: ^(void){
-        NSLog(@"%s %d", __FUNCTION__, [NSThread isMainThread]);
-        NSError *error = nil;
-        NSArray *array = [context executeFetchRequest: request
-                                       error: &error];
-        finishTask(array, error);
-    }];
-#endif
 }
 
 -(void) selectedCompany: (NSString *)criteria
@@ -167,7 +140,6 @@
                                                                        ascending: NO];
         [request setSortDescriptors: [NSArray arrayWithObject: sortDescriptor]];
     }
-#ifdef SESSION1
     [self.queue addOperationWithBlock: ^(void){
         NSLog(@"%s %d", __FUNCTION__, [NSThread isMainThread]);
         
@@ -176,22 +148,43 @@
                                                        error: &error];
         finishTask(array, error);
     }];
+}
+
+- (void)setSelectedData:(NSArray *)selectedData
+{
+#ifdef DEBUG
+    NSLog(@"%s %d", __FUNCTION__, [NSThread isMainThread]);
 #endif
-#ifdef SESSION2
-    NSManagedObjectContext *context
-    = [[NSManagedObjectContext alloc]
-       initWithConcurrencyType: NSPrivateQueueConcurrencyType];
-    context.parentContext = self.moContext;
-    //    context.persistentStoreCoordinator = self.pStoreCoordinator;
-    
-    [context performBlockAndWait: ^(void){
+    self.selectedArray = selectedData;
+}
+
+- (NSInteger)countSelectedData
+{
+    return self.selectedArray.count;
+}
+
+- (NSDictionary *)selectedDataOfIndex: (NSInteger)index
+{
+#ifdef DEBUG
+    NSLog(@"%s %d", __FUNCTION__, [NSThread isMainThread]);
+#endif
+    __block NSDictionary *aRecord;
+    [self.queue addOperationWithBlock: ^(void){
         NSLog(@"%s %d", __FUNCTION__, [NSThread isMainThread]);
-        NSError *error = nil;
-        NSArray *array = [context executeFetchRequest: request
-                                       error: &error];
-        finishTask(array, error);
+        
+        People *person = self.selectedArray[index];
+        aRecord = @{@"name": person.name,
+                    @"mail": person.mail,
+                    @"phone": person.phone,
+                    @"prefecture": person.prefecture,
+                    @"birthday": person.birthday,
+                    @"company": @{@"company": person.company.company,
+                                  @"zip": person.company.zip,
+                                  @"address": person.company.address,
+                                  @"section": person.company.section}};
     }];
-#endif
+    [self.queue waitUntilAllOperationsAreFinished];
+    return aRecord;
 }
 
 -(void)readFromXMLFiles
