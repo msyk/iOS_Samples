@@ -17,7 +17,7 @@
 
 @property(nonatomic, strong) LocalDB *localDB;
 @property (nonatomic, strong)
-    NSFetchedResultsController *fechedController;
+    NSFetchedResultsController *fetchedController;
 
 @end
 
@@ -31,8 +31,8 @@
     [super awakeFromNib];
     
     self.localDB = [[LocalDB alloc]init];
-    self.fechedController = self.localDB.fetchResultController;
-    self.fechedController.delegate = self;
+    self.fetchedController = self.localDB.fetchResultController;
+    self.fetchedController.delegate = self;
 }
 
 - (void)viewDidLoad
@@ -116,9 +116,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #ifdef DEBUG
-    NSLog(@"%s %d", __FUNCTION__,  (int)self.fechedController.fetchedObjects.count);
+    NSLog(@"%s %d", __FUNCTION__,  (int)self.fetchedController.fetchedObjects.count);
 #endif
-    return self.fechedController.fetchedObjects.count;
+    return self.fetchedController.fetchedObjects.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -128,7 +128,7 @@
 #endif
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"CELL"
                                                             forIndexPath: indexPath];
-    People *myself = [self.fechedController objectAtIndexPath: indexPath];
+    People *myself = [self.fetchedController objectAtIndexPath: indexPath];
     cell.textLabel.text = myself.name;
     cell.detailTextLabel.text = myself.company.company;
     return cell;

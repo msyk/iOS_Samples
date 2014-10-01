@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println(NSDate(), (__FILE__ as String).lastPathComponent, __FUNCTION__)
+        println((__FILE__ as String).lastPathComponent, __FUNCTION__)
         
         let tc = self.traitCollection
         println(tc.horizontalSizeClass,
@@ -56,11 +56,13 @@ class ViewController: UIViewController {
         println((__FILE__ as String).lastPathComponent, __FUNCTION__)
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator!) {
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         println((__FILE__ as String).lastPathComponent, __FUNCTION__)
     }
     
-    override func willTransitionToTraitCollection(newCollection: UITraitCollection!, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator!) {
+    
+    override func willTransitionToTraitCollection(newCollection: (UITraitCollection!), withTransitionCoordinator coordinator: (UIViewControllerTransitionCoordinator!)){
+        super.willTransitionToTraitCollection(newCollection, withTransitionCoordinator: coordinator)
         println((__FILE__ as String).lastPathComponent, __FUNCTION__)
  
     }
@@ -88,10 +90,18 @@ class ViewController: UIViewController {
         
     }
     
-    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration d: NSTimeInterval) {
+        super.willRotateToInterfaceOrientation(toInterfaceOrientation, duration: d)
         println((__FILE__ as String).lastPathComponent, __FUNCTION__)
        
     }
 
+    override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration d: NSTimeInterval) {
+        println((__FILE__ as String).lastPathComponent, __FUNCTION__)
+    }
+    
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        println((__FILE__ as String).lastPathComponent, __FUNCTION__)
+    }
 }
 

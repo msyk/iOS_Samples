@@ -156,9 +156,9 @@
 - (UITableViewCellEditingStyle)tableView: (UITableView *)tableView
            editingStyleForRowAtIndexPath: (NSIndexPath *)indexPath
 {
-//    if (indexPath.row == 0) {
-//        return UITableViewCellEditingStyleInsert;
-//    }
+    if (indexPath.row == 0) {
+        return UITableViewCellEditingStyleInsert;
+    }
     return UITableViewCellEditingStyleDelete;
 }
 
