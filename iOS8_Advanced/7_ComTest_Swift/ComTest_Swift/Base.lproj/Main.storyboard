@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B23" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ComTest_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdp-PF-et2">
+                                <rect key="frame" x="16" y="20" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2p0-Ys-8tw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AxM-fn-E88">
+                                <rect key="frame" x="16" y="58" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ba2-KI-eGA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sa4-r4-dfB">
+                                <rect key="frame" x="16" y="96" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uXo-LG-Nr0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJB-M6-ksf">
+                                <rect key="frame" x="16" y="134" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton34:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bmo-iO-rWt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rf3-jQ-kbh">
+                                <rect key="frame" x="16" y="172" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Ui-au-AE8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxz-oR-c6b">
+                                <rect key="frame" x="16" y="210" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z9E-sx-zXd"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3a4-Mf-SM1">
+                                <rect key="frame" x="70" y="20" width="514" height="560"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rR0-t2-Lga">
+                                <rect key="frame" x="16" y="248" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton7:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ie2-vA-gdr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fdp-PF-et2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="6CH-DQ-3at"/>
+                            <constraint firstAttribute="bottom" secondItem="3a4-Mf-SM1" secondAttribute="bottom" constant="20" symbolic="YES" id="7JF-Cq-8eV"/>
+                            <constraint firstItem="hxz-oR-c6b" firstAttribute="top" secondItem="Rf3-jQ-kbh" secondAttribute="bottom" constant="8" symbolic="YES" id="7lm-24-NPc"/>
+                            <constraint firstItem="AxM-fn-E88" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8xN-a6-NjE"/>
+                            <constraint firstItem="Sa4-r4-dfB" firstAttribute="top" secondItem="AxM-fn-E88" secondAttribute="bottom" constant="8" symbolic="YES" id="BSb-IA-MGX"/>
+                            <constraint firstItem="3a4-Mf-SM1" firstAttribute="top" secondItem="fdp-PF-et2" secondAttribute="top" id="Fzx-Pm-mk6"/>
+                            <constraint firstItem="cJB-M6-ksf" firstAttribute="leading" secondItem="Sa4-r4-dfB" secondAttribute="leading" id="Gi8-ef-TO3"/>
+                            <constraint firstItem="fdp-PF-et2" firstAttribute="leading" secondItem="AxM-fn-E88" secondAttribute="leading" id="GyB-sc-dRe"/>
+                            <constraint firstItem="Sa4-r4-dfB" firstAttribute="leading" secondItem="AxM-fn-E88" secondAttribute="leading" id="Kyi-nq-1FV"/>
+                            <constraint firstItem="3a4-Mf-SM1" firstAttribute="leading" secondItem="fdp-PF-et2" secondAttribute="trailing" constant="8" symbolic="YES" id="PhG-KQ-5i2"/>
+                            <constraint firstItem="AxM-fn-E88" firstAttribute="top" secondItem="fdp-PF-et2" secondAttribute="bottom" constant="8" symbolic="YES" id="QGR-qb-g94"/>
+                            <constraint firstItem="Rf3-jQ-kbh" firstAttribute="top" secondItem="cJB-M6-ksf" secondAttribute="bottom" constant="8" symbolic="YES" id="TqV-uP-Y6M"/>
+                            <constraint firstItem="Rf3-jQ-kbh" firstAttribute="leading" secondItem="hxz-oR-c6b" secondAttribute="leading" id="bM4-Nx-2QX"/>
+                            <constraint firstItem="cJB-M6-ksf" firstAttribute="top" secondItem="Sa4-r4-dfB" secondAttribute="bottom" constant="8" symbolic="YES" id="biq-z5-V7L"/>
+                            <constraint firstItem="rR0-t2-Lga" firstAttribute="top" secondItem="hxz-oR-c6b" secondAttribute="bottom" constant="8" symbolic="YES" id="eZC-nv-swP"/>
+                            <constraint firstItem="3a4-Mf-SM1" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="idg-hl-Ls5"/>
+                            <constraint firstItem="rR0-t2-Lga" firstAttribute="leading" secondItem="hxz-oR-c6b" secondAttribute="leading" id="p2p-ti-6b1"/>
+                            <constraint firstItem="cJB-M6-ksf" firstAttribute="leading" secondItem="Rf3-jQ-kbh" secondAttribute="leading" id="te4-CF-f69"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultText" destination="3a4-Mf-SM1" id="Uku-fr-1Tx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

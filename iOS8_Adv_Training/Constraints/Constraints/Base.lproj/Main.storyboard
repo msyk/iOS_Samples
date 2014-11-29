@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JUE-qt-LUw"/>
+                        <viewControllerLayoutGuide type="bottom" id="E5u-ci-MMx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7R-0u-Av4">
+                                <rect key="frame" x="16" y="28" width="55" height="30"/>
+                                <state key="normal" title="Button1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4n-lV-EmR">
+                                <rect key="frame" x="16" y="550" width="55" height="30"/>
+                                <state key="normal" title="Button2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R41-ke-3j4">
+                                <rect key="frame" x="529" y="28" width="55" height="30"/>
+                                <state key="normal" title="Button3">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gse-gA-Ddw">
+                                <rect key="frame" x="529" y="550" width="55" height="30"/>
+                                <state key="normal" title="Button4">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Mgw-kE-NDA">
+                                <rect key="frame" x="511" y="480" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="fTM-Dq-5NO"/>
+                                    <constraint firstAttribute="height" constant="30" id="gZz-qO-SaS"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="R41-ke-3j4" firstAttribute="baseline" secondItem="g7R-0u-Av4" secondAttribute="baseline" id="20T-cZ-RlM"/>
+                            <constraint firstItem="Gse-gA-Ddw" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="3k3-8I-A14"/>
+                            <constraint firstItem="Gse-gA-Ddw" firstAttribute="top" secondItem="Mgw-kE-NDA" secondAttribute="bottom" constant="40" id="9YV-1p-2Fl"/>
+                            <constraint firstItem="Q4n-lV-EmR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CRI-zd-Vbu"/>
+                            <constraint firstAttribute="bottom" secondItem="Q4n-lV-EmR" secondAttribute="bottom" constant="20" symbolic="YES" id="E7j-ZB-aKM"/>
+                            <constraint firstItem="Q4n-lV-EmR" firstAttribute="baseline" secondItem="Gse-gA-Ddw" secondAttribute="baseline" id="MOb-YT-NUs"/>
+                            <constraint firstItem="g7R-0u-Av4" firstAttribute="top" secondItem="JUE-qt-LUw" secondAttribute="bottom" constant="8" symbolic="YES" id="NHX-AH-gRH"/>
+                            <constraint firstItem="R41-ke-3j4" firstAttribute="leading" secondItem="Gse-gA-Ddw" secondAttribute="leading" id="YLk-Bb-fmV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mgw-kE-NDA" secondAttribute="trailing" constant="43" id="eEP-C5-5lx"/>
+                            <constraint firstItem="Q4n-lV-EmR" firstAttribute="leading" secondItem="g7R-0u-Av4" secondAttribute="leading" id="s0b-2K-crP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="429"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo1.jpg" width="300" height="300"/>
+    </resources>
+</document>

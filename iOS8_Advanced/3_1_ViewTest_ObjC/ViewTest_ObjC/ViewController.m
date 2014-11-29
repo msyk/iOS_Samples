@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UIContentContainer>
 
 @end
 
@@ -62,6 +62,7 @@
 
 }
 
+// Try to comment out the method below
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
     NSLog(@"%s", __FUNCTION__);

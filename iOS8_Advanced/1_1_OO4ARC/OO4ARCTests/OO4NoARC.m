@@ -95,7 +95,7 @@
     obj2.nextObject = obj3;
     obj3.nextObject = obj1;
     [obj1 release];
-    XCTAssertNil( nil, @"The array should be deallocated.");
+    XCTAssertNil( obj1, @"The array should be deallocated.");
 }
 
 

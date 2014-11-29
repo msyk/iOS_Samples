@@ -21,9 +21,9 @@ class ViewController: UIViewController {
         
         let tc = self.traitCollection
         println(tc.horizontalSizeClass,
-        tc.displayScale,
-        tc.userInterfaceIdiom,
-        tc.verticalSizeClass)
+            tc.displayScale,
+            tc.userInterfaceIdiom,
+            tc.verticalSizeClass)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -43,12 +43,12 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-       println((__FILE__ as String).lastPathComponent, __FUNCTION__)
+        println((__FILE__ as String).lastPathComponent, __FUNCTION__)
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-       println((__FILE__ as String).lastPathComponent, __FUNCTION__)
+        println((__FILE__ as String).lastPathComponent, __FUNCTION__)
     }
     
     override func viewWillLayoutSubviews() {
@@ -56,34 +56,40 @@ class ViewController: UIViewController {
         println((__FILE__ as String).lastPathComponent, __FUNCTION__)
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        println((__FILE__ as String).lastPathComponent, __FUNCTION__)
+    // Try to comment out the method below
+    override func viewWillTransitionToSize(size: CGSize,
+        withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+            println((__FILE__ as String).lastPathComponent, __FUNCTION__)
     }
     
     
-    override func willTransitionToTraitCollection(newCollection: (UITraitCollection!), withTransitionCoordinator coordinator: (UIViewControllerTransitionCoordinator!)){
-        super.willTransitionToTraitCollection(newCollection, withTransitionCoordinator: coordinator)
-        println((__FILE__ as String).lastPathComponent, __FUNCTION__)
- 
+    override func willTransitionToTraitCollection(
+        newCollection: (UITraitCollection!),
+        withTransitionCoordinator coordinator: (UIViewControllerTransitionCoordinator!))
+    {
+            super.willTransitionToTraitCollection(
+                newCollection, withTransitionCoordinator: coordinator)
+            println((__FILE__ as String).lastPathComponent, __FUNCTION__)
+            
     }
     
     override func traitCollectionDidChange(previousTraitCollection: UITraitCollection!) {
         super.traitCollectionDidChange(previousTraitCollection)
         println((__FILE__ as String).lastPathComponent, __FUNCTION__)
-
+        
     }
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
         println((__FILE__ as String).lastPathComponent, __FUNCTION__)
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     override func awakeFromNib() {
         super.updateViewConstraints()
         println((__FILE__ as String).lastPathComponent, __FUNCTION__)
@@ -93,9 +99,9 @@ class ViewController: UIViewController {
     override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration d: NSTimeInterval) {
         super.willRotateToInterfaceOrientation(toInterfaceOrientation, duration: d)
         println((__FILE__ as String).lastPathComponent, __FUNCTION__)
-       
+        
     }
-
+    
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration d: NSTimeInterval) {
         println((__FILE__ as String).lastPathComponent, __FUNCTION__)
     }

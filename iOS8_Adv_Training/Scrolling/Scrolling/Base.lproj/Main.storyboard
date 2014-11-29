@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HU5-8W-z5r"/>
+                        <viewControllerLayoutGuide type="bottom" id="MNv-S3-osu"/>
+                    </layoutGuides>
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" minimumZoomScale="0.10000000000000001" maximumZoomScale="100" id="yKT-71-5bx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="mVH-LU-4fN">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <connections>
+                            <outlet property="delegate" destination="BYZ-38-t0r" id="ydv-Q4-fHT"/>
+                        </connections>
+                    </scrollView>
+                    <connections>
+                        <outlet property="imageView" destination="mVH-LU-4fN" id="L3D-8H-8nO"/>
+                        <outlet property="scrollView" destination="yKT-71-5bx" id="KxB-0b-NON"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo1.jpg" width="300" height="300"/>
+    </resources>
+</document>

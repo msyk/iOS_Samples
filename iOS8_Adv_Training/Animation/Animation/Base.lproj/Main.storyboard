@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Green View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GreenViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6z-of-IGd">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rQU-Yn-1IT"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7e3-cU-JgG">
+                                <rect key="frame" x="16" y="329" width="568" height="251"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M7K-LR-Tsr">
+                                <rect key="frame" x="16" y="28" width="568" height="249"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNm-Cz-Ng8">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" id="ep9-uC-fnp">
+                                        <connections>
+                                            <action selector="showAnotherView:" destination="BYZ-38-t0r" id="q8h-5a-hzu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" id="9U8-lE-lDG">
+                                        <connections>
+                                            <action selector="showAlertView:" destination="BYZ-38-t0r" id="NlR-uF-rPE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" id="2gy-Rr-gwy">
+                                        <connections>
+                                            <action selector="showActionSheet:" destination="BYZ-38-t0r" id="wvI-cY-C76"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" id="M4D-As-V4T">
+                                        <connections>
+                                            <segue destination="kYr-iq-cut" kind="popoverPresentation" popoverAnchorBarButtonItem="M4D-As-V4T" id="7Jg-Pn-iPn">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40407316609999999" green="1" blue="0.60313707289999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="7e3-cU-JgG" firstAttribute="top" secondItem="y6z-of-IGd" secondAttribute="bottom" constant="14" id="2te-6b-zOP"/>
+                            <constraint firstItem="7e3-cU-JgG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="8rB-gQ-xG4"/>
+                            <constraint firstAttribute="bottom" secondItem="7e3-cU-JgG" secondAttribute="bottom" constant="20" symbolic="YES" id="CLV-pc-vWO"/>
+                            <constraint firstItem="M7K-LR-Tsr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SQM-ZB-Q0n"/>
+                            <constraint firstItem="y6z-of-IGd" firstAttribute="centerX" secondItem="M7K-LR-Tsr" secondAttribute="centerX" id="Z5h-iY-YvK"/>
+                            <constraint firstItem="FNm-Cz-Ng8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dR0-Ob-Jr4"/>
+                            <constraint firstItem="FNm-Cz-Ng8" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="dfG-n7-hwG"/>
+                            <constraint firstItem="y6z-of-IGd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jjg-ev-WZf"/>
+                            <constraint firstItem="M7K-LR-Tsr" firstAttribute="leading" secondItem="7e3-cU-JgG" secondAttribute="leading" id="k2f-wI-4PS"/>
+                            <constraint firstItem="M7K-LR-Tsr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="mNT-kB-JQN"/>
+                            <constraint firstItem="FNm-Cz-Ng8" firstAttribute="centerX" secondItem="7e3-cU-JgG" secondAttribute="centerX" id="pBp-De-pjY"/>
+                            <constraint firstItem="y6z-of-IGd" firstAttribute="top" secondItem="M7K-LR-Tsr" secondAttribute="bottom" constant="8" symbolic="YES" id="rx5-hP-i2M"/>
+                            <constraint firstItem="7e3-cU-JgG" firstAttribute="trailing" secondItem="M7K-LR-Tsr" secondAttribute="trailing" id="vZi-96-aKH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="box" destination="M7K-LR-Tsr" id="Khw-M1-S9C"/>
+                        <outlet property="photo" destination="7e3-cU-JgG" id="9dv-F2-j5f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="429"/>
+        </scene>
+        <!--Red View Controller-->
+        <scene sceneID="7EJ-6U-gcW">
+            <objects>
+                <viewController storyboardIdentifier="RedView" modalPresentationStyle="pageSheet" id="kYr-iq-cut" customClass="RedViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BgT-yi-fjm"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fu-31-6fh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q3Y-EW-Fqd">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Uj-Zy-De6">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="kYr-iq-cut" eventType="touchUpInside" id="wu7-JB-u69"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.1238798653" blue="0.20934013630000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="5Uj-Zy-De6" firstAttribute="centerX" secondItem="q3Y-EW-Fqd" secondAttribute="centerX" id="AGl-bN-E3a"/>
+                            <constraint firstItem="5Uj-Zy-De6" firstAttribute="centerY" secondItem="q3Y-EW-Fqd" secondAttribute="centerY" id="oeN-di-zT5"/>
+                        </constraints>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="200" height="200"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JHZ-o7-x6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="983" y="473"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo1.jpg" width="300" height="300"/>
+    </resources>
+</document>

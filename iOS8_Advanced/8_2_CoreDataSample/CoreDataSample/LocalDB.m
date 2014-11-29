@@ -132,6 +132,9 @@
     if (array == nil)    {
         NSLog( @"ERROR: %@", error.description );
     }
+    if (array.count > 0){
+        NSLog(@"isfault? = %d", ((NSManagedObject *)array[0]).isFault);
+    }
     return array;
 }
 
@@ -141,7 +144,8 @@
     NSLog(@"%s", __FUNCTION__);
 #endif
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName: @"Company"];
-
+    request.returnsObjectsAsFaults = NO;
+    
     if ( criteria != nil )  {
         NSPredicate *predicate;
         predicate = [NSPredicate predicateWithFormat: @"company BEGINSWITH %d", criteria];
@@ -157,6 +161,9 @@
     NSArray *array = [self.moContext executeFetchRequest: request error:&error];
     if (array == nil)    {
         NSLog( @"ERROR: %@", error.description );
+    }
+    if (array.count > 0){
+        NSLog(@"isfault? = %d", ((NSManagedObject *)array[0]).isFault);
     }
     return array;
 }

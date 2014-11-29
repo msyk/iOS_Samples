@@ -13,13 +13,35 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    __weak NSString *x = [[NSString alloc]initWithFormat: @"total"];
+    NSLog(@"%@", x);
+    
+    NSString *y =[[NSString alloc]initWithFormat: @"total"];
+    NSLog(@"retaincount=%ld",
+          CFGetRetainCount((__bridge CFTypeRef)(y)));
+    
     TestClass *obj1 = [[TestClass alloc] init];
     TestClass *obj2 = [[TestClass alloc] init];
     TestClass *obj3 = [[TestClass alloc] init];
+    __weak id objw1 = obj1;
+    __weak id objw2 = obj2;
+    __weak id objw3 = obj3;
+    NSLog(@"obj1=%ld, obj2=%ld, obj3=%ld",
+          CFGetRetainCount((__bridge CFTypeRef)(objw1)),
+          CFGetRetainCount((__bridge CFTypeRef)(objw2)),
+          CFGetRetainCount((__bridge CFTypeRef)(objw3)));
     obj1.nextObject = obj2;
     obj2.nextObject = obj3;
     obj3.nextObject = obj1;
+    NSLog(@"obj1=%ld, obj2=%ld, obj3=%ld",
+          CFGetRetainCount((__bridge CFTypeRef)(objw1)),
+          CFGetRetainCount((__bridge CFTypeRef)(objw2)),
+          CFGetRetainCount((__bridge CFTypeRef)(objw3)));
     obj1 = nil;
+    NSLog(@"obj1=%ld, obj2=%ld, obj3=%ld",
+          CFGetRetainCount((__bridge CFTypeRef)(objw1)),
+          CFGetRetainCount((__bridge CFTypeRef)(objw2)),
+          CFGetRetainCount((__bridge CFTypeRef)(objw3)));
 
     return YES;
 }
