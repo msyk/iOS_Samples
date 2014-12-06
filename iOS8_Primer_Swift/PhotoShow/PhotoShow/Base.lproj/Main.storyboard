@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="y3j-sm-hvM">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Shoto Show View Controller-->
+        <scene sceneID="KSx-VK-NQL">
+            <objects>
+                <viewController id="y3j-sm-hvM" customClass="ShotoShowViewController" customModule="PhotoShow" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="njw-lA-BzN"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Wb-3Z-OaM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eNu-pg-zAL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHB-5o-gP6">
+                                <rect key="frame" x="16" y="28" width="49" height="30"/>
+                                <state key="normal" title="photo1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="y3j-sm-hvM" eventType="touchUpInside" id="okj-0Z-4Ba"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVR-UI-xcm">
+                                <rect key="frame" x="276" y="28" width="49" height="30"/>
+                                <state key="normal" title="photo2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="y3j-sm-hvM" eventType="touchUpInside" id="wkO-p1-fw3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHj-4Q-PM8">
+                                <rect key="frame" x="535" y="28" width="49" height="30"/>
+                                <state key="normal" title="photo3">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="y3j-sm-hvM" eventType="touchUpInside" id="diz-QT-XqA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eN-Pq-aRz">
+                                <rect key="frame" x="16" y="550" width="49" height="30"/>
+                                <state key="normal" title="photo4">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="y3j-sm-hvM" eventType="touchUpInside" id="TLB-2D-B5d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6g-Wr-Nim">
+                                <rect key="frame" x="276" y="550" width="49" height="30"/>
+                                <state key="normal" title="photo5">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="y3j-sm-hvM" eventType="touchUpInside" id="W4J-SR-oth"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xri-D8-cuB">
+                                <rect key="frame" x="16" y="66" width="568" height="476"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFb-kg-HVW">
+                                <rect key="frame" x="535" y="550" width="49" height="30"/>
+                                <state key="normal" title="photo6">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="y3j-sm-hvM" eventType="touchUpInside" id="YOE-zn-eJY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NHj-4Q-PM8" firstAttribute="baseline" secondItem="oVR-UI-xcm" secondAttribute="baseline" id="2Fh-Z7-b44"/>
+                            <constraint firstItem="M6g-Wr-Nim" firstAttribute="baseline" secondItem="5eN-Pq-aRz" secondAttribute="baseline" id="54i-eh-bva"/>
+                            <constraint firstItem="oVR-UI-xcm" firstAttribute="centerX" secondItem="xri-D8-cuB" secondAttribute="centerX" id="6f8-Az-9Hh"/>
+                            <constraint firstItem="oVR-UI-xcm" firstAttribute="leading" secondItem="M6g-Wr-Nim" secondAttribute="leading" id="ENl-BD-WmL"/>
+                            <constraint firstItem="MHB-5o-gP6" firstAttribute="leading" secondItem="xri-D8-cuB" secondAttribute="leading" id="HTX-Hb-4BB"/>
+                            <constraint firstItem="NHj-4Q-PM8" firstAttribute="leading" secondItem="RFb-kg-HVW" secondAttribute="leading" id="Jxb-2d-pHn"/>
+                            <constraint firstItem="5eN-Pq-aRz" firstAttribute="top" secondItem="xri-D8-cuB" secondAttribute="bottom" constant="8" symbolic="YES" id="TcO-RO-Z3t"/>
+                            <constraint firstItem="RFb-kg-HVW" firstAttribute="baseline" secondItem="M6g-Wr-Nim" secondAttribute="baseline" id="ZRN-gt-3KI"/>
+                            <constraint firstItem="NHj-4Q-PM8" firstAttribute="trailing" secondItem="eNu-pg-zAL" secondAttribute="trailingMargin" id="Ztu-ey-v1s"/>
+                            <constraint firstItem="xri-D8-cuB" firstAttribute="top" secondItem="MHB-5o-gP6" secondAttribute="bottom" constant="8" symbolic="YES" id="boh-JA-ntV"/>
+                            <constraint firstItem="MHB-5o-gP6" firstAttribute="top" secondItem="njw-lA-BzN" secondAttribute="bottom" constant="8" symbolic="YES" id="dsY-2K-G8j"/>
+                            <constraint firstItem="5eN-Pq-aRz" firstAttribute="leading" secondItem="xri-D8-cuB" secondAttribute="leading" id="gG4-Iq-U3Q"/>
+                            <constraint firstAttribute="bottom" secondItem="5eN-Pq-aRz" secondAttribute="bottom" constant="20" symbolic="YES" id="lQc-NN-rXe"/>
+                            <constraint firstItem="5eN-Pq-aRz" firstAttribute="leading" secondItem="eNu-pg-zAL" secondAttribute="leadingMargin" id="sCf-kd-MeG"/>
+                            <constraint firstItem="MHB-5o-gP6" firstAttribute="baseline" secondItem="oVR-UI-xcm" secondAttribute="baseline" id="vFz-9M-B4M"/>
+                            <constraint firstItem="xri-D8-cuB" firstAttribute="trailing" secondItem="NHj-4Q-PM8" secondAttribute="trailing" id="wnT-sg-Hw8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imaveView" destination="xri-D8-cuB" id="m3N-15-Vaq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s0F-Vv-q49" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="274" y="547"/>
+        </scene>
+    </scenes>
+</document>
