@@ -12,7 +12,8 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = NSMutableArray()
-
+    var dateFormatter: NSDateFormatter?
+    var timeFormatter: NSDateFormatter?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,8 +32,13 @@ class MasterViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
             let controllers = split.viewControllers
-            self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
+            self.detailViewController
+                = controllers[controllers.count-1].topViewController as? DetailViewController
         }
+        dateFormatter = NSDateFormatter();
+        dateFormatter?.dateStyle = .LongStyle
+        timeFormatter = NSDateFormatter();
+        timeFormatter?.timeStyle = .ShortStyle
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,16 +72,23 @@ class MasterViewController: UITableViewController {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+    override func tableView(tableView: UITableView,
+        numberOfRowsInSection section: Int) -> Int {
+            return objects.count
     }
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-
-        let object = objects[indexPath.row] as NSDate
-        cell.textLabel!.text = object.description
-        return cell
+    
+    override func tableView(tableView: UITableView,
+        cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCellWithIdentifier(
+                "Cell", forIndexPath: indexPath) as UITableViewCell
+            
+            let object = objects[indexPath.row] as NSDate
+            cell.textLabel?.text = dateFormatter?.stringFromDate(object)
+            cell.detailTextLabel?.text = timeFormatter?.stringFromDate(object)
+            let photoPath = NSBundle.mainBundle()
+                .pathForResource("photo1", ofType: "jpg")
+            cell.imageView?.image = UIImage(contentsOfFile: photoPath!)
+            return cell
     }
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
