@@ -13,6 +13,7 @@
 		2B989B4A1A78CFD1002D33FC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B989B491A78CFD1002D33FC /* Images.xcassets */; };
 		2B989B4D1A78CFD1002D33FC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B989B4B1A78CFD1002D33FC /* LaunchScreen.xib */; };
 		2B989B591A78CFD1002D33FC /* Table3_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B989B581A78CFD1002D33FC /* Table3_SwiftTests.swift */; };
+		2B989B631A78D0CF002D33FC /* StaticCellTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B989B621A78D0CF002D33FC /* StaticCellTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		2B989B521A78CFD1002D33FC /* Table3_SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Table3_SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B989B571A78CFD1002D33FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B989B581A78CFD1002D33FC /* Table3_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table3_SwiftTests.swift; sourceTree = "<group>"; };
+		2B989B621A78D0CF002D33FC /* StaticCellTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticCellTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				2B989B491A78CFD1002D33FC /* Images.xcassets */,
 				2B989B4B1A78CFD1002D33FC /* LaunchScreen.xib */,
 				2B989B401A78CFD1002D33FC /* Supporting Files */,
+				2B989B621A78D0CF002D33FC /* StaticCellTableViewController.swift */,
 			);
 			path = Table3_Swift;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B989B631A78D0CF002D33FC /* StaticCellTableViewController.swift in Sources */,
 				2B989B451A78CFD1002D33FC /* ViewController.swift in Sources */,
 				2B989B431A78CFD1002D33FC /* AppDelegate.swift in Sources */,
 			);
