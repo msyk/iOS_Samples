@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2B989B6C1A78DD1F002D33FC"
-               BuildableName = "Table4_Swift.app"
-               BlueprintName = "Table4_Swift"
-               ReferencedContainer = "container:Table4_Swift.xcodeproj">
+               BlueprintIdentifier = "2BD379041A7909F800B5592D"
+               BuildableName = "Constraints_Swift.app"
+               BlueprintName = "Constraints_Swift"
+               ReferencedContainer = "container:Constraints_Swift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2B989B831A78DD1F002D33FC"
-               BuildableName = "Table4_SwiftTests.xctest"
-               BlueprintName = "Table4_SwiftTests"
-               ReferencedContainer = "container:Table4_Swift.xcodeproj">
+               BlueprintIdentifier = "2BD379191A7909F800B5592D"
+               BuildableName = "Constraints_SwiftTests.xctest"
+               BlueprintName = "Constraints_SwiftTests"
+               ReferencedContainer = "container:Constraints_Swift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2B989B831A78DD1F002D33FC"
-               BuildableName = "Table4_SwiftTests.xctest"
-               BlueprintName = "Table4_SwiftTests"
-               ReferencedContainer = "container:Table4_Swift.xcodeproj">
+               BlueprintIdentifier = "2BD379191A7909F800B5592D"
+               BuildableName = "Constraints_SwiftTests.xctest"
+               BlueprintName = "Constraints_SwiftTests"
+               ReferencedContainer = "container:Constraints_Swift.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2B989B6C1A78DD1F002D33FC"
-            BuildableName = "Table4_Swift.app"
-            BlueprintName = "Table4_Swift"
-            ReferencedContainer = "container:Table4_Swift.xcodeproj">
+            BlueprintIdentifier = "2BD379041A7909F800B5592D"
+            BuildableName = "Constraints_Swift.app"
+            BlueprintName = "Constraints_Swift"
+            ReferencedContainer = "container:Constraints_Swift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -75,10 +75,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2B989B6C1A78DD1F002D33FC"
-            BuildableName = "Table4_Swift.app"
-            BlueprintName = "Table4_Swift"
-            ReferencedContainer = "container:Table4_Swift.xcodeproj">
+            BlueprintIdentifier = "2BD379041A7909F800B5592D"
+            BuildableName = "Constraints_Swift.app"
+            BlueprintName = "Constraints_Swift"
+            ReferencedContainer = "container:Constraints_Swift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -93,10 +93,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2B989B6C1A78DD1F002D33FC"
-            BuildableName = "Table4_Swift.app"
-            BlueprintName = "Table4_Swift"
-            ReferencedContainer = "container:Table4_Swift.xcodeproj">
+            BlueprintIdentifier = "2BD379041A7909F800B5592D"
+            BuildableName = "Constraints_Swift.app"
+            BlueprintName = "Constraints_Swift"
+            ReferencedContainer = "container:Constraints_Swift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
