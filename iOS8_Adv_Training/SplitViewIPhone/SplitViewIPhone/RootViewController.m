@@ -27,6 +27,7 @@
     [self addChildViewController: svc];
     [svc didMoveToParentViewController: self];
     [self.view addSubview: svc.view];
+    svc.delegate = self;
 }
 
 - (void)viewWillTransitionToSize: (CGSize)size
