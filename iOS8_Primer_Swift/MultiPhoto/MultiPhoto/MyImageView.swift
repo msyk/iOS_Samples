@@ -17,10 +17,15 @@ class MyImageView: UIImageView {
         
         if event.allTouches()?.count == 1 {
             previousFrame = frame;
-            let shrinked = CGRectMake(
-                frame.origin.x + frame.size.width / 2,
-                frame.origin.y + frame.size.height / 2,
-                0.0, 0.0)
+//            let shrinked = CGRectMake(
+//                frame.origin.x + frame.size.width / 2,
+//                frame.origin.y + frame.size.height / 2,
+//                0.0, 0.0)
+            let shrinked = CGRect(
+                x: frame.origin.x + frame.size.width / 2,
+                y: frame.origin.y + frame.size.height / 2,
+                width: 0.0,
+                height: 0.0)
             UIView.animateWithDuration( 1.0,
                 animations: {self.frame = shrinked})
         }

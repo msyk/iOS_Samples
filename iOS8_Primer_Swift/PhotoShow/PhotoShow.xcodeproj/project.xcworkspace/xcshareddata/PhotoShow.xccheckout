@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>E5FBB976-446C-47B0-9278-B5BBF561A711</string>
+	<string>4F0877DE-E6D7-4572-8455-4326444E4A95</string>
 	<key>IDESourceControlProjectName</key>
-	<string>SelfInBlock</string>
+	<string>PhotoShow</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>BD9F5C53530874142DD7017CAE561E277A0C39D2</key>
 		<string>https://github.com/msyk/iOS_Samples.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iOS8_Advanced/1_3_SelfInBlock_Swift/SelfInBlock.xcodeproj</string>
+	<string>iOS8_Primer_Swift/PhotoShow/PhotoShow.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>BD9F5C53530874142DD7017CAE561E277A0C39D2</key>

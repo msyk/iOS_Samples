@@ -113,6 +113,30 @@ class SelfInBlock: NSObject {
         //            return("test6-1=\(n)")
         //        }
         //        println(c6(67))
+        var b2: UIView? = UIView()
+        println(b2?.tag)
         
+        if b2 != nil {
+            println(b2!.tag)
+        }
+        //println(b2!.tag)
+        if let theView = b2 {
+            println(theView.tag)
+        }
+        func test2(a: String) -> String   {
+            println("this is \(a)")
+            return a
+        }
+        
+        var d1: String = "bbb"
+        var d2: String? = "ccc"
+        var d3: String! = "bbb"
+        var d4: String! = nil
+        
+        test2(d1)
+        test2(d2!)
+        test2(d3)
+        test2(d4)
+
     }
 }

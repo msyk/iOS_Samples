@@ -59,11 +59,7 @@
     
     NSLog(@"%s", __FUNCTION__);
     
-    if([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
-        return YES;
-    } else {
-        return NO;
-    }
+    return YES;
 }
 
 //- (void)splitViewController: (UISplitViewController *)svc

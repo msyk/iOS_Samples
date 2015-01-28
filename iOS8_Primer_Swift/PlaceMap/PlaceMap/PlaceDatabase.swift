@@ -61,7 +61,7 @@ class PlaceDatabase: NSObject {
             ["pref":"大分県", "name":"大分市", "latitude":33.2381, "longitude":131.6125],
             ["pref":"宮崎県", "name":"宮崎市", "latitude":31.9111, "longitude":131.4239],
             ["pref":"鹿児島県", "name":"鹿児島市", "latitude":31.5603, "longitude":130.5581],
-            ["pref":"沖縄県", "name":"那覇市", "latitude":226.2125, "longitude":127.6811],
+            ["pref":"沖縄県", "name":"那覇市", "latitude":26.2125, "longitude":127.6811],
         ]
 
         println(places);

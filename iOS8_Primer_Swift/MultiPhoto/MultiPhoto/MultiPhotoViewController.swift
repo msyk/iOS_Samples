@@ -15,7 +15,7 @@ class MultiPhotoViewController: UIViewController, UIScrollViewDelegate {
     private var player: AVAudioPlayer?
     
     func playSound(fired: NSTimer)  {
-        player?.play()
+    //    player?.play()
         
     }
     
@@ -29,26 +29,31 @@ class MultiPhotoViewController: UIViewController, UIScrollViewDelegate {
             error: nil)
         player?.prepareToPlay()
         player?.numberOfLoops = 100;
-//        player?.play()
-        NSTimer.scheduledTimerWithTimeInterval(5.0, target: self,
-            selector: Selector("playSound:"), userInfo: nil, repeats: false)
+        //        player?.play()
+        NSTimer.scheduledTimerWithTimeInterval(5.0,
+            target: self,
+            selector: Selector("playSound:"),
+            userInfo: nil,
+            repeats: false)
         
         let panelWidth = 1000.0 as Float
         let panelHeight = 1000.0 as Float
         let photoFiles = ["photo1", "photo2", "photo3",
             "photo4", "photo5", "photo6"]
-        let count_x = Int(sqrt(Float(countElements(photoFiles))))
-        let count_y = countElements(photoFiles) /  count_x
-        let backRect = CGRectMake(0.0,0.0,
-            CGFloat(panelWidth), CGFloat(panelHeight))
+        let count_x = Int(sqrt(Float(photoFiles.count)))
+        let count_y = photoFiles.count /  count_x
+        let backRect = CGRect(x: 0.0, y: 0.0,
+            width: CGFloat(panelWidth),
+            height: CGFloat(panelHeight))
         
-       // let x = CGRectMake(1,1,1,1)
+        // let x = CGRectMake(1,1,1,1)
         
         insideView = UIView(frame: backRect)
         let scrollView = view as UIScrollView
         scrollView.addSubview(insideView!)
-        scrollView.contentSize = CGSizeMake(
-            CGFloat(panelWidth), CGFloat(panelHeight))
+        scrollView.contentSize = CGSize(
+            width: CGFloat(panelWidth),
+            height: CGFloat(panelHeight))
         scrollView.contentOffset = CGPointZero
         var x = 0, y = 0
         let width = panelWidth / Float(count_x)
@@ -56,11 +61,11 @@ class MultiPhotoViewController: UIViewController, UIScrollViewDelegate {
         for oneItem in photoFiles   {
             let path = NSBundle.mainBundle()
                 .pathForResource(oneItem, ofType: "jpg")
-            let imageFrame = CGRectMake(
-                CGFloat(Float(x) * width),
-                CGFloat(Float(y) * height),
-                CGFloat(width),
-                CGFloat(height))
+            let imageFrame = CGRect(
+                x: CGFloat(Float(x) * width),
+                y: CGFloat(Float(y) * height),
+                width: CGFloat(width),
+                height: CGFloat(height))
             let oneImage = MyImageView(frame: imageFrame)
             oneImage.userInteractionEnabled = true;
             oneImage.image = UIImage(contentsOfFile: path!)

@@ -52,7 +52,7 @@ class PlaceListViewController: UITableViewController,
 //        cell.textLabel.text = places[indexPath.row]["name"] as String?
         let prefName = places[indexPath.row]["pref"] as String
         let capName = places[indexPath.row]["name"] as String
-        cell.textLabel.text = "\(prefName) [\(capName)]"
+        cell.textLabel?.text = "\(prefName) [\(capName)]"
 
         return cell
     }
