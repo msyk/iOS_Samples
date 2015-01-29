@@ -9,17 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet private var input: UITextField?
+    @IBOutlet private var message: UITextView?
+    
+@IBAction func tapButton(sender: UIButton) {
+    if let inputText = input?.text {
+        message?.text = NSString(format:
+            NSLocalizedString("message1", comment: ""), inputText)
+    }
+}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 

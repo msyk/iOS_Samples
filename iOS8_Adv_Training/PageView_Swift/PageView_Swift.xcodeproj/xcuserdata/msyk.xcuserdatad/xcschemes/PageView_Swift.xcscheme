@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2BD379661A7931E600B5592D"
-               BuildableName = "Localizing_Swift.app"
-               BlueprintName = "Localizing_Swift"
-               ReferencedContainer = "container:Localizing_Swift.xcodeproj">
+               BlueprintIdentifier = "2B4EDBFD1A7A513E00C4623D"
+               BuildableName = "PageView_Swift.app"
+               BlueprintName = "PageView_Swift"
+               ReferencedContainer = "container:PageView_Swift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2BD3797B1A7931E600B5592D"
-               BuildableName = "Localizing_SwiftTests.xctest"
-               BlueprintName = "Localizing_SwiftTests"
-               ReferencedContainer = "container:Localizing_Swift.xcodeproj">
+               BlueprintIdentifier = "2B4EDC161A7A513F00C4623D"
+               BuildableName = "PageView_SwiftTests.xctest"
+               BlueprintName = "PageView_SwiftTests"
+               ReferencedContainer = "container:PageView_Swift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2BD3797B1A7931E600B5592D"
-               BuildableName = "Localizing_SwiftTests.xctest"
-               BlueprintName = "Localizing_SwiftTests"
-               ReferencedContainer = "container:Localizing_Swift.xcodeproj">
+               BlueprintIdentifier = "2B4EDC161A7A513F00C4623D"
+               BuildableName = "PageView_SwiftTests.xctest"
+               BlueprintName = "PageView_SwiftTests"
+               ReferencedContainer = "container:PageView_Swift.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2BD379661A7931E600B5592D"
-            BuildableName = "Localizing_Swift.app"
-            BlueprintName = "Localizing_Swift"
-            ReferencedContainer = "container:Localizing_Swift.xcodeproj">
+            BlueprintIdentifier = "2B4EDBFD1A7A513E00C4623D"
+            BuildableName = "PageView_Swift.app"
+            BlueprintName = "PageView_Swift"
+            ReferencedContainer = "container:PageView_Swift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -75,10 +75,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2BD379661A7931E600B5592D"
-            BuildableName = "Localizing_Swift.app"
-            BlueprintName = "Localizing_Swift"
-            ReferencedContainer = "container:Localizing_Swift.xcodeproj">
+            BlueprintIdentifier = "2B4EDBFD1A7A513E00C4623D"
+            BuildableName = "PageView_Swift.app"
+            BlueprintName = "PageView_Swift"
+            ReferencedContainer = "container:PageView_Swift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -93,10 +93,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2BD379661A7931E600B5592D"
-            BuildableName = "Localizing_Swift.app"
-            BlueprintName = "Localizing_Swift"
-            ReferencedContainer = "container:Localizing_Swift.xcodeproj">
+            BlueprintIdentifier = "2B4EDBFD1A7A513E00C4623D"
+            BuildableName = "PageView_Swift.app"
+            BlueprintName = "PageView_Swift"
+            ReferencedContainer = "container:PageView_Swift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
