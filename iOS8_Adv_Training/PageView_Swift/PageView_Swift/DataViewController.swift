@@ -12,7 +12,7 @@ class DataViewController: UIViewController {
 
     @IBOutlet weak var dataLabel: UILabel!
     var dataObject: AnyObject?
-
+    @IBOutlet weak var photoView: UIImageView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +24,17 @@ class DataViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        if let obj: AnyObject = dataObject {
-            self.dataLabel!.text = obj.description
-        } else {
-            self.dataLabel!.text = ""
-        }
+override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    if let obj: AnyObject = dataObject {
+        self.dataLabel!.text = obj.description
+        let imagePath = NSBundle.mainBundle()
+            .pathForResource(obj.description, ofType: "jpg")
+        photoView?.image = UIImage(contentsOfFile: imagePath!)
+        photoView?.contentMode = .ScaleAspectFit
+    } else {
+        self.dataLabel!.text = ""
     }
-
-
+}
 }
 
