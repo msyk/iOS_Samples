@@ -16,17 +16,17 @@ class MasterViewController: UITableViewController {
     let dataURL = "http://msyk.net/ios/prefs.json"
     var downloader: Downloader?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-            self.clearsSelectionOnViewWillAppear = false
-            self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
-        }
-        downloader = Downloader(url: NSURL(string: dataURL),
-            afterTask: {
-                self.tableView.reloadData()
-        })
+override func awakeFromNib() {
+    super.awakeFromNib()
+    if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+        self.clearsSelectionOnViewWillAppear = false
+        self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
     }
+    downloader = Downloader(url: NSURL(string: dataURL),
+        afterTask: {
+            self.tableView.reloadData()
+    })
+}
     
     override func viewDidLoad() {
         super.viewDidLoad()

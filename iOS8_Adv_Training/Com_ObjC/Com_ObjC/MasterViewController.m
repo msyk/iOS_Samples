@@ -8,10 +8,15 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "Downloader.h"
+
+#define DATA_URL @"http://msyk.net/ios/prefs.json"
 
 @interface MasterViewController ()
 
 @property NSMutableArray *objects;
+@property(nonatomic, strong) Downloader *downloader;
+
 @end
 
 @implementation MasterViewController
@@ -22,6 +27,13 @@
         self.clearsSelectionOnViewWillAppear = NO;
         self.preferredContentSize = CGSizeMake(320.0, 600.0);
     }
+//self.downloader = [[Downloader alloc]
+//                   initWithURL: [NSURL URLWithString: DATA_URL]];
+    self.downloader = [[Downloader alloc]
+                       initWithURL: [NSURL URLWithString: DATA_URL]
+                       afterTask: ^(){
+                           [self.tableView reloadData];
+                       }];
 }
 
 - (void)viewDidLoad {
@@ -63,19 +75,24 @@
 
 #pragma mark - Table View
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView: (UITableView *)tableView {
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.objects.count;
+- (NSInteger)tableView: (UITableView *)tableView
+ numberOfRowsInSection: (NSInteger)section {
+    return self.downloader.parsedData.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    NSDate *object = self.objects[indexPath.row];
-    cell.textLabel.text = [object description];
+- (UITableViewCell *)tableView: (UITableView *)tableView
+         cellForRowAtIndexPath: (NSIndexPath *)indexPath {
+    UITableViewCell *cell
+    = [tableView dequeueReusableCellWithIdentifier: @"Cell"
+                                      forIndexPath: indexPath];
+    
+    NSDictionary *obj = self.downloader.parsedData[indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat: @"%@[%@]",
+                           obj[@"pref"], obj[@"name"]];
     return cell;
 }
 

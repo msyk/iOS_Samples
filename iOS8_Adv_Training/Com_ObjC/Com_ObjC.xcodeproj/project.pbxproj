@@ -15,6 +15,7 @@
 		2B6E9FED1A7BD3A300449D4A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B6E9FEC1A7BD3A300449D4A /* Images.xcassets */; };
 		2B6E9FF01A7BD3A300449D4A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B6E9FEE1A7BD3A300449D4A /* LaunchScreen.xib */; };
 		2B6E9FFC1A7BD3A300449D4A /* Com_ObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6E9FFB1A7BD3A300449D4A /* Com_ObjCTests.m */; };
+		2B6EA0071A7BD3D000449D4A /* Downloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6EA0061A7BD3D000449D4A /* Downloader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		2B6E9FF51A7BD3A300449D4A /* Com_ObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Com_ObjCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B6E9FFA1A7BD3A300449D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B6E9FFB1A7BD3A300449D4A /* Com_ObjCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Com_ObjCTests.m; sourceTree = "<group>"; };
+		2B6EA0051A7BD3D000449D4A /* Downloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Downloader.h; sourceTree = "<group>"; };
+		2B6EA0061A7BD3D000449D4A /* Downloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Downloader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				2B6E9FEC1A7BD3A300449D4A /* Images.xcassets */,
 				2B6E9FEE1A7BD3A300449D4A /* LaunchScreen.xib */,
 				2B6E9FDC1A7BD3A300449D4A /* Supporting Files */,
+				2B6EA0051A7BD3D000449D4A /* Downloader.h */,
+				2B6EA0061A7BD3D000449D4A /* Downloader.m */,
 			);
 			path = Com_ObjC;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 			files = (
 				2B6E9FE21A7BD3A300449D4A /* AppDelegate.m in Sources */,
 				2B6E9FE51A7BD3A300449D4A /* MasterViewController.m in Sources */,
+				2B6EA0071A7BD3D000449D4A /* Downloader.m in Sources */,
 				2B6E9FDF1A7BD3A300449D4A /* main.m in Sources */,
 				2B6E9FE81A7BD3A300449D4A /* DetailViewController.m in Sources */,
 			);
