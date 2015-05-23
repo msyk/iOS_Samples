@@ -58,7 +58,7 @@ class MasterViewController: UITableViewController {
     }
     
     func insertNewObject(sender: AnyObject) {
-        objects.insertObject(NSDate.date(), atIndex: 0)
+        objects.insertObject(NSDate(), atIndex: 0)
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
@@ -67,12 +67,13 @@ class MasterViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
-            let tappedCell = sender as UITableViewCell
-            let indexPath = self.tableView.indexPathForCell(tappedCell) as NSIndexPath
-            let object = objects[indexPath.row] as NSDate
-            let destNC = segue.destinationViewController as UINavigationController
-            let destVC = destNC.topViewController as DetailViewController
-            destVC.navigationItem.title = object.description
+            let tappedCell = sender as! UITableViewCell
+            if let indexPath = self.tableView.indexPathForCell(tappedCell) {
+                let object = objects[indexPath.row] as! NSDate
+                let destNC = segue.destinationViewController as! UINavigationController
+                let destVC = destNC.topViewController as! DetailViewController
+                destVC.navigationItem.title = object.description
+            }
         }
     }
     
@@ -87,10 +88,10 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         
-        let object = objects[indexPath.row] as NSDate
-        cell.textLabel.text = object.description
+        let object = objects[indexPath.row] as! NSDate
+        cell.textLabel!.text = object.description
         return cell
     }
     
@@ -110,7 +111,7 @@ class MasterViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-            let object = objects[indexPath.row] as NSDate
+            let object = objects[indexPath.row] as! NSDate
             self.detailViewController!.detailItem = object
         }
     }

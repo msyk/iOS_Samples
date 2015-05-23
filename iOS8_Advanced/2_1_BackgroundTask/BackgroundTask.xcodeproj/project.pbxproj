@@ -12,6 +12,7 @@
 		2B2D076619BEBF6500F11F50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2D076419BEBF6500F11F50 /* Main.storyboard */; };
 		2B2D076819BEBF6500F11F50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B2D076719BEBF6500F11F50 /* Images.xcassets */; };
 		2B2D077419BEBF6500F11F50 /* BackgroundTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2D077319BEBF6500F11F50 /* BackgroundTaskTests.swift */; };
+		2B86D8BC1B10D80000F7DCA1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B86D8BB1B10D80000F7DCA1 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		2B2D076D19BEBF6500F11F50 /* BackgroundTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackgroundTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2D077219BEBF6500F11F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B2D077319BEBF6500F11F50 /* BackgroundTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTaskTests.swift; sourceTree = "<group>"; };
+		2B86D8BB1B10D80000F7DCA1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		2B2D075219BEBF6400F11F50 = {
 			isa = PBXGroup;
 			children = (
+				2B86D8BB1B10D80000F7DCA1 /* Default-568h@2x.png */,
 				2B2D075D19BEBF6400F11F50 /* BackgroundTask */,
 				2B2D077019BEBF6500F11F50 /* BackgroundTaskTests */,
 				2B2D075C19BEBF6400F11F50 /* Products */,
@@ -192,6 +195,7 @@
 			files = (
 				2B2D076619BEBF6500F11F50 /* Main.storyboard in Resources */,
 				2B2D076819BEBF6500F11F50 /* Images.xcassets in Resources */,
+				2B86D8BC1B10D80000F7DCA1 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +400,7 @@
 				2B2D077919BEBF6500F11F50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B2D077A19BEBF6500F11F50 /* Build configuration list for PBXNativeTarget "BackgroundTaskTests" */ = {
 			isa = XCConfigurationList;
@@ -404,6 +409,7 @@
 				2B2D077C19BEBF6500F11F50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

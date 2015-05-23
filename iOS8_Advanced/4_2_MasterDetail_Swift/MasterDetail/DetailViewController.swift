@@ -51,7 +51,7 @@ class DetailViewController: UIViewController {
     required init(coder aDecoder: NSCoder) {
         debugLogging()
         
-        return super.init(coder: aDecoder);
+        super.init(coder: aDecoder);
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -105,7 +105,7 @@ class DetailViewController: UIViewController {
             super.willTransitionToTraitCollection(newCollection, withTransitionCoordinator: coordinator)
     }
     
-    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection) {
+    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
         debugLogging()
         
         super.traitCollectionDidChange(previousTraitCollection)

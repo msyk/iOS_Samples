@@ -20,25 +20,25 @@ class RootViewController: UIViewController, UISplitViewControllerDelegate {
         
         let storyboard = self.storyboard
         let svc = storyboard?.instantiateViewControllerWithIdentifier("svc")
-            as UISplitViewController
+            as! UISplitViewController
         self.containingVC = svc
         
         self.addChildViewController(svc);
         svc.didMoveToParentViewController(self)
         self.view.addSubview(svc.view);
         
-        let masterNC = svc.viewControllers[0] as UINavigationController
-        let detailNC = svc.viewControllers[1] as UINavigationController
+        let masterNC = svc.viewControllers[0] as! UINavigationController
+        let detailNC = svc.viewControllers[1] as! UINavigationController
         svc.delegate = self
         
 //        detailNC.topViewController.navigationItem.leftBarButtonItem = svc.displayModeButtonItem()
         
-        let controller = masterNC.topViewController as MasterViewController
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let controller = masterNC.topViewController as! MasterViewController
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         controller.managedObjectContext = appDelegate.managedObjectContext
         
-        let hClass = self.traitCollection.horizontalSizeClass.toRaw()
-        let vClass = self.traitCollection.verticalSizeClass.toRaw()
+        let hClass = self.traitCollection.horizontalSizeClass.rawValue
+        let vClass = self.traitCollection.verticalSizeClass.rawValue
         println("Size Class: h:\(hClass) v:\(vClass) ex:1=Compact,2=Regular")
     }
     

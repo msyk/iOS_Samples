@@ -15,11 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication,
         openURL url: NSURL,
-        sourceApplication: String,
+        sourceApplication: String?,
         annotation: AnyObject?) -> Bool {
             
             if let rootVC = window?.rootViewController {
-                rootVC.openURL(url)
+                (rootVC as! RootViewController).openURL(url)
                 return true
             }
             return false

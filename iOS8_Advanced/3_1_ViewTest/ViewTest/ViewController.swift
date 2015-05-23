@@ -95,13 +95,13 @@ class ViewController: UIViewController {
         println((__FILE__ as String).lastPathComponent, __FUNCTION__)
         
     }
-    
+
     override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration d: NSTimeInterval) {
         super.willRotateToInterfaceOrientation(toInterfaceOrientation, duration: d)
         println((__FILE__ as String).lastPathComponent, __FUNCTION__)
         
     }
-    
+
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration d: NSTimeInterval) {
         println((__FILE__ as String).lastPathComponent, __FUNCTION__)
     }

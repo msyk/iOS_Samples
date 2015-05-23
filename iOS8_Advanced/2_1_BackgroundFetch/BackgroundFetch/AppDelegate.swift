@@ -51,10 +51,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //            notifying.alertAction = "OK"
             //            application.scheduleLocalNotification(notifying)
             //            application.presentLocalNotificationNow(notifying)
-            let url = NSURL.URLWithString("http://msyk.net")
+            let url = NSURL(string:"http://msyk.net")
             let config = NSURLSessionConfiguration.ephemeralSessionConfiguration()
             let session = NSURLSession(configuration: config)
-            let task = session.dataTaskWithURL(url,
+            let task = session.dataTaskWithURL(url!,
                 completionHandler: {
                     (data: NSData!, response: NSURLResponse!, error: NSError!) -> Void
                     in
@@ -77,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication,
         openURL url: NSURL,
-        sourceApplication: String,
+        sourceApplication: String?,
         annotation: AnyObject?) -> Bool  {
             println("openURL \(url)")
             println("sourceApplication \(sourceApplication)")

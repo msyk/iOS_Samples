@@ -15,6 +15,7 @@
 		2B2B8D7219D11E38006E5D64 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B2B8D7119D11E38006E5D64 /* Images.xcassets */; };
 		2B2B8D7519D11E38006E5D64 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B2B8D7319D11E38006E5D64 /* LaunchScreen.xib */; };
 		2B2B8D8119D11E38006E5D64 /* PDFViewer_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2B8D8019D11E38006E5D64 /* PDFViewer_SwiftTests.swift */; };
+		2B86D8BE1B10E01C00F7DCA1 /* PDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B86D8BD1B10E01C00F7DCA1 /* PDFView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		2B2B8D7A19D11E38006E5D64 /* PDFViewer_SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDFViewer_SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2B8D7F19D11E38006E5D64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B2B8D8019D11E38006E5D64 /* PDFViewer_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewer_SwiftTests.swift; sourceTree = "<group>"; };
+		2B86D8BD1B10E01C00F7DCA1 /* PDFView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				2B2B8D7119D11E38006E5D64 /* Images.xcassets */,
 				2B2B8D7319D11E38006E5D64 /* LaunchScreen.xib */,
 				2B2B8D6419D11E38006E5D64 /* Supporting Files */,
+				2B86D8BD1B10E01C00F7DCA1 /* PDFView.swift */,
 			);
 			path = PDFViewer_Swift;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				2B2B8D6919D11E38006E5D64 /* RootViewController.swift in Sources */,
 				2B2B8D6D19D11E38006E5D64 /* ModelController.swift in Sources */,
 				2B2B8D6B19D11E38006E5D64 /* DataViewController.swift in Sources */,
+				2B86D8BE1B10E01C00F7DCA1 /* PDFView.swift in Sources */,
 				2B2B8D6719D11E38006E5D64 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +419,7 @@
 				2B2B8D8619D11E38006E5D64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B2B8D8719D11E38006E5D64 /* Build configuration list for PBXNativeTarget "PDFViewer_SwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +428,7 @@
 				2B2B8D8919D11E38006E5D64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
