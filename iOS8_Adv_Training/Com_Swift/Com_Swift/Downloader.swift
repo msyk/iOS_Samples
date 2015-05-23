@@ -28,8 +28,8 @@ class Downloader: NSObject {
                     var jsonError: NSError?
                     if let parsed = NSJSONSerialization.JSONObjectWithData(data,
                         options: NSJSONReadingOptions.AllowFragments,
-                        error: &jsonError) as NSArray? {
-                            self.parsedData = parsed as Array
+                        error: &jsonError) as! NSArray? {
+                            self.parsedData = parsed as! Array
                             println("downloaded = \(self.parsedData)")
                     }
                     NSOperationQueue.mainQueue().addOperationWithBlock(doItAfter)

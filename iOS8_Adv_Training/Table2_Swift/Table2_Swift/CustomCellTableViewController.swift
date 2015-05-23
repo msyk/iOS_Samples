@@ -42,7 +42,7 @@ class CustomCellTableViewController: UITableViewController {
     override func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCellWithIdentifier(
-                "MYCUSTOMCELL", forIndexPath: indexPath) as MyCustomCell
+                "MYCUSTOMCELL", forIndexPath: indexPath) as! MyCustomCell
             cell.column1?.text = "Section\(indexPath.section)"
             cell.column2?.text = "Line\(indexPath.row)"
             cell.column3?.text = "Info\(indexPath.row)"

@@ -37,10 +37,10 @@ class MapDisplayViewController: UIViewController {
         super.viewDidAppear(animated)
         println("Selected = \(selectedIndex)")
         
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let places = appDelegate.placeDB.places
-        let prefName = places[selectedIndex]["pref"] as String
-        let capName = places[selectedIndex]["name"] as String
+        let prefName = places[selectedIndex]["pref"] as! String
+        let capName = places[selectedIndex]["name"] as! String
 
         println("Capital City = \(capName)")
         
@@ -52,8 +52,8 @@ class MapDisplayViewController: UIViewController {
 //        )
 //        mapView.centerCoordinate = coordinate
         let coordinate = CLLocationCoordinate2D(
-            latitude: places[selectedIndex]["latitude"] as CLLocationDegrees,
-            longitude: places[selectedIndex]["longitude"] as CLLocationDegrees
+            latitude: places[selectedIndex]["latitude"] as! CLLocationDegrees,
+            longitude: places[selectedIndex]["longitude"] as! CLLocationDegrees
         )
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let region = MKCoordinateRegion(center: coordinate, span: span)

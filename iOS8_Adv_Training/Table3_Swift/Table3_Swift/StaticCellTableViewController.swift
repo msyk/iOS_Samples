@@ -22,7 +22,7 @@ class StaticCellTableViewController: UITableViewController {
     }
     @IBAction func tapButton2(sender: AnyObject) -> Void {
         if let sliderValue = slider?.value {
-            label2?.text = NSString(format: "Value=%4.1f", sliderValue)
+            label2?.text = NSString(format: "Value=%4.1f", sliderValue) as String
         }
     }
     @IBAction func changeSlider(sender: AnyObject) -> Void {

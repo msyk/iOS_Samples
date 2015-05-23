@@ -35,7 +35,7 @@ class PlaceListViewController: UITableViewController,
     override func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int)
         -> Int {
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let places = appDelegate.placeDB.places
         return places.count
     }
@@ -44,14 +44,14 @@ class PlaceListViewController: UITableViewController,
     override func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath)
         -> UITableViewCell {
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let places = appDelegate.placeDB.places
 
-        let cell = tableView.dequeueReusableCellWithIdentifier("PLACECELL",
-            forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(
+            "PLACECELL", forIndexPath: indexPath) as! UITableViewCell
 //        cell.textLabel.text = places[indexPath.row]["name"] as String?
-        let prefName = places[indexPath.row]["pref"] as String
-        let capName = places[indexPath.row]["name"] as String
+        let prefName = places[indexPath.row]["pref"] as! String
+        let capName = places[indexPath.row]["name"] as! String
         cell.textLabel?.text = "\(prefName) [\(capName)]"
 
         return cell
@@ -99,9 +99,9 @@ class PlaceListViewController: UITableViewController,
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue,
         sender: AnyObject?) {
-            //        let destVC = segue.destinationViewController as MapDisplayViewController
-            let destNC = segue.destinationViewController as UINavigationController
-            let destVC = destNC.topViewController as MapDisplayViewController
+              //   let destVC = segue.destinationViewController as! MapDisplayViewController
+            let destNC = segue.destinationViewController as! UINavigationController
+            let destVC = destNC.topViewController as! MapDisplayViewController
             destVC.selectedIndex = tableView.indexPathForSelectedRow()!.row
     }
   

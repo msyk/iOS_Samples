@@ -40,95 +40,97 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-override func viewDidAppear(animated: Bool) {
-    super.viewDidAppear(animated)
-    showInfo()
-    
-    if let photoView = imageView? {
-        let viewWidth = view.bounds.size.width
-        let viewHeight = view.bounds.size.height
-        let imageWidth = photoView.frame.size.width
-        let imageHeight = photoView.frame.size.height
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        showInfo()
         
-        let ratioX = imageWidth/viewWidth
-        let ratioY = imageHeight/viewHeight
-        println(NSString(
-            format: "ratioX = %5.1f, ratioY = %5.1f",
-            Float(ratioX), Float(ratioY)))
-        let isBlankUpDown = (ratioX > ratioY)
-        //ブランクが上下ならtrue、左右ならfalse
-        println("isBlankUpDown = \(isBlankUpDown)")
-        
-        var justfyRatio = 1.0   //型はDouble
-        //CGFloatとFloat/Doubleは互換性がなく変換が必要
-        if isBlankUpDown {
-            justfyRatio = 1.0 / Double(ratioX)
-        } else {
-            justfyRatio = 1.0 / Double(ratioY)
-        }
-        println("justfyRatio = \(justfyRatio)")
-        
-        scrollView?.contentOffset = CGPointZero
-        scrollView?.contentSize
-            = CGSize(width: viewWidth, height: viewHeight)
-        scrollView?.minimumZoomScale = CGFloat(justfyRatio)
-        scrollView?.maximumZoomScale = CGFloat(justfyRatio * 100.0)
-        scrollView?.zoomScale = CGFloat(justfyRatio)
-        
-        var upDownBlank = 0.0, leftRightBlank = 0.0
-        if isBlankUpDown {
-            upDownBlank = (Double(viewHeight)
-                - Double(imageHeight) * justfyRatio) / 2.0
-        } else {
-            leftRightBlank = (Double(viewWidth)
-                - Double(imageWidth) * justfyRatio) / 2.0
-        }
-        scrollView?.contentInset = UIEdgeInsets(
-            top: CGFloat(upDownBlank), left: CGFloat(leftRightBlank),
-            bottom: CGFloat(upDownBlank), right: CGFloat(leftRightBlank))
-    }
-}
-    
-override func didRotateFromInterfaceOrientation(
-    fromInterfaceOrientation: UIInterfaceOrientation) {
-        adjustViews()
-}
-    
-func scrollViewDidEndZooming(scrollView: UIScrollView,
-    withView view: UIView!,
-    atScale scale: CGFloat) {
-        adjustViews()
-}
-
-func adjustViews() {
-    if let photoView = imageView? {
-        let viewWidth = view.bounds.size.width
-        let viewHeight = view.bounds.size.height
-        let imageWidth = photoView.frame.size.width
-        let imageHeight = photoView.frame.size.height
-        let ratioX = imageWidth/viewWidth
-        let ratioY = imageHeight/viewHeight
-        let isBlankUpDown = (ratioX > ratioY)
-        
-        var upDownBlank = 0.0, leftRightBlank = 0.0
-        if isBlankUpDown {
-            upDownBlank = (Double(viewHeight)
-                - Double(imageHeight)) / 2.0
-            if (upDownBlank < 0.0)  {
-                upDownBlank = 0.0
+        if let photoView = imageView {
+            let viewWidth = view.bounds.size.width
+            let viewHeight = view.bounds.size.height
+            let imageWidth = photoView.frame.size.width
+            let imageHeight = photoView.frame.size.height
+            
+            let ratioX = imageWidth/viewWidth
+            let ratioY = imageHeight/viewHeight
+            println(NSString(
+                format: "ratioX = %5.1f, ratioY = %5.1f",
+                Float(ratioX), Float(ratioY)))
+            let isBlankUpDown = (ratioX > ratioY)
+            //ブランクが上下ならtrue、左右ならfalse
+            println("isBlankUpDown = \(isBlankUpDown)")
+            
+            var justfyRatio = 1.0   //型はDouble
+            //CGFloatとFloat/Doubleは互換性がなく変換が必要
+            if isBlankUpDown {
+                justfyRatio = 1.0 / Double(ratioX)
+            } else {
+                justfyRatio = 1.0 / Double(ratioY)
             }
-        } else {
-            leftRightBlank = (Double(viewWidth)
-                - Double(imageWidth)) / 2.0
-            if (leftRightBlank < 0.0)  {
-                leftRightBlank = 0.0
+            println("justfyRatio = \(justfyRatio)")
+            
+            scrollView?.contentOffset = CGPointZero
+            scrollView?.contentSize
+                = CGSize(width: viewWidth, height: viewHeight)
+            scrollView?.minimumZoomScale = CGFloat(justfyRatio)
+            scrollView?.maximumZoomScale = CGFloat(justfyRatio * 100.0)
+            scrollView?.zoomScale = CGFloat(justfyRatio)
+            
+            var upDownBlank = 0.0, leftRightBlank = 0.0
+            if isBlankUpDown {
+                upDownBlank = (Double(viewHeight)
+                    - Double(imageHeight) * justfyRatio) / 2.0
+            } else {
+                leftRightBlank = (Double(viewWidth)
+                    - Double(imageWidth) * justfyRatio) / 2.0
             }
+            scrollView?.contentInset = UIEdgeInsets(
+                top: CGFloat(upDownBlank),
+                left: CGFloat(leftRightBlank),
+                bottom: CGFloat(upDownBlank),
+                right: CGFloat(leftRightBlank))
         }
-        scrollView?.contentInset = UIEdgeInsets(
-            top: CGFloat(upDownBlank), left: CGFloat(leftRightBlank),
-            bottom: CGFloat(upDownBlank), right: CGFloat(leftRightBlank))
     }
-}
+    
+    override func didRotateFromInterfaceOrientation(
+        fromInterfaceOrientation: UIInterfaceOrientation) {
+            adjustViews()
+    }
+    
+    func scrollViewDidEndZooming(scrollView: UIScrollView,
+        withView view: UIView!,
+        atScale scale: CGFloat) {
+            adjustViews()
+    }
+    
+    func adjustViews() {
+        if let photoView = imageView {
+            let viewWidth = view.bounds.size.width
+            let viewHeight = view.bounds.size.height
+            let imageWidth = photoView.frame.size.width
+            let imageHeight = photoView.frame.size.height
+            let ratioX = imageWidth/viewWidth
+            let ratioY = imageHeight/viewHeight
+            let isBlankUpDown = (ratioX > ratioY)
+            
+            var upDownBlank = 0.0, leftRightBlank = 0.0
+            if isBlankUpDown {
+                upDownBlank = (Double(viewHeight)
+                    - Double(imageHeight)) / 2.0
+                if (upDownBlank < 0.0)  {
+                    upDownBlank = 0.0
+                }
+            } else {
+                leftRightBlank = (Double(viewWidth)
+                    - Double(imageWidth)) / 2.0
+                if (leftRightBlank < 0.0)  {
+                    leftRightBlank = 0.0
+                }
+            }
+            scrollView?.contentInset = UIEdgeInsets(
+                top: CGFloat(upDownBlank), left: CGFloat(leftRightBlank),
+                bottom: CGFloat(upDownBlank), right: CGFloat(leftRightBlank))
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         -> Bool {
         // Override point for customization after application launch.
         
-        let splitVC = window?.rootViewController as UISplitViewController
+        let splitVC = window?.rootViewController as! UISplitViewController
         splitVC.delegate = self
         
         return true

@@ -38,7 +38,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         }
         
         // Create a new view controller and pass suitable data.
-        let dataViewController = storyboard.instantiateViewControllerWithIdentifier("DataViewController") as DataViewController
+        let dataViewController = storyboard.instantiateViewControllerWithIdentifier("DataViewController") as! DataViewController
         dataViewController.dataObject = self.pageData[index]
         return dataViewController
     }
@@ -56,7 +56,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     // MARK: - Page View Controller Data Source
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        var index = self.indexOfViewController(viewController as DataViewController)
+        var index = self.indexOfViewController(viewController as! DataViewController)
         if (index == 0) || (index == NSNotFound) {
             return nil
         }
@@ -66,7 +66,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        var index = self.indexOfViewController(viewController as DataViewController)
+        var index = self.indexOfViewController(viewController as! DataViewController)
         if index == NSNotFound {
             return nil
         }

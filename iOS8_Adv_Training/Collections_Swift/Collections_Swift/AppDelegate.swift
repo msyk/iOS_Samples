@@ -94,10 +94,8 @@ for person in addressBook {
         println("result30 = \(key):\(value)")
     }
 }
-sort(&addressBook){
-    (dict1: Dictionary, dict2: Dictionary) -> Bool in
-    return dict1["読み"] < dict2["読み"]
-}
+           
+            addressBook.sort { $0["読み"] < $1["読み"] }
 println("result31 = \(addressBook)")
 sort(&mar){
     (s1: String, s2: String) -> Bool in
@@ -118,10 +116,7 @@ println("result32 = \(mar)")
             }
             println("result 4-A = \(index)")
 
-            sort(&addressBook){
-                (dict1: Dictionary, dict2: Dictionary) -> Bool in
-                return dict1["年齢"]?.toInt() < dict2["年齢"]?.toInt()
-            }
+            addressBook.sort{ $0["年齢"]?.toInt() < $1["年齢"]?.toInt()}
             println("result 4-B = \(addressBook)")
 
             var result: [String] = []

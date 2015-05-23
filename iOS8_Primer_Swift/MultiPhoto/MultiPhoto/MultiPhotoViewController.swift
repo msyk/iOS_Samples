@@ -49,7 +49,7 @@ class MultiPhotoViewController: UIViewController, UIScrollViewDelegate {
         // let x = CGRectMake(1,1,1,1)
         
         insideView = UIView(frame: backRect)
-        let scrollView = view as UIScrollView
+        let scrollView = view as! UIScrollView
         scrollView.addSubview(insideView!)
         scrollView.contentSize = CGSize(
             width: CGFloat(panelWidth),

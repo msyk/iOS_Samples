@@ -12,7 +12,7 @@ class MyImageView: UIImageView {
     
     private var previousFrame: CGRect?
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         println(__FUNCTION__)
         
         if event.allTouches()?.count == 1 {
@@ -31,18 +31,18 @@ class MyImageView: UIImageView {
         }
     }
     
-    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
         println(__FUNCTION__)
 
         UIView.animateWithDuration( 1.0,
             animations: {
-                if let changedFrame = self.previousFrame? {
+                if let changedFrame = self.previousFrame {
                     self.frame = changedFrame
                 }
         })
     }
     
-    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
         println(__FUNCTION__)
     }
 

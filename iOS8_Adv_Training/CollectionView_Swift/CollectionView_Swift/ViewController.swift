@@ -28,7 +28,7 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         
         navigationItem.title = "\(year) \(month)"
         
-        let fl = collectionViewLayout as UICollectionViewFlowLayout
+        let fl = collectionViewLayout as! UICollectionViewFlowLayout
         let space = (320.0 - cell_width * Float(cells_per_line))
             / Float(cells_per_line - 1)
         fl.minimumInteritemSpacing = CGFloat(space)
@@ -37,7 +37,7 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         let dtFormatter = NSDateFormatter()
         dtFormatter.dateFormat = "yyyy-MM-dd"
         let firstDate = dtFormatter.dateFromString(
-            NSString(format:"%4d-%2d-01", year, month))
+            NSString(format:"%4d-%2d-01", year, month) as String)
         let cal = NSCalendar.currentCalendar()
         let comps = cal.components(
             NSCalendarUnit.WeekdayCalendarUnit,
@@ -58,7 +58,7 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         cellForItemAtIndexPath indexPath: NSIndexPath)
         -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
-                "DATACELL", forIndexPath: indexPath) as DataCellView
+                "DATACELL", forIndexPath: indexPath) as! DataCellView
             let dayNum = indexPath.item
                 + indexPath.section * cells_per_line - startDateBias + 1
             if dayNum > 0 && dayNum <= endDayNum {

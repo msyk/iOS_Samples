@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func moveSlider(sender: AnyObject)    {
-        let slider = sender as UISlider
+        let slider = sender as! UISlider
         imageView?.alpha = CGFloat(slider.value)
     }
 
