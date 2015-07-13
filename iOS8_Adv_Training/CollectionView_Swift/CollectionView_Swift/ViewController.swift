@@ -12,7 +12,7 @@ class ViewController: UICollectionViewController,
 UICollectionViewDataSource, UICollectionViewDelegate {
     
     var year: Int = 2015
-    var month: Int = 1
+    var month: Int = 5
     
     private var startDateBias: Int = 0
     private var endDayNum: Int = 0

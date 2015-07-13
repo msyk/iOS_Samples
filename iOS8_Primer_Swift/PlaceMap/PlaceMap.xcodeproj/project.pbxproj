@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B91FC1C1A74C8990054E99F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B91FC1B1A74C8990054E99F /* MapKit.framework */; };
 		B40913E01A32A4AF008FD464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40913DF1A32A4AF008FD464 /* AppDelegate.swift */; };
 		B40913E51A32A4AF008FD464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B40913E31A32A4AF008FD464 /* Main.storyboard */; };
 		B40913E71A32A4AF008FD464 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B40913E61A32A4AF008FD464 /* Images.xcassets */; };
@@ -29,7 +28,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B91FC1B1A74C8990054E99F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B40913DA1A32A4AF008FD464 /* PlaceMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaceMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B40913DE1A32A4AF008FD464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B40913DF1A32A4AF008FD464 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +47,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B91FC1C1A74C8990054E99F /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +63,6 @@
 		B40913D11A32A4AF008FD464 = {
 			isa = PBXGroup;
 			children = (
-				2B91FC1B1A74C8990054E99F /* MapKit.framework */,
 				B40913DC1A32A4AF008FD464 /* PlaceMap */,
 				B40913F21A32A4AF008FD464 /* PlaceMapTests */,
 				B40913DB1A32A4AF008FD464 /* Products */,

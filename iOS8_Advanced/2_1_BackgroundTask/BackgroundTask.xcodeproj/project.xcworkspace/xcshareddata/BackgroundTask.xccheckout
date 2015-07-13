@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>2FDB4F2C-F4FD-4B69-9FEF-9917827668BC</string>
+	<string>B7E9E439-4BB3-4367-A7D3-EDA44EB3E86E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>PlaceMap</string>
+	<string>BackgroundTask</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>BD9F5C53530874142DD7017CAE561E277A0C39D2</key>
 		<string>https://github.com/msyk/iOS_Samples.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iOS8_Primer_Swift/PlaceMap/PlaceMap.xcodeproj</string>
+	<string>iOS8_Advanced/2_1_BackgroundTask/BackgroundTask.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>BD9F5C53530874142DD7017CAE561E277A0C39D2</key>

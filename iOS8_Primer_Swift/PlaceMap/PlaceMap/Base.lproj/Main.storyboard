@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6fW-6f-MW4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E36b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6fW-6f-MW4">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -61,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDo-2b-Zb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-923" y="1602"/>
+            <point key="canvasLocation" x="-895" y="1602"/>
         </scene>
         <!--Prefectural Capital-->
         <scene sceneID="IMA-AF-SGl">
@@ -87,7 +87,7 @@
                             <outlet property="delegate" destination="vVx-MI-Dk4" id="ce5-Ql-AdF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Prefectural Capital" id="tG1-ef-2K0"/>
+                    <navigationItem key="navigationItem" title="Prefectural Capital" id="lSQ-jU-mQo"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ybd-yr-ER0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

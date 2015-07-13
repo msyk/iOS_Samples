@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    var resultString: NSString?
+    var resultString: String?
     var queue: NSOperationQueue?
     //@property (strong, nonatomic) ComTestMod *ct;
     @IBOutlet weak var resultText: UITextView?
@@ -60,8 +60,9 @@ class ViewController: UIViewController {
                 (data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
                 
                 debugLogging()
-                self.resultString = NSString(data: data, encoding: NSUTF8StringEncoding)
-                debugLogging("[Data]\(self.resultString?)")
+                let dataString = NSString(data: data, encoding: NSUTF8StringEncoding)
+                self.resultString = dataString as String?
+                debugLogging("[Data]\(self.resultString)")
                 if (response != nil)    {
                     debugLogging("[Response]\(response!.description)")
                 }

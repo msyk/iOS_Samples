@@ -16,18 +16,25 @@ class MasterViewController: UITableViewController {
     let dataURL = "http://msyk.net/ios/prefs.json"
     var downloader: Downloader?
     
-override func awakeFromNib() {
-    super.awakeFromNib()
-    if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-        self.clearsSelectionOnViewWillAppear = false
-        self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            self.clearsSelectionOnViewWillAppear = false
+            self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
+        }
+//        downloader = Downloader(url: NSURL(string: dataURL),
+//            afterTask: {
+//                self.tableView.reloadData()
+//        })
     }
-    downloader = Downloader(url: NSURL(string: dataURL),
-        afterTask: {
-            self.tableView.reloadData()
-    })
-}
     
+    override func viewDidAppear(animated: Bool) {
+        downloader = Downloader(url: NSURL(string: dataURL),
+            afterTask: {
+                self.tableView.reloadData()
+        })
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -68,34 +75,34 @@ override func awakeFromNib() {
     
     // MARK: - Table View
     
-override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 1
-}
-
-override func tableView(tableView: UITableView,
-    numberOfRowsInSection section: Int) -> Int {
-    if let dl = downloader {
-        return dl.parsedData.count
-    } else {
-        return 0
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
-}
-
-override func tableView(tableView: UITableView,
-    cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Cell",
-        forIndexPath: indexPath) as! UITableViewCell
     
-    if let dl = downloader {
-        let obj = dl.parsedData[indexPath.row] as Dictionary
-        if let pref = obj["pref"] as! String? {
-            if let name = obj["name"] as! String? {
-                cell.textLabel!.text = "\(name)[\(pref)]"
+    override func tableView(tableView: UITableView,
+        numberOfRowsInSection section: Int) -> Int {
+            if let dl = downloader {
+                return dl.parsedData.count
+            } else {
+                return 0
             }
-        }
     }
-    return cell
-}
+    
+    override func tableView(tableView: UITableView,
+        cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCellWithIdentifier("Cell",
+                forIndexPath: indexPath) as! UITableViewCell
+            
+            if let dl = downloader {
+                let obj = dl.parsedData[indexPath.row] as Dictionary
+                if let pref = obj["pref"] as! String? {
+                    if let name = obj["name"] as! String? {
+                        cell.textLabel!.text = "\(name)[\(pref)]"
+                    }
+                }
+            }
+            return cell
+    }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
