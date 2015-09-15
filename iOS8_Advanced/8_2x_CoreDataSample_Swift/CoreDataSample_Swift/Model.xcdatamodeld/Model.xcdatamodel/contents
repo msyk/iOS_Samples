@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8118.17" systemVersion="14E46" minimumToolsVersion="Xcode 4.3">
+    <entity name="Person" representedClassName=".Person" syncable="YES">
+        <attribute name="cellphone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="yomi" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Person" positionX="-63" positionY="-18" width="128" height="105"/>
+    </elements>
+</model>
