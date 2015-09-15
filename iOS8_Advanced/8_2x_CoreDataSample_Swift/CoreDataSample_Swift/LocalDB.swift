@@ -13,29 +13,24 @@ class LocalDB: NSObject {
     
     lazy var model: NSManagedObjectModel? = {
         let modelURL = NSBundle.mainBundle().URLForResource("Model", withExtension: "momd")
-        if let url = modelURL {
-            return NSManagedObjectModel(contentsOfURL: url)
-        } else {
-            return nil
-        }
+        guard let url = modelURL else { return nil }
+        return NSManagedObjectModel(contentsOfURL: url)
         }()
     
     lazy var moContext: NSManagedObjectContext? = {
         let moc = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
-        if let model = self.model {
-            let pStoreCoordinator: NSPersistentStoreCoordinator?
-            = NSPersistentStoreCoordinator(managedObjectModel: model);
-            if let coordinator = pStoreCoordinator {
-                do {
-                    moc.persistentStoreCoordinator = coordinator;
-                    let storeURL = self.documentURL.URLByAppendingPathComponent("localdb.sqlite");
-                    try coordinator.addPersistentStoreWithType(NSSQLiteStoreType,
-                        configuration: nil, URL: storeURL, options: nil)
-                    return moc
-                } catch let error1 as NSError? {
-                    print(error1?.description);
-                }
-            }
+        guard let model = self.model else { return nil }
+        let pStoreCoordinator: NSPersistentStoreCoordinator?
+        = NSPersistentStoreCoordinator(managedObjectModel: model);
+        guard let coordinator = pStoreCoordinator else { return nil }
+        do {
+            moc.persistentStoreCoordinator = coordinator;
+            let storeURL = self.documentURL.URLByAppendingPathComponent("localdb.sqlite");
+            try coordinator.addPersistentStoreWithType(NSSQLiteStoreType,
+                configuration: nil, URL: storeURL, options: nil)
+            return moc
+        } catch let error1 as NSError? {
+            print(error1?.description);
         }
         return nil
         }()
@@ -54,41 +49,40 @@ class LocalDB: NSObject {
     
     func getFromServer(doItAfter: ()->Void)    {
         let urlToAccess = NSURL(string: "https://server.msyk.net/apitest/index.php?op=R")
-        if let url = urlToAccess {
-            let request = NSURLRequest(URL: url)
-            let config = NSURLSessionConfiguration.ephemeralSessionConfiguration();
-            let session = NSURLSession(configuration: config);
-            let task = session.dataTaskWithRequest(request,
-                completionHandler:{
-                    (data: NSData?, res: NSURLResponse?, er: NSError?) -> Void in
-                    if let dataDL = data {
-                        let dataArray: AnyObject
-                        do {
-                            dataArray = try NSJSONSerialization.JSONObjectWithData(dataDL,
-                                options: NSJSONReadingOptions.MutableContainers)
-                        } catch _ {
-                            return
-                        }
-                        for currentRecord in dataArray as! Array<AnyObject> {
-                            let aPerson = Person(
-                                entity: self.entityDescPeople!,
-                                insertIntoManagedObjectContext: self.moContext)
-                            aPerson.name = currentRecord["name"] as? String
-                            aPerson.yomi = currentRecord["yomi"] as? String
-                            aPerson.tel = currentRecord["tel"] as? String
-                            aPerson.cellphone = currentRecord["cellphone"] as? String
-                        }
-                        do {
-                            try self.moContext?.save()
-                            NSOperationQueue.mainQueue().addOperationWithBlock(doItAfter)
-                        } catch let error1 as NSError? {
-                            print(error1?.description);
-                            return;
-                        };
-                    }
-            })
-            task.resume()
-        }
+        guard let url = urlToAccess else { return }
+        let request = NSURLRequest(URL: url)
+        let config = NSURLSessionConfiguration.ephemeralSessionConfiguration();
+        let session = NSURLSession(configuration: config);
+        let task = session.dataTaskWithRequest(request,
+            completionHandler:{
+                (data: NSData?, res: NSURLResponse?, er: NSError?) -> Void in
+                guard let dataDL = data else { return }
+                let dataArray: AnyObject
+                do {
+                    dataArray = try NSJSONSerialization.JSONObjectWithData(dataDL,
+                        options: NSJSONReadingOptions.MutableContainers)
+                } catch _ {
+                    return
+                }
+                for currentRecord in dataArray as! Array<AnyObject> {
+                    let aPerson = Person(
+                        entity: self.entityDescPeople!,
+                        insertIntoManagedObjectContext: self.moContext)
+                    aPerson.name = currentRecord["name"] as? String
+                    aPerson.yomi = currentRecord["yomi"] as? String
+                    aPerson.tel = currentRecord["tel"] as? String
+                    aPerson.cellphone = currentRecord["cellphone"] as? String
+                }
+                do {
+                    try self.moContext?.save()
+                    NSOperationQueue.mainQueue().addOperationWithBlock(doItAfter)
+                } catch let error1 as NSError? {
+                    print(error1?.description);
+                    return;
+                }
+            }
+        )
+        task.resume()
     }
     
     func allData() -> [AnyObject]?    {
