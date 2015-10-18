@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B22c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IDv-jF-Wyt">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Map Display View Controller-->
+        <scene sceneID="KZ8-pW-Bbf">
+            <objects>
+                <viewController id="qqh-2T-kNN" customClass="MapDisplayViewController" customModule="PlaceMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ptU-IW-b7I"/>
+                        <viewControllerLayoutGuide type="bottom" id="IF8-ac-6ct"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8zF-eg-bOO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GPT-kb-ZHJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sOB-fF-aA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3012" y="429"/>
+        </scene>
+        <!--Prefectural Capital-->
+        <scene sceneID="k9w-Wj-O47">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="FwI-t6-mvl" customClass="PlaceListViewController" customModule="PlaceMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1FC-3a-UDR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PLACECELL" id="IGS-R8-fpb">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IGS-R8-fpb" id="Mdc-qC-Vce">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <segue destination="qqh-2T-kNN" kind="show" id="Mhk-wZ-LxA"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FwI-t6-mvl" id="tA1-Sg-YGS"/>
+                            <outlet property="delegate" destination="FwI-t6-mvl" id="Az7-vh-g5q"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Prefectural Capital" id="kGp-pa-tvp"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HEU-hJ-bS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3022" y="-316"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lfd-JR-hrE">
+            <objects>
+                <navigationController id="IDv-jF-Wyt" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HMd-Tk-iST">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="FwI-t6-mvl" kind="relationship" relationship="rootViewController" id="svD-Wh-RwK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1YW-wm-rxB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3738" y="-316"/>
+        </scene>
+    </scenes>
+</document>
