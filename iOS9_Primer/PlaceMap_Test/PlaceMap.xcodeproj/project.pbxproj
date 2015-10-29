@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B433BF81BE2325F0049AFEB /* PlaceMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B433BF71BE2325F0049AFEB /* PlaceMapTests.swift */; };
+		2B433C061BE235060049AFEB /* PlaceMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B433C051BE235060049AFEB /* PlaceMapUITests.swift */; };
 		2BC86C0A1BC03B5600A6C01A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC86C091BC03B5600A6C01A /* AppDelegate.swift */; };
 		2BC86C0F1BC03B5600A6C01A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BC86C0D1BC03B5600A6C01A /* Main.storyboard */; };
 		2BC86C111BC03B5600A6C01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC86C101BC03B5600A6C01A /* Assets.xcassets */; };
@@ -17,14 +19,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2BF590571BCE5154003C0D29 /* PBXContainerItemProxy */ = {
+		2B433BFA1BE2325F0049AFEB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2BC86BFE1BC03B5500A6C01A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2BC86C051BC03B5500A6C01A;
 			remoteInfo = PlaceMap;
 		};
-		2BF590651BCE5172003C0D29 /* PBXContainerItemProxy */ = {
+		2B433C081BE235060049AFEB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2BC86BFE1BC03B5500A6C01A /* Project object */;
 			proxyType = 1;
@@ -34,6 +36,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B433BF51BE2325F0049AFEB /* PlaceMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaceMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B433BF71BE2325F0049AFEB /* PlaceMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMapTests.swift; sourceTree = "<group>"; };
+		2B433BF91BE2325F0049AFEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B433C031BE235060049AFEB /* PlaceMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaceMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B433C051BE235060049AFEB /* PlaceMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMapUITests.swift; sourceTree = "<group>"; };
+		2B433C071BE235060049AFEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BC86C061BC03B5500A6C01A /* PlaceMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaceMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC86C091BC03B5600A6C01A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BC86C0E1BC03B5600A6C01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,26 +51,24 @@
 		2BC86C1B1BC03BBC00A6C01A /* PlaceListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceListViewController.swift; sourceTree = "<group>"; };
 		2BC86C1D1BC03BD900A6C01A /* MapDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapDisplayViewController.swift; sourceTree = "<group>"; };
 		2BC86C1F1BC03BF700A6C01A /* PlaceDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDatabase.swift; sourceTree = "<group>"; };
-		2BF590521BCE5154003C0D29 /* PlaceMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaceMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BF590601BCE5172003C0D29 /* PlaceMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaceMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2B433BF21BE2325F0049AFEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B433C001BE235060049AFEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2BC86C031BC03B5500A6C01A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BF5904F1BCE5154003C0D29 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BF5905D1BCE5172003C0D29 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,10 +78,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B433BF61BE2325F0049AFEB /* PlaceMapTests */ = {
+			isa = PBXGroup;
+			children = (
+				2B433BF71BE2325F0049AFEB /* PlaceMapTests.swift */,
+				2B433BF91BE2325F0049AFEB /* Info.plist */,
+			);
+			path = PlaceMapTests;
+			sourceTree = "<group>";
+		};
+		2B433C041BE235060049AFEB /* PlaceMapUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2B433C051BE235060049AFEB /* PlaceMapUITests.swift */,
+				2B433C071BE235060049AFEB /* Info.plist */,
+			);
+			path = PlaceMapUITests;
+			sourceTree = "<group>";
+		};
 		2BC86BFD1BC03B5500A6C01A = {
 			isa = PBXGroup;
 			children = (
 				2BC86C081BC03B5600A6C01A /* PlaceMap */,
+				2B433BF61BE2325F0049AFEB /* PlaceMapTests */,
+				2B433C041BE235060049AFEB /* PlaceMapUITests */,
 				2BC86C071BC03B5500A6C01A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,8 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				2BC86C061BC03B5500A6C01A /* PlaceMap.app */,
-				2BF590521BCE5154003C0D29 /* PlaceMapTests.xctest */,
-				2BF590601BCE5172003C0D29 /* PlaceMapUITests.xctest */,
+				2B433BF51BE2325F0049AFEB /* PlaceMapTests.xctest */,
+				2B433C031BE235060049AFEB /* PlaceMapUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +134,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2B433BF41BE2325F0049AFEB /* PlaceMapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B433BFE1BE2325F0049AFEB /* Build configuration list for PBXNativeTarget "PlaceMapTests" */;
+			buildPhases = (
+				2B433BF11BE2325F0049AFEB /* Sources */,
+				2B433BF21BE2325F0049AFEB /* Frameworks */,
+				2B433BF31BE2325F0049AFEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B433BFB1BE2325F0049AFEB /* PBXTargetDependency */,
+			);
+			name = PlaceMapTests;
+			productName = PlaceMapTests;
+			productReference = 2B433BF51BE2325F0049AFEB /* PlaceMapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2B433C021BE235060049AFEB /* PlaceMapUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B433C0A1BE235060049AFEB /* Build configuration list for PBXNativeTarget "PlaceMapUITests" */;
+			buildPhases = (
+				2B433BFF1BE235060049AFEB /* Sources */,
+				2B433C001BE235060049AFEB /* Frameworks */,
+				2B433C011BE235060049AFEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B433C091BE235060049AFEB /* PBXTargetDependency */,
+			);
+			name = PlaceMapUITests;
+			productName = PlaceMapUITests;
+			productReference = 2B433C031BE235060049AFEB /* PlaceMapUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		2BC86C051BC03B5500A6C01A /* PlaceMap */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2BC86C181BC03B5600A6C01A /* Build configuration list for PBXNativeTarget "PlaceMap" */;
@@ -125,42 +187,6 @@
 			productReference = 2BC86C061BC03B5500A6C01A /* PlaceMap.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2BF590511BCE5154003C0D29 /* PlaceMapTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2BF590591BCE5154003C0D29 /* Build configuration list for PBXNativeTarget "PlaceMapTests" */;
-			buildPhases = (
-				2BF5904E1BCE5154003C0D29 /* Sources */,
-				2BF5904F1BCE5154003C0D29 /* Frameworks */,
-				2BF590501BCE5154003C0D29 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2BF590581BCE5154003C0D29 /* PBXTargetDependency */,
-			);
-			name = PlaceMapTests;
-			productName = PlaceMapTests;
-			productReference = 2BF590521BCE5154003C0D29 /* PlaceMapTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		2BF5905F1BCE5172003C0D29 /* PlaceMapUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2BF590671BCE5172003C0D29 /* Build configuration list for PBXNativeTarget "PlaceMapUITests" */;
-			buildPhases = (
-				2BF5905C1BCE5172003C0D29 /* Sources */,
-				2BF5905D1BCE5172003C0D29 /* Frameworks */,
-				2BF5905E1BCE5172003C0D29 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2BF590661BCE5172003C0D29 /* PBXTargetDependency */,
-			);
-			name = PlaceMapUITests;
-			productName = PlaceMapUITests;
-			productReference = 2BF590601BCE5172003C0D29 /* PlaceMapUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -172,17 +198,17 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Masayuki Nii";
 				TargetAttributes = {
+					2B433BF41BE2325F0049AFEB = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 2BC86C051BC03B5500A6C01A;
+					};
+					2B433C021BE235060049AFEB = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 2BC86C051BC03B5500A6C01A;
+					};
 					2BC86C051BC03B5500A6C01A = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = S5QJV4EMU4;
-					};
-					2BF590511BCE5154003C0D29 = {
-						CreatedOnToolsVersion = 7.1;
-						TestTargetID = 2BC86C051BC03B5500A6C01A;
-					};
-					2BF5905F1BCE5172003C0D29 = {
-						CreatedOnToolsVersion = 7.1;
-						TestTargetID = 2BC86C051BC03B5500A6C01A;
 					};
 				};
 			};
@@ -200,13 +226,27 @@
 			projectRoot = "";
 			targets = (
 				2BC86C051BC03B5500A6C01A /* PlaceMap */,
-				2BF590511BCE5154003C0D29 /* PlaceMapTests */,
-				2BF5905F1BCE5172003C0D29 /* PlaceMapUITests */,
+				2B433BF41BE2325F0049AFEB /* PlaceMapTests */,
+				2B433C021BE235060049AFEB /* PlaceMapUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2B433BF31BE2325F0049AFEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B433C011BE235060049AFEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2BC86C041BC03B5500A6C01A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -217,23 +257,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2BF590501BCE5154003C0D29 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BF5905E1BCE5172003C0D29 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2B433BF11BE2325F0049AFEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B433BF81BE2325F0049AFEB /* PlaceMapTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B433BFF1BE235060049AFEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B433C061BE235060049AFEB /* PlaceMapUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2BC86C021BC03B5500A6C01A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,32 +287,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2BF5904E1BCE5154003C0D29 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BF5905C1BCE5172003C0D29 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2BF590581BCE5154003C0D29 /* PBXTargetDependency */ = {
+		2B433BFB1BE2325F0049AFEB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2BC86C051BC03B5500A6C01A /* PlaceMap */;
-			targetProxy = 2BF590571BCE5154003C0D29 /* PBXContainerItemProxy */;
+			targetProxy = 2B433BFA1BE2325F0049AFEB /* PBXContainerItemProxy */;
 		};
-		2BF590661BCE5172003C0D29 /* PBXTargetDependency */ = {
+		2B433C091BE235060049AFEB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2BC86C051BC03B5500A6C01A /* PlaceMap */;
-			targetProxy = 2BF590651BCE5172003C0D29 /* PBXContainerItemProxy */;
+			targetProxy = 2B433C081BE235060049AFEB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -294,6 +322,58 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2B433BFC1BE2325F0049AFEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PlaceMapTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = msyk.net.PlaceMapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlaceMap.app/PlaceMap";
+			};
+			name = Debug;
+		};
+		2B433BFD1BE2325F0049AFEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PlaceMapTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = msyk.net.PlaceMapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlaceMap.app/PlaceMap";
+			};
+			name = Release;
+		};
+		2B433C0B1BE235060049AFEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PlaceMapUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = msyk.net.PlaceMapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PlaceMap;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		2B433C0C1BE235060049AFEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PlaceMapUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = msyk.net.PlaceMapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PlaceMap;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
 		2BC86C161BC03B5600A6C01A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -401,61 +481,25 @@
 			};
 			name = Release;
 		};
-		2BF5905A1BCE5154003C0D29 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = PlaceMapTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = msyk.net.PlaceMapTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlaceMap.app/PlaceMap";
-			};
-			name = Debug;
-		};
-		2BF5905B1BCE5154003C0D29 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = PlaceMapTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = msyk.net.PlaceMapTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlaceMap.app/PlaceMap";
-			};
-			name = Release;
-		};
-		2BF590681BCE5172003C0D29 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = PlaceMapUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = msyk.net.PlaceMapUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = PlaceMap;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		2BF590691BCE5172003C0D29 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = PlaceMapUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = msyk.net.PlaceMapUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = PlaceMap;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2B433BFE1BE2325F0049AFEB /* Build configuration list for PBXNativeTarget "PlaceMapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B433BFC1BE2325F0049AFEB /* Debug */,
+				2B433BFD1BE2325F0049AFEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2B433C0A1BE235060049AFEB /* Build configuration list for PBXNativeTarget "PlaceMapUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B433C0B1BE235060049AFEB /* Debug */,
+				2B433C0C1BE235060049AFEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		2BC86C011BC03B5500A6C01A /* Build configuration list for PBXProject "PlaceMap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -470,24 +514,6 @@
 			buildConfigurations = (
 				2BC86C191BC03B5600A6C01A /* Debug */,
 				2BC86C1A1BC03B5600A6C01A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2BF590591BCE5154003C0D29 /* Build configuration list for PBXNativeTarget "PlaceMapTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2BF5905A1BCE5154003C0D29 /* Debug */,
-				2BF5905B1BCE5154003C0D29 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2BF590671BCE5172003C0D29 /* Build configuration list for PBXNativeTarget "PlaceMapUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2BF590681BCE5172003C0D29 /* Debug */,
-				2BF590691BCE5172003C0D29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
