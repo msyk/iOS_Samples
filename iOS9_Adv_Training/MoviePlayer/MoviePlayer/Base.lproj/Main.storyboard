@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MoviePlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7J-bZ-1iQ">
+                                <rect key="frame" x="49" y="51" width="502" height="497"/>
+                                <color key="backgroundColor" red="0.4133897352" green="1" blue="0.4291270452" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="m7J-bZ-1iQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6oq-hw-gHB"/>
+                            <constraint firstItem="m7J-bZ-1iQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="29" id="N2f-Wa-sSi"/>
+                            <constraint firstItem="m7J-bZ-1iQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g2a-Dv-tVO"/>
+                            <constraint firstItem="m7J-bZ-1iQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="31" id="rXA-ak-FkQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="guideView" destination="m7J-bZ-1iQ" id="ZMj-92-VhH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="330" y="59"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="Ou9-7H-9jm">
+            <objects>
+                <avPlayerViewController storyboardIdentifier="MOVIE" videoGravity="AVLayerVideoGravityResizeAspect" id="8pt-eS-IwQ" customClass="MovieViewController" customModule="MoviePlayer" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sfk-cu-enm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="617" y="751"/>
+        </scene>
+    </scenes>
+</document>

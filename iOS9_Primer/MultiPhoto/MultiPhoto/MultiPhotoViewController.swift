@@ -37,7 +37,8 @@ class MultiPhotoViewController:
             self.player?.numberOfLoops = 100;	//繰り返し回数の設定
             self.player?.play()	//実際に鳴らす
             NSTimer.scheduledTimerWithTimeInterval(5.0,
-                target: self, selector: Selector("playSound:"),
+                target: self,
+                selector: #selector(MultiPhotoViewController.playSound(_:)),
                 userInfo: nil, repeats: false)
         } catch {
             print("Error in AVAudioPlayer")
@@ -82,10 +83,10 @@ class MultiPhotoViewController:
             //画像データを取得してイメージビューに画像を設定する
             self.insideView?.addSubview(oneImage)
             //イメージビューをサブビューとして追加
-            x++;
+            x += 1
             if ( x >= count_x)  {	//カウンターが横方向の個数を超えると
                 x = 0
-                y++	//縦方向の個数のカウンターをアップ
+                y += 1	//縦方向の個数のカウンターをアップ
             }
         }
         

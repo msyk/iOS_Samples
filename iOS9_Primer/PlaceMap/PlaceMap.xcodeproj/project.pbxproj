@@ -11,9 +11,9 @@
 		2BC86C0F1BC03B5600A6C01A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BC86C0D1BC03B5600A6C01A /* Main.storyboard */; };
 		2BC86C111BC03B5600A6C01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC86C101BC03B5600A6C01A /* Assets.xcassets */; };
 		2BC86C141BC03B5600A6C01A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BC86C121BC03B5600A6C01A /* LaunchScreen.storyboard */; };
-		2BC86C1C1BC03BBC00A6C01A /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC86C1B1BC03BBC00A6C01A /* PlaceListViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		2BC86C1E1BC03BD900A6C01A /* MapDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC86C1D1BC03BD900A6C01A /* MapDisplayViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		2BC86C201BC03BF700A6C01A /* PlaceDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC86C1F1BC03BF700A6C01A /* PlaceDatabase.swift */; settings = {ASSET_TAGS = (); }; };
+		2BC86C1C1BC03BBC00A6C01A /* PlaceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC86C1B1BC03BBC00A6C01A /* PlaceListViewController.swift */; };
+		2BC86C1E1BC03BD900A6C01A /* MapDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC86C1D1BC03BD900A6C01A /* MapDisplayViewController.swift */; };
+		2BC86C201BC03BF700A6C01A /* PlaceDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC86C1F1BC03BF700A6C01A /* PlaceDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -257,6 +257,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PlaceMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = msyk.net.PlaceMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -268,6 +269,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PlaceMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = msyk.net.PlaceMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -293,6 +295,7 @@
 				2BC86C1A1BC03B5600A6C01A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
