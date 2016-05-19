@@ -20,12 +20,12 @@ b = an?.host
 //c = (an?.host)! as String // EXC_BAD_INSTRUCTION
 
 var url = NSURL(string: "http://msyk.net")
-//url = nil
-var hostname: String?
-if let u = url {
-    hostname = u.host
+url = nil
+var hostname: String = ""
+if let u = url, h = u.host {
+    hostname = h
 }
-print(hostname) // ✍ "msyk.net" or nil
+print(hostname) // ✍ "msyk.net" or ""
 
 var dict: Dictionary<String, NSURL>? = nil
 dict = ["Test": NSURL(string: "http://msyk.net")!]
@@ -72,4 +72,6 @@ var f = Optional<String>("cc")
 print(f) // Optional("cc")
 f = "aa"
 print(f) // Optional("aa")
+
+
 

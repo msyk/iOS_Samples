@@ -11,13 +11,13 @@
  *************************************************/
 
 import UIKit
-/*
-class ObservablePool    {
+
+class ObserverPool    {
     
     static var observers = Array<AnyObject>()
-    static var observablesPool = Dictionary<Int, Array<Observable>>()
+    static var observerPool = Dictionary<Int, Array<Observer>>()
     
-    static func observableArray(obj: AnyObject) -> Array<Observable>  {
+    static func observerArray(obj: AnyObject) -> Array<Observer>  {
         
         print(observers.startIndex, observers.endIndex, obj)
         
@@ -33,22 +33,22 @@ class ObservablePool    {
             index = observers.endIndex
         }
         
-        if (observablesPool[index] == nil)  {
-            self.observablesPool.updateValue([], forKey: index)
+        if (observerPool[index] == nil)  {
+            self.observerPool.updateValue([], forKey: index)
         }
-        return observablesPool[index]!
+        return observerPool[index]!
     }
 }
 
 extension NSString {
     
-    func attach(obj: Observable)    {
-         var ob = ObservablePool.observableArray(self)
+    func attach(obj: Observer)    {
+         var ob = ObserverPool.observerArray(self)
         ob.append(obj)
     }
     
-    func dettach(obj: Observable)    {
-        var ob = ObservablePool.observableArray(self)
+    func dettach(obj: Observer)    {
+        var ob = ObserverPool.observerArray(self)
         var index = ob.startIndex
         for elem in ob {
             if elem === obj {
@@ -59,7 +59,7 @@ extension NSString {
     }
     
     func notify()    {
-        let ob = ObservablePool.observableArray(self)
+        let ob = ObserverPool.observerArray(self)
         for elem in ob    {
             elem.update(self as AnyObject)
         }
@@ -69,4 +69,3 @@ extension NSString {
         self.notify()
     }
 }
-*/

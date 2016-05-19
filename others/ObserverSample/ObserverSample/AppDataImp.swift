@@ -11,40 +11,32 @@ import UIKit
 protocol ObservableData {
     associatedtype DataType
     
-    var obserbables: Array<Observable> { get set }
+    var observers: Array<Observer> { get set }
     var dataStore: DataType { get set }
 }
 
 extension ObservableData {
-    mutating func attach(obj: Observable)    {
-        self.obserbables.append(obj)
+    mutating func attach(obj: Observer)    {
+        self.observers.append(obj)
     }
     
-    mutating func detach(obj: Observable)    {
-        var index = self.obserbables.startIndex
-        for elem in self.obserbables {
+    mutating func detach(obj: Observer)    {
+        var index = self.observers.startIndex
+        for elem in self.observers {
             if elem === obj {
-                self.obserbables.removeAtIndex(index)
+                self.observers.removeAtIndex(index)
             }
             index += 1
         }
     }
     
     func notify()    {
-        for elem in self.obserbables    {
-            elem.update(self.dataStore as! AnyObject)
+        for elem in self.observers    {
+            elem.update(self.observers as! AnyObject)
         }
     }
-}
 
-class AppDataImp : ObservableData {
-    
-    typealias DataType = String
-
-    var obserbables: Array<Observable> = []
-    var dataStore: String = ""
-    
-    var data: String {
+    var data: DataType {
         get    {
             return self.dataStore
         }
@@ -53,4 +45,13 @@ class AppDataImp : ObservableData {
             self.notify()
         }
     }
+}
+
+class AppDataImp : ObservableData {
+    
+    typealias DataType = String
+
+    internal var observers: Array<Observer> = []
+    internal var dataStore: String = ""
+
 }

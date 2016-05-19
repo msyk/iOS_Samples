@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MasterViewController: UIViewController, Observable {
+class MasterViewController: UIViewController, Observer {
 
     // [Demo 2][Demo 3][Demo 4] Demo 1 works leaving below line.
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -24,11 +24,11 @@ class MasterViewController: UIViewController, Observable {
 //        otherVC.textField?.text = self.textField?.text
 
         // [Demo 2][Demo 3][Demo 4]
-//        self.appDelegate.store.data = (self.textField?.text)!;
+        self.appDelegate.store.data = (self.textField?.text)!
 
         // [Demo 5]
-        self.appDelegate.store = (self.textField?.text)!;
-        self.appDelegate.store.notify(10)
+//        self.appDelegate.store = (self.textField?.text)!
+//        self.appDelegate.store.notify(10)
 
     }
     
@@ -41,10 +41,10 @@ class MasterViewController: UIViewController, Observable {
         super.viewDidLoad()
 
         // [Demo 2][Demo 3][Demo 4]
-//        self.appDelegate.store.attach(self);
+        self.appDelegate.store.attach(self);
         
         // [Demo 5]
-       self.appDelegate.store.attach(self, inGroupID:10);
+//       self.appDelegate.store.attach(self, inGroupID:10)
  }
 
     override func viewWillAppear(animated: Bool) {

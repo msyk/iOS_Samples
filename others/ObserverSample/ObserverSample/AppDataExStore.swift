@@ -12,43 +12,43 @@
 
 import UIKit
 
-class ObservableStore {
-    static var observables: Dictionary<Int, Array<Observable>> = [:]
+class ObserverStore {
+    static var observers: Dictionary<Int, Array<Observer>> = [:]
 
-    static func observableArray(index: Int) -> Array<Observable> {
-        if (observables[index] == nil)    {
-            observables[index] = []
+    static func observerArray(index: Int) -> Array<Observer> {
+        if (self.observers[index] == nil)    {
+            self.observers[index] = []
         }
-        return observables[index]!
+        return self.observers[index]!
     }
     
-    static func setObservable(index: Int, asArray ar: Array<Observable>) {
-        observables[index] = ar
+    static func setObservers(index: Int, asArray ar: Array<Observer>) {
+        self.observers[index] = ar
     }
 }
 
 extension String {
-    func attach(obj: Observable, inGroupID gid: Int)    {
-        var observables = ObservableStore.observableArray(gid)
-        observables.append(obj)
-        ObservableStore.setObservable(gid, asArray: observables)
+    func attach(obj: Observer, inGroupID gid: Int)    {
+        var observersArray = ObserverStore.observerArray(gid)
+        observersArray.append(obj)
+        ObserverStore.setObservers(gid, asArray: observersArray)
     }
     
-    func detach(obj: Observable, inGroupID gid: Int)    {
-        var observables = ObservableStore.observableArray(gid)
-        var index = observables.startIndex
-        for elem in observables {
+    func detach(obj: Observer, inGroupID gid: Int)    {
+        var observersArray = ObserverStore.observerArray(gid)
+        var index = observersArray.startIndex
+        for elem in observersArray {
             if elem === obj {
-                observables.removeAtIndex(index)
+                observersArray.removeAtIndex(index)
             }
             index += 1
         }
-        ObservableStore.setObservable(gid, asArray: observables)
+        ObserverStore.setObservers(gid, asArray: observersArray)
     }
     
     func notify(gid: Int)    {
-        let observables = ObservableStore.observableArray(gid)
-        for elem in observables    {
+        let observersArray = ObserverStore.observerArray(gid)
+        for elem in observersArray    {
             elem.update(self)
         }
     }

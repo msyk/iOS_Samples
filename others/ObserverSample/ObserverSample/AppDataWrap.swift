@@ -10,25 +10,25 @@ import UIKit
 
 class ObservableStruct<T> {
     
-    var obserbables: Array<Observable> = []
+    var observers: Array<Observer> = []
     var dataStore: T?
     
-    func attach(obj: Observable)    {
-        self.obserbables.append(obj)
+    func attach(obj: Observer)    {
+        self.observers.append(obj)
     }
     
-    func detach(obj: Observable)    {
-        var index = self.obserbables.startIndex
-        for elem in self.obserbables {
+    func detach(obj: Observer)    {
+        var index = self.observers.startIndex
+        for elem in self.observers {
             if elem === obj {
-                self.obserbables.removeAtIndex(index)
+                self.observers.removeAtIndex(index)
             }
             index += 1
         }
     }
     
     func notify()    {
-        for elem in self.obserbables    {
+        for elem in self.observers    {
             elem.update(self.dataStore as! AnyObject)
         }
     }
@@ -42,8 +42,17 @@ class ObservableStruct<T> {
             self.notify()
         }
     }
+    
+    init()  {
+        self.dataStore = nil
+    }
+    
+    init(value: T)  {
+        self.dataStore = value
+    }
+    
 }
 
 class AppDataWrap : ObservableStruct<String> {
-
+    
 }

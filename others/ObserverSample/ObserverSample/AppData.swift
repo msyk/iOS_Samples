@@ -8,19 +8,17 @@
 
 import UIKit
 
-protocol Observable : AnyObject {
+protocol Observer : AnyObject {
     func update(value: AnyObject)
 }
 
-protocol Observer : AnyObject {
-    func attach(obj: Observable)
-    func detach(obj: Observable)
+protocol Observable : AnyObject {
+    func attach(obj: Observer)
+    func detach(obj: Observer)
     func notify()
 }
 
-class AppData : Observer {
-
-    typealias DataType = String
+class AppData : Observable {
 
     private var sharedString = ""
     
@@ -30,25 +28,25 @@ class AppData : Observer {
         }
     }
     
-    private var obserbables: Array<Observable> = []
+    private var observers: Array<Observer> = []
     
-    func attach(obj: Observable)    {
-        self.obserbables.append(obj)
+    func attach(obj: Observer)    {
+        self.observers.append(obj)
     }
     
     // The detach method is not tested anymore. Sorry!
-    func detach(obj: Observable)    {
-        var index = self.obserbables.startIndex
-        for elem in self.obserbables {
+    func detach(obj: Observer)    {
+        var index = self.observers.startIndex
+        for elem in self.observers {
             if elem === obj {
-                self.obserbables.removeAtIndex(index)
+                self.observers.removeAtIndex(index)
             }
             index += 1
         }
     }
     
     func notify()    {
-        for elem in self.obserbables    {
+        for elem in self.observers    {
             elem.update(self.data)
         }
     }

@@ -20,7 +20,6 @@
 		2BA2A2D81CE4D4C800543FDD /* AppDataExStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2A2D71CE4D4C800543FDD /* AppDataExStore.swift */; };
 		2BA2A2DA1CE4D67400543FDD /* AppDataImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2A2D91CE4D67400543FDD /* AppDataImp.swift */; };
 		2BA2A2DC1CE4E9AF00543FDD /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2A2DB1CE4E9AF00543FDD /* Test.swift */; };
-		2BA992711CEC69FE001770B8 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 2BA992701CEC69FE001770B8 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +61,7 @@
 		2BA2A2DB1CE4E9AF00543FDD /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		2BA9926F1CEC69C6001770B8 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = ObserverSample/MyPlayground.playground; sourceTree = "<group>"; };
 		2BA992701CEC69FE001770B8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2BA992721CECBD3A001770B8 /* MyPlayground2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground2.playground; path = ObserverSample/MyPlayground2.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +94,7 @@
 			children = (
 				2BA992701CEC69FE001770B8 /* README.md */,
 				2BA9926F1CEC69C6001770B8 /* MyPlayground.playground */,
+				2BA992721CECBD3A001770B8 /* MyPlayground2.playground */,
 				2B4EC5DF1CE24001008AF030 /* ObserverSample */,
 				2B4EC5F61CE24001008AF030 /* ObserverSampleTests */,
 				2B4EC6011CE24001008AF030 /* ObserverSampleUITests */,
@@ -285,7 +286,6 @@
 				2B4EC5E11CE24001008AF030 /* AppDelegate.swift in Sources */,
 				2BA2A2DC1CE4E9AF00543FDD /* Test.swift in Sources */,
 				2BA2A2D81CE4D4C800543FDD /* AppDataExStore.swift in Sources */,
-				2BA992711CEC69FE001770B8 /* README.md in Sources */,
 				2BA2A2DA1CE4D67400543FDD /* AppDataImp.swift in Sources */,
 				2B4EC6111CE24622008AF030 /* AppData.swift in Sources */,
 			);
