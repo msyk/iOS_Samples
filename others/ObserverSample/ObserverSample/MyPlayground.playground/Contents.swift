@@ -73,5 +73,9 @@ print(f) // Optional("cc")
 f = "aa"
 print(f) // Optional("aa")
 
+for var i in (0..<10) {
+    print("\(i)")
+}
 
-
+let g = (0..<10)
+print(g.3)

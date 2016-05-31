@@ -19,12 +19,12 @@ class MasterViewController: UIViewController, Observer {
         print(#file, #function)
 
         //[Demo 1]
-//        let otherNC = self.splitViewController?.viewControllers[1] as! UINavigationController
-//        let otherVC = otherNC.topViewController as! DetailViewController
-//        otherVC.textField?.text = self.textField?.text
+        let otherNC = self.splitViewController?.viewControllers[1] as! UINavigationController
+        let otherVC = otherNC.topViewController as! DetailViewController
+        otherVC.textField?.text = self.textField?.text
 
         // [Demo 2][Demo 3][Demo 4]
-        self.appDelegate.store.data = (self.textField?.text)!
+//        self.appDelegate.store.data = (self.textField?.text)!
 
         // [Demo 5]
 //        self.appDelegate.store = (self.textField?.text)!
@@ -41,7 +41,7 @@ class MasterViewController: UIViewController, Observer {
         super.viewDidLoad()
 
         // [Demo 2][Demo 3][Demo 4]
-        self.appDelegate.store.attach(self);
+//        self.appDelegate.store.attach(self);
         
         // [Demo 5]
 //       self.appDelegate.store.attach(self, inGroupID:10)
