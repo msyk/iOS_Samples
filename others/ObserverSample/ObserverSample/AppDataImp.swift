@@ -32,7 +32,7 @@ extension ObservableData {
     
     func notify()    {
         for elem in self.observers    {
-            elem.update(self.observers as! AnyObject)
+            elem.update(self.dataStore as! AnyObject)
         }
     }
 

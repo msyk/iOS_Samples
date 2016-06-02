@@ -41,7 +41,7 @@ class MasterViewController: UIViewController, Observer {
         super.viewDidLoad()
 
         // [Demo 2][Demo 3][Demo 4]
-//        self.appDelegate.store.attach(self);
+ //       self.appDelegate.store.attach(self);
         
         // [Demo 5]
 //       self.appDelegate.store.attach(self, inGroupID:10)

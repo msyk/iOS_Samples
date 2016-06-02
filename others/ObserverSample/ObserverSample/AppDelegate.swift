@@ -12,9 +12,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
+    
 //    var store: AppData = AppData() // [Demo 2]
-//    var store: AppDataImp = AppDataImp() // [Demo 3]
-//    var store: ObservableStruct<String> = ObservableStruct<String>(value: "test2") // [Demo 4]
+    
+ //   var store: AppDataImp = AppDataImp() // [Demo 3]
+
+ //   var store: ObservableStruct<String> = ObservableStruct<String>(value: "test2") // [Demo 4]
 //    var store: String = String()   // [Demo 5]
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
