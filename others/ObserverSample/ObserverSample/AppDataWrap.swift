@@ -13,15 +13,15 @@ class ObservableStruct<T> {
     var observers: Array<Observer> = []
     var dataStore: T?
     
-    func attach(obj: Observer)    {
+    func attach(_ obj: Observer)    {
         self.observers.append(obj)
     }
     
-    func detach(obj: Observer)    {
+    func detach(_ obj: Observer)    {
         var index = self.observers.startIndex
         for elem in self.observers {
             if elem === obj {
-                self.observers.removeAtIndex(index)
+                self.observers.remove(at: index)
             }
             index += 1
         }
@@ -29,7 +29,7 @@ class ObservableStruct<T> {
     
     func notify()    {
         for elem in self.observers    {
-            elem.update(self.dataStore as! AnyObject)
+            elem.update(self.dataStore as AnyObject)
         }
     }
     

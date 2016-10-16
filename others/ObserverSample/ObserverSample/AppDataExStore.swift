@@ -15,41 +15,41 @@ import UIKit
 class ObserverStore {
     static var observers: Dictionary<Int, Array<Observer>> = [:]
 
-    static func observerArray(index: Int) -> Array<Observer> {
+    static func observerArray(_ index: Int) -> Array<Observer> {
         if (self.observers[index] == nil)    {
             self.observers[index] = []
         }
         return self.observers[index]!
     }
     
-    static func setObservers(index: Int, asArray ar: Array<Observer>) {
+    static func setObservers(_ index: Int, asArray ar: Array<Observer>) {
         self.observers[index] = ar
     }
 }
 
 extension String {
-    func attach(obj: Observer, inGroupID gid: Int)    {
+    func attach(_ obj: Observer, inGroupID gid: Int)    {
         var observersArray = ObserverStore.observerArray(gid)
         observersArray.append(obj)
         ObserverStore.setObservers(gid, asArray: observersArray)
     }
     
-    func detach(obj: Observer, inGroupID gid: Int)    {
+    func detach(_ obj: Observer, inGroupID gid: Int)    {
         var observersArray = ObserverStore.observerArray(gid)
         var index = observersArray.startIndex
         for elem in observersArray {
             if elem === obj {
-                observersArray.removeAtIndex(index)
+                observersArray.remove(at: index)
             }
             index += 1
         }
         ObserverStore.setObservers(gid, asArray: observersArray)
     }
     
-    func notify(gid: Int)    {
+    func notify(_ gid: Int)    {
         let observersArray = ObserverStore.observerArray(gid)
         for elem in observersArray    {
-            elem.update(self)
+            elem.update(self as AnyObject)
         }
     }
     
@@ -59,7 +59,7 @@ extension String {
     }
     
     // This is not called.
-    func set(value: NSString) {
+    func set(_ value: NSString) {
         print("didSet!!!!!")
     }
 }

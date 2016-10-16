@@ -17,7 +17,7 @@ class ObserverPool    {
     static var observers = Array<AnyObject>()
     static var observerPool = Dictionary<Int, Array<Observer>>()
     
-    static func observerArray(obj: AnyObject) -> Array<Observer>  {
+    static func observerArray(_ obj: AnyObject) -> Array<Observer>  {
         
         print(observers.startIndex, observers.endIndex, obj)
         
@@ -42,17 +42,17 @@ class ObserverPool    {
 
 extension NSString {
     
-    func attach(obj: Observer)    {
+    func attach(_ obj: Observer)    {
          var ob = ObserverPool.observerArray(self)
         ob.append(obj)
     }
     
-    func dettach(obj: Observer)    {
+    func dettach(_ obj: Observer)    {
         var ob = ObserverPool.observerArray(self)
         var index = ob.startIndex
         for elem in ob {
             if elem === obj {
-                ob.removeAtIndex(index)
+                ob.remove(at: index)
             }
             index += 1
         }

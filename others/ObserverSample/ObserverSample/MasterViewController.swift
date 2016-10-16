@@ -11,20 +11,20 @@ import UIKit
 class MasterViewController: UIViewController, Observer {
 
     // [Demo 2][Demo 3][Demo 4] Demo 1 works leaving below line.
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     @IBOutlet var textField: UITextField?
 
-    @IBAction func typeing(sender: UITextField) {
+    @IBAction func typeing(_ sender: UITextField) {
         print(#file, #function)
 
         //[Demo 1]
-        let otherNC = self.splitViewController?.viewControllers[1] as! UINavigationController
-        let otherVC = otherNC.topViewController as! DetailViewController
-        otherVC.textField?.text = self.textField?.text
+//        let otherNC = self.splitViewController?.viewControllers[1] as! UINavigationController
+//        let otherVC = otherNC.topViewController as! DetailViewController
+//        otherVC.textField?.text = self.textField?.text
 
         // [Demo 2][Demo 3][Demo 4]
-//        self.appDelegate.store.data = (self.textField?.text)!
+        self.appDelegate.store.data = (self.textField?.text)!
 
         // [Demo 5]
 //        self.appDelegate.store = (self.textField?.text)!
@@ -32,7 +32,7 @@ class MasterViewController: UIViewController, Observer {
 
     }
     
-    func update(value: AnyObject) {
+    func update(_ value: AnyObject) {
         // [Demo 2][Demo 3][Demo 4][Demo 5]
         self.textField?.text = value as? String
     }
@@ -41,13 +41,13 @@ class MasterViewController: UIViewController, Observer {
         super.viewDidLoad()
 
         // [Demo 2][Demo 3][Demo 4]
- //       self.appDelegate.store.attach(self);
+        self.appDelegate.store.attach(self);
         
         // [Demo 5]
 //       self.appDelegate.store.attach(self, inGroupID:10)
  }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
 
@@ -58,7 +58,7 @@ class MasterViewController: UIViewController, Observer {
 
     // MARK: - Segues
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
 }
 

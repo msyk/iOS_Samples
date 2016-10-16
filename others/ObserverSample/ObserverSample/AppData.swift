@@ -9,18 +9,18 @@
 import UIKit
 
 protocol Observer : AnyObject {
-    func update(value: AnyObject)
+    func update(_ value: AnyObject)
 }
 
 protocol Observable : AnyObject {
-    func attach(obj: Observer)
-    func detach(obj: Observer)
+    func attach(_ obj: Observer)
+    func detach(_ obj: Observer)
     func notify()
 }
 
 class AppData : Observable {
 
-    private var sharedString = ""
+    fileprivate var sharedString = ""
     
     var data: String = "" {
         didSet    {
@@ -28,18 +28,18 @@ class AppData : Observable {
         }
     }
     
-    private var observers: Array<Observer> = []
+    fileprivate var observers: Array<Observer> = []
     
-    func attach(obj: Observer)    {
+    func attach(_ obj: Observer)    {
         self.observers.append(obj)
     }
     
     // The detach method is not tested anymore. Sorry!
-    func detach(obj: Observer)    {
+    func detach(_ obj: Observer)    {
         var index = self.observers.startIndex
         for elem in self.observers {
             if elem === obj {
-                self.observers.removeAtIndex(index)
+                self.observers.remove(at: index)
             }
             index += 1
         }
@@ -47,7 +47,7 @@ class AppData : Observable {
     
     func notify()    {
         for elem in self.observers    {
-            elem.update(self.data)
+            elem.update(self.data as AnyObject)
         }
     }
     

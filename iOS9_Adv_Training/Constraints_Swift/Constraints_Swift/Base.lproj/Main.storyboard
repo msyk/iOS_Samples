@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E49a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G12a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -46,12 +46,26 @@
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bEN-mo-K66">
-                                <rect key="frame" x="307" y="399" width="240" height="128"/>
+                                <rect key="frame" x="290" y="399" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="JM7-o4-1hl"/>
                                     <constraint firstAttribute="width" constant="240" id="sb9-CI-yeA"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r85-qo-Fgy">
+                                <rect key="frame" x="16" y="20" width="52" height="30"/>
+                                <state key="normal" title="Button1"/>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CgK-Dx-nvW">
+                                <rect key="frame" x="281" y="178" width="121" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xda-wm-pWB">
+                                <rect key="frame" x="353" y="242" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -65,12 +79,17 @@
                             <constraint firstItem="l9P-QR-oWx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="U6B-rJ-ikU"/>
                             <constraint firstItem="l9P-QR-oWx" firstAttribute="trailing" secondItem="6Qg-CW-r1M" secondAttribute="trailing" id="obh-Xz-nF8"/>
                             <constraint firstItem="QPa-TU-Ujp" firstAttribute="leading" secondItem="PXM-rU-Y0P" secondAttribute="leading" id="pUY-zF-Kcc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bEN-mo-K66" secondAttribute="trailing" constant="50" id="qBq-iX-KgD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bEN-mo-K66" secondAttribute="trailing" constant="33" id="r8w-rX-COI"/>
                             <constraint firstAttribute="bottom" secondItem="PXM-rU-Y0P" secondAttribute="bottom" constant="20" symbolic="YES" id="uYP-HZ-8V8"/>
+                            <constraint firstItem="CgK-Dx-nvW" firstAttribute="trailing" secondItem="Xda-wm-pWB" secondAttribute="trailing" id="ugg-Hc-ec7"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="QPa-TU-Ujp"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="r8w-rX-COI"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0810"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2B4EC5DC1CE24001008AF030"
-               BuildableName = "ObserverSample.app"
-               BlueprintName = "ObserverSample"
-               ReferencedContainer = "container:ObserverSample.xcodeproj">
+               BlueprintIdentifier = "2B99E1DE1DAA996500322C27"
+               BuildableName = "MultiProcess.app"
+               BlueprintName = "MultiProcess"
+               ReferencedContainer = "container:MultiProcess.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2B4EC5F21CE24001008AF030"
-               BuildableName = "ObserverSampleTests.xctest"
-               BlueprintName = "ObserverSampleTests"
-               ReferencedContainer = "container:ObserverSample.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2B4EC5FD1CE24001008AF030"
-               BuildableName = "ObserverSampleUITests.xctest"
-               BlueprintName = "ObserverSampleUITests"
-               ReferencedContainer = "container:ObserverSample.xcodeproj">
+               BlueprintIdentifier = "2B99E1F21DAA996600322C27"
+               BuildableName = "MultiProcessTests.xctest"
+               BlueprintName = "MultiProcessTests"
+               ReferencedContainer = "container:MultiProcess.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2B4EC5DC1CE24001008AF030"
-            BuildableName = "ObserverSample.app"
-            BlueprintName = "ObserverSample"
-            ReferencedContainer = "container:ObserverSample.xcodeproj">
+            BlueprintIdentifier = "2B99E1DE1DAA996500322C27"
+            BuildableName = "MultiProcess.app"
+            BlueprintName = "MultiProcess"
+            ReferencedContainer = "container:MultiProcess.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +65,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2B4EC5DC1CE24001008AF030"
-            BuildableName = "ObserverSample.app"
-            BlueprintName = "ObserverSample"
-            ReferencedContainer = "container:ObserverSample.xcodeproj">
+            BlueprintIdentifier = "2B99E1DE1DAA996500322C27"
+            BuildableName = "MultiProcess.app"
+            BlueprintName = "MultiProcess"
+            ReferencedContainer = "container:MultiProcess.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +84,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2B4EC5DC1CE24001008AF030"
-            BuildableName = "ObserverSample.app"
-            BlueprintName = "ObserverSample"
-            ReferencedContainer = "container:ObserverSample.xcodeproj">
+            BlueprintIdentifier = "2B99E1DE1DAA996500322C27"
+            BuildableName = "MultiProcess.app"
+            BlueprintName = "MultiProcess"
+            ReferencedContainer = "container:MultiProcess.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

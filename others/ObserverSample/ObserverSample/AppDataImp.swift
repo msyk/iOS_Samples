@@ -16,15 +16,15 @@ protocol ObservableData {
 }
 
 extension ObservableData {
-    mutating func attach(obj: Observer)    {
+    mutating func attach(_ obj: Observer)    {
         self.observers.append(obj)
     }
     
-    mutating func detach(obj: Observer)    {
+    mutating func detach(_ obj: Observer)    {
         var index = self.observers.startIndex
         for elem in self.observers {
             if elem === obj {
-                self.observers.removeAtIndex(index)
+                self.observers.remove(at: index)
             }
             index += 1
         }
@@ -32,7 +32,7 @@ extension ObservableData {
     
     func notify()    {
         for elem in self.observers    {
-            elem.update(self.dataStore as! AnyObject)
+            elem.update(self.dataStore as AnyObject)
         }
     }
 
