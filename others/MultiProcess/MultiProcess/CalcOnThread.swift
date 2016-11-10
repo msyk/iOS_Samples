@@ -12,6 +12,8 @@ class CalcOnThread {
     
     static var number = 0;
     
+    // ============= Demo 1-1
+    // ============= Demo 1-2
     func startCalc(_ times: Int) -> Void {
         print("startCalc: Thread=\(Thread.current)")
         for _ in 1...times {
@@ -19,29 +21,34 @@ class CalcOnThread {
         }
     }
     
+    // ============= Demo 1-3
+    // ============= Demo 1-4
     func startCalcOnThread(_ times: Int) -> Void {
         Thread.detachNewThread {
-            print("startCalc: Thread=\(Thread.current)")
+            print("[START]startCalcOnThread: Thread=\(Thread.current)")
             for _ in 1...times {
                 CalcOnThread.number += 1;
             }
+            print("[END]startCalcOnThread: Thread=\(Thread.current)")
         }
     }
     
+    // ============= Demo 1-5
     var queue = OperationQueue()
     
     func startCalcAsQueue(_ times: Int) -> Void {
         self.queue.addOperation {
-            print("startCalc: Thread=\(Thread.current)")
+            print("[START]startCalcAsQueue: Thread=\(Thread.current)")
             for _ in 1...times {
                 CalcOnThread.number += 1;
             }
+            print("[END]startCalcAsQueue: Thread=\(Thread.current)")
         }
     }
     
     func createCalcOperation(_ times: Int) -> Operation {
         let op = BlockOperation(block: {
-            print("startCalc: Thread=\(Thread.current)")
+            print("[START]createCalcOperation: Thread=\(Thread.current)")
             for _ in 1...times {
                 CalcOnThread.number += 1;
             }
@@ -49,16 +56,26 @@ class CalcOnThread {
         return op;
     }
     
+    // ============= Demo 1-6
     static let lock = NSLock()
     
+    func createCalcOperationWithLockObjCStyle(_ times: Int) -> Operation {
+        let op = BlockOperation(block: {
+            print("startCalc: Thread=\(Thread.current)")
+            for _ in 1...times {
+                CalcOnThread.lock.lock()
+                CalcOnThread.number += 1;
+                CalcOnThread.lock.unlock()
+            }
+        })
+        return op;
+    }
     func createCalcOperationWithLock(_ times: Int) -> Operation {
         let op = BlockOperation(block: {
             print("startCalc: Thread=\(Thread.current)")
             for _ in 1...times {
-                //CalcOnThread.lock.lock()
                 objc_sync_enter(CalcOnThread.lock)
                 CalcOnThread.number += 1;
-                //CalcOnThread.lock.unlock()
                 objc_sync_exit(CalcOnThread.lock)
                 
             }
@@ -66,6 +83,7 @@ class CalcOnThread {
         return op;
     }
     
+    // ============= Demo 1-10
     func downloadFileOperation() -> Operation {
         return BlockOperation(block: {
             print("[\(Date())]Download Starts: Thread=\(Thread.current)")

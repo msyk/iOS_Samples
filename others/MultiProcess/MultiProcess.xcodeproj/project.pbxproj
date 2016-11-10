@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B6833BF1DC8A32800226228 /* DownloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6833BE1DC8A32800226228 /* DownloadOperation.swift */; };
 		2B99E1E31DAA996500322C27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B99E1E21DAA996500322C27 /* AppDelegate.swift */; };
 		2B99E1E51DAA996500322C27 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B99E1E41DAA996500322C27 /* ViewController.swift */; };
 		2B99E1E81DAA996500322C27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B99E1E61DAA996500322C27 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B6833BE1DC8A32800226228 /* DownloadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadOperation.swift; sourceTree = "<group>"; };
 		2B99E1DF1DAA996500322C27 /* MultiProcess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiProcess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B99E1E21DAA996500322C27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B99E1E41DAA996500322C27 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				2B99E1E21DAA996500322C27 /* AppDelegate.swift */,
 				2B99E1E41DAA996500322C27 /* ViewController.swift */,
 				2B99E2101DAA998F00322C27 /* CalcOnThread.swift */,
+				2B6833BE1DC8A32800226228 /* DownloadOperation.swift */,
 				2B99E1E61DAA996500322C27 /* Main.storyboard */,
 				2B99E1E91DAA996500322C27 /* Assets.xcassets */,
 				2B99E1EB1DAA996500322C27 /* LaunchScreen.storyboard */,
@@ -178,7 +181,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Masayuki Nii";
 				TargetAttributes = {
 					2B99E1DE1DAA996500322C27 = {
@@ -252,6 +255,7 @@
 				2B99E1E51DAA996500322C27 /* ViewController.swift in Sources */,
 				2B99E1E31DAA996500322C27 /* AppDelegate.swift in Sources */,
 				2B99E2111DAA998F00322C27 /* CalcOnThread.swift in Sources */,
+				2B6833BF1DC8A32800226228 /* DownloadOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +327,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -373,6 +378,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
